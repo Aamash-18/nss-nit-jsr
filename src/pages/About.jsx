@@ -155,7 +155,7 @@ const About = () => {
       </div>
 
       {/* Mobile Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md z-100 md:hidden border-t border-gray-800">
+      <div className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-md z-[1000] md:hidden border-t border-gray-800">
         <div className="flex justify-around items-center py-2">
           {[
             {
