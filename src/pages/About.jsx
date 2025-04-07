@@ -36,7 +36,7 @@ const About = () => {
   const teamControls = useAnimation();
 
   // View states
-  const heroInView = useInView(heroRef, { once: false, threshold: 0.3 });
+  const heroInView = useInView(heroRef, { once: false, threshold: 0.2 });
   const missionInView = useInView(missionRef, { once: false, threshold: 0.2 });
   const historyInView = useInView(historyRef, { once: false, threshold: 0.3 });
   const valuesInView = useInView(valuesRef, { once: false, threshold: 0.2 });
@@ -119,6 +119,7 @@ const About = () => {
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
+  console.log("activeSection", activeSection);
 
   return (
     <div className="w-full overflow-hidden bg-gradient-to-b from-[#050510] via-[#0a0a1e] to-[#131330] text-white min-h-screen font-sans">
@@ -153,10 +154,8 @@ const About = () => {
           ))}
         </div>
       </div>
-
-      {/* Mobile Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-md z-[1000] md:hidden border-t border-gray-800">
-        <div className="flex justify-around items-center py-2">
+      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50  md:hidden">
+        <div className="flex flex-col space-y-4 items-center">
           {[
             {
               id: "hero",
@@ -188,33 +187,40 @@ const About = () => {
               icon: <FaHandsHelping className="text-lg" />,
               ref: impactRef,
             },
+            {
+              id: "team",
+              label: "Team",
+              icon: <FaUsers className="text-lg" />,
+              ref: teamRef,
+            },
           ].map((item) => (
             <motion.div
               key={item.id}
-              className={`flex flex-col items-center py-1 px-2 ${
-                activeSection === item.id ? "text-cyan-400" : "text-gray-400"
-              }`}
+              className="relative group cursor-pointer"
               onClick={() => scrollToSection(item.ref)}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.2 }}
             >
-              {item.icon}
-              <span className="text-xs mt-1">{item.label}</span>
-              {activeSection === item.id && (
-                <motion.div
-                  className="h-0.5 w-full mt-1 bg-gradient-to-r from-cyan-400 to-purple-500"
-                  layoutId="activeTab"
-                />
-              )}
+              <div
+                className={` rounded-full transition-all p-2 duration-300 ${
+                  activeSection === item.id
+                    ? "bg-gradient-to-r from-cyan-400 to-purple-500 shadow-md shadow-purple-500/50"
+                    : "bg-gray-500/40"
+                }`}
+              >
+                 {item.icon}
+              </div>
+              
             </motion.div>
           ))}
         </div>
       </div>
 
+ 
       {/* Hero Section */}
       <section
+        id="hero"
         ref={heroRef}
         className="relative min-h-screen flex items-center justify-center overflow-hidden md:px-16"
-        id="hero"
       >
         {/* Background with 3D layers */}
         <div className="absolute inset-0 bg-black z-0">
@@ -299,7 +305,6 @@ const About = () => {
                   <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-rose-400">
                     Communities
                   </span>
-                  
                 </div>
                 <span className="block text-white">Through Service</span>
               </h1>
@@ -342,8 +347,6 @@ const About = () => {
                   Join Our Community
                 </motion.button>
               </div>
-
-             
             </motion.div>
 
             {/* Right side - 3D Illustration */}
