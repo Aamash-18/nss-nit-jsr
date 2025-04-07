@@ -154,7 +154,8 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50  md:hidden">
+      {/* Mobile Navigation */}
+      <div className="fixed right-2 top-1/2 transform -translate-y-1/2 z-50  md:hidden">
         <div className="flex flex-col space-y-4 items-center">
           {[
             {
@@ -759,7 +760,7 @@ const About = () => {
 
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-amber-400 to-orange-500 opacity-60"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-amber-400 to-orange-500 opacity-60 hidden md:block"></div>
 
             {/* Timeline Items */}
             <div className="space-y-16">
@@ -772,7 +773,7 @@ const About = () => {
                 className="relative"
               >
                 <motion.div
-                  className="absolute left-[49%]  transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center z-10"
+                  className="absolute md:left-[49%] hidden md:flex   transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full  items-center justify-center z-10"
                   whileInView={{
                     scale: [0.5, 1.2, 1],
                     boxShadow: "0 0 20px rgba(251, 191, 36, 0.5)",
@@ -822,7 +823,7 @@ const About = () => {
                 className="relative"
               >
                 <motion.div
-                  className="absolute left-[49%] transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center z-10"
+                  className="absolute left-[49%] hidden md:flex transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full  items-center justify-center z-10"
                   whileInView={{
                     scale: [0.5, 1.2, 1],
                     boxShadow: "0 0 20px rgba(251, 191, 36, 0.5)",
@@ -873,7 +874,7 @@ const About = () => {
                 className="relative"
               >
                 <motion.div
-                  className="absolute left-[49%] transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center z-10"
+                  className="absolute left-[49%] hidden md:flex transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full items-center justify-center z-10"
                   whileInView={{
                     scale: [0.5, 1.2, 1],
                     boxShadow: "0 0 20px rgba(251, 191, 36, 0.5)",
@@ -924,7 +925,7 @@ const About = () => {
                 className="relative"
               >
                 <motion.div
-                  className="absolute left-[49%]  transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center z-10"
+                  className="absolute left-[49%] hidden md:flex  transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full items-center justify-center z-10"
                   whileInView={{
                     scale: [0.5, 1.2, 1],
                     boxShadow: "0 0 20px rgba(251, 191, 36, 0.5)",
@@ -975,7 +976,7 @@ const About = () => {
                 className="relative"
               >
                 <motion.div
-                  className="absolute left-[49%]  transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center z-10"
+                  className="absolute left-[49%] hidden md:flex  transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full  items-center justify-center z-10"
                   whileInView={{
                     scale: [0.5, 1.2, 1],
                     boxShadow: "0 0 20px rgba(251, 191, 36, 0.5)",
