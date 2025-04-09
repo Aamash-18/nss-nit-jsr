@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.bg-grid-pattern {
+  background-color: #676666;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.95) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.9) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
 @layer base {
   body {
     @apply bg-white text-gray-800 dark:bg-dark-bg dark:text-dark-text;
