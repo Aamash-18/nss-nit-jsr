@@ -225,22 +225,6 @@ const About = () => {
       >
         {/* Background with 3D layers */}
         <div className="absolute inset-0 bg-black z-0">
-          {/* Star field background */}
-          <div className="absolute inset-0 bg-[url('/stars-bg.png')] opacity-70"></div>
-
-          {/* Animated galaxy */}
-          <motion.div
-            className="absolute inset-0 bg-[url('/galaxy-nebula.png')] bg-center bg-cover opacity-40"
-            animate={{
-              scale: [1, 1.1, 1],
-              rotate: [0, 3, 0],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
 
           {/* Glowing overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-purple-900/40 to-rose-900/40"></div>
@@ -1655,8 +1639,14 @@ const About = () => {
             <motion.div
               className="h-1 bg-gradient-to-r from-blue-400 to-indigo-500 mx-auto mb-8"
               initial={{ width: 0 }}
-              animate={{ width: "120px" }}
-              transition={{ duration: 1, delay: 0.5 }}
+              animate={{ width: "25%" }}
+              transition={{
+                duration: 2,
+                ease: "easeInOut",
+                delay: 0.5,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
             />
             <p className="text-gray-300 max-w-3xl mx-auto text-lg">
               The passionate individuals who lead our initiatives and drive our
