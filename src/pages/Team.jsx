@@ -242,6 +242,7 @@ const Team = () => {
   return (
     <div>
       {/* Hero Section */}
+
       <section className="relative py-24 bg-gradient-to-br from-primary via-primary/90 to-secondary/80 text-white">
         <div className="absolute inset-0 bg-[url('https://via.placeholder.com/1920x1080')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
         <div className="container-custom relative z-10">

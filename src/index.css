@@ -4,6 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.bg-grid-pattern {
+  background-color: #676666;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.95) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.9) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+
+/* index.css or App.css */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3b82f6; /* Tailwind's blue-500 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e5e7eb; /* Tailwind's gray-200 */
+}
+
+
 @layer base {
   body {
     @apply bg-white text-gray-800 dark:bg-dark-bg dark:text-dark-text;
@@ -52,3 +77,4 @@
     @apply opacity-0;
   }
 }
+

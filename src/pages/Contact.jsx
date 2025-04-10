@@ -1,16 +1,38 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaUser,
+  FaEnvelope,
+  FaPaperPlane,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaClock,
+  FaArrowRight,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaHeart,
+  FaHandHoldingHeart,
+  FaUsers,
+  FaHandsHelping,
+} from "react-icons/fa";
+import { MdSubject, MdMessage, MdCheck, MdStar } from "react-icons/md";
 
-const Contact = () => {
+export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState(false);
+  const [focusedField, setFocusedField] = useState(null);
+  const [submitted, setSubmitted] = useState(false);
+  const [currentSection, setCurrentSection] = useState(0);
+  const [hoverCard, setHoverCard] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,401 +42,679 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    console.log("Form submitted:", formData);
+    setIsSubmitting(false);
+    setSubmitted(true);
+
     setTimeout(() => {
-      // Simulate successful submission (in a real app, this would be an API call)
-      const success = Math.random() > 0.1; // 90% success rate for demo
-      
-      if (success) {
-        setIsSubmitting(false);
-        setSubmitSuccess(true);
-        
-        // Reset form after successful submission
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        });
-        
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setSubmitSuccess(false);
-        }, 5000);
-      } else {
-        setIsSubmitting(false);
-        setSubmitError(true);
-        
-        // Reset error message after 5 seconds
-        setTimeout(() => {
-          setSubmitError(false);
-        }, 5000);
-      }
-    }, 1500);
+      setSubmitted(false);
+      // Reset form after submission
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    }, 3000);
   };
 
-  return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative py-20 pb-32 bg-gradient-to-r from-primary to-primary/80 text-white overflow-hidden">
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-lg md:text-xl">
-              Get in touch with us for any inquiries, collaborations, or to join our team.
-            </p>
-          </motion.div>
-        </div>
-       
-        {/* SVG Wave */}
-        <div className="absolute bottom-0 left-0 w-full z-0 text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" className="w-full h-20">
-            <path 
-              fill="currentColor" 
-              fillOpacity="1" 
-              d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,138.7C672,139,768,181,864,181.3C960,181,1056,139,1152,122.7C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            ></path>
-          </svg>
-        </div>
-      </section>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSection((prev) => (prev + 1) % 3);
+    }, 5000);
 
-      {/* Contact Section */}
-      <section className="py-20">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+    return () => clearInterval(interval);
+  }, []);
+
+  const contactCards = [
+    {
+      icon: <FaMapMarkerAlt className="text-3xl text-rose-400" />,
+      title: "Visit Us",
+      content:
+        "National Institute of Technology, Jamshedpur, Jharkhand - 831014, India",
+      action: "Get Directions",
+      link: "https://maps.google.com",
+      color: "from-rose-500/20 to-rose-900/40",
+    },
+    {
+      icon: <FaEnvelope className="text-3xl text-violet-400" />,
+      title: "Email Us",
+      content: "nss@nitjsr.ac.in",
+      action: "Send Email",
+      link: "mailto:nss@nitjsr.ac.in",
+      color: "from-violet-500/20 to-violet-900/40",
+    },
+    {
+      icon: <FaPhone className="text-3xl text-blue-400" />,
+      title: "Call Us",
+      content: "+91 1234567890",
+      action: "Call Now",
+      link: "tel:+911234567890",
+      color: "from-blue-500/20 to-blue-900/40",
+    },
+    {
+      icon: <FaClock className="text-3xl text-cyan-400" />,
+      title: "Office Hours",
+      content: "Monday to Friday: 9:00 AM - 5:00 PM",
+      action: "View Schedule",
+      link: "#schedule",
+      color: "from-cyan-500/20 to-cyan-900/40",
+    },
+  ];
+
+  const faqItems = [
+    {
+      question: "How can I join NSS at NIT Jamshedpur?",
+      answer:
+        "To join NSS at NIT Jamshedpur, you can register at the beginning of the academic year during the registration drive. Keep an eye on our notices and social media updates for the announcement.",
+    },
+    {
+      question: "What activities does NSS NIT Jamshedpur conduct?",
+      answer:
+        "NSS NIT Jamshedpur conducts various activities like blood donation camps, tree plantation drives, cleanliness campaigns, teaching underprivileged children, awareness programs, and many more community service activities.",
+    },
+    {
+      question: "Is there any certificate provided for NSS volunteers?",
+      answer:
+        "Yes, NSS volunteers receive certificates based on their hours of service. A minimum of 120 hours of service over two years is required for the NSS certificate, which adds value to your academic profile.",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-indigo-950 to-gray-950 text-white">
+  
+      <header className="relative py-28 overflow-hidden">
+          {/* Background effects */}
+          <div className="absolute inset-0">
+        {/* Animated gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,#4f46e520,transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,#3b82f630,transparent_50%)]"></div>
+        
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+        
+      </div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              className="absolute inset-0 -z-10 overflow-hidden"
             >
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Send Us a Message</h2>
-              
-              {/* Success Message */}
-              {submitSuccess && (
+              <div className="absolute top-0 left-0 w-full h-full">
+                {/* Animated gradient circles */}
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 bg-green-100 text-green-700 rounded-md"
-                >
-                  <p>Your message has been sent successfully! We'll get back to you soon.</p>
-                </motion.div>
-              )}
-              
-              {/* Error Message */}
-              {submitError && (
+                  className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-rose-500/10 blur-3xl"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    x: [0, 20, 0],
+                    y: [0, -20, 0],
+                    opacity: [0.3, 0.5, 0.3],
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 bg-red-100 text-red-700 rounded-md"
-                >
-                  <p>There was an error sending your message. Please try again later.</p>
-                </motion.div>
-              )}
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 mb-2">
-                    Your Name
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 mb-2">
-                    Your Email
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-gray-700 dark:text-gray-300 mb-2">
-                    Subject
-                  </label>
-                  <motion.input
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 mb-2">
-                    Your Message
-                  </label>
-                  <motion.textarea
-                    whileFocus={{ scale: 1.01 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary"
-                  ></motion.textarea>
-                </div>
-                
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full btn btn-primary py-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-                >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </motion.button>
-              </form>
+                  className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-violet-500/10 blur-3xl"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    x: [0, -30, 0],
+                    y: [0, 30, 0],
+                    opacity: [0.3, 0.4, 0.3],
+                  }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
+                />
+                <motion.div
+                  className="absolute top-1/2 left-1/2 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl"
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    x: [0, 40, 0],
+                    y: [0, 10, 0],
+                    opacity: [0.2, 0.3, 0.2],
+                  }}
+                  transition={{
+                    duration: 9,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 2,
+                  }}
+                />
+                <motion.div
+                  className="absolute bottom-1/3 right-1/3 w-64 h-64 rounded-full bg-cyan-500/10 blur-3xl"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    x: [0, -15, 0],
+                    y: [0, -25, 0],
+                    opacity: [0.2, 0.4, 0.2],
+                  }}
+                  transition={{
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 3,
+                  }}
+                />
+              </div>
             </motion.div>
+
             
-            {/* Contact Information */}
+            <motion.div
+             initial={{ opacity: 0, y: -20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.5 }}
+            className="inline-flex items-center p-2  from-rose-400/20 to-violet-500/20 rounded-full text-rose-300 font-medium text-sm mb-4 border border-rose-500/40">
+                <span className="mr-2 text-rose-300">
+                  <FaHandHoldingHeart size={16} />
+                </span>
+                <span className="text-white text-sm font-medium">
+                  NSS NIT Jamshedpur
+                </span>
+              </motion.div>
+
+            <motion.h1
+              className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-rose-300 via-violet-300 to-cyan-300"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Connect With Our Community
+            </motion.h1>
+
+            <motion.p
+              className="text-xl text-gray-300 mb-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Have questions about NSS activities or want to collaborate? Reach
+              out to our team and join us in our mission of service and social
+              impact.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-wrap justify-center gap-4"
+            >
+              <a
+                href="#contact-form"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-rose-500 to-violet-600 rounded-full text-white font-medium group transition-all duration-300 hover:shadow-lg hover:shadow-rose-500/25"
+              >
+                <span>Reach Out To Us</span>
+                <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
+
+              <a
+                href="#about"
+                className="inline-flex items-center px-8 py-4 bg-gray-800/50 border border-gray-700 rounded-full text-white font-medium group transition-all duration-300 hover:bg-gray-800/80"
+              >
+                <span>Learn More</span>
+                <FaArrowRight className="ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </header>
+      
+
+      {/* Main Content Split Section */}
+      <section className="py-24 relative">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent to-gray-950/50"></div>
+          <div className="absolute top-1/2 right-0 w-1/3 h-1/2 bg-rose-900/5 blur-3xl rounded-full"></div>
+          <div className="absolute bottom-0 left-1/4 w-1/4 h-1/3 bg-violet-900/5 blur-3xl rounded-full"></div>
+        </div>
+
+        <div className="container mx-auto px-2 md:px-6">
+          <div className="flex flex-col lg:flex-row gap-12 md:px-12">
+            {/* Left side: About NSS Section*/}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
+              className="lg:w-2/5"
             >
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Contact Information</h2>
-              
-              <div className="space-y-8">
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Our Location</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        NSS Office, Student Activity Center<br />
-                        NIT Jamshedpur, Adityapur<br />
-                        Jamshedpur, Jharkhand - 831014
-                      </p>
-                    </div>
-                  </div>
+              <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-800 rounded-2xl p-10 shadow-2xl mb-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500"></div>
+
+                <div className="mb-6">
+                  <span className="inline-block px-4 py-1.5 bg-blue-500/20 rounded-full text-blue-300 font-medium text-sm mb-4 border border-blue-500/20">
+                    About NSS
+                  </span>
+                  <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-violet-300">
+                    National Service Scheme
+                  </h2>
                 </div>
-                
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Email Us</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        <a href="mailto:nss@nitjsr.ac.in" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                          nss@nitjsr.ac.in
-                        </a>
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-300 mt-1">
-                        <a href="mailto:coordinator.nss@nitjsr.ac.in" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                          coordinator.nss@nitjsr.ac.in
-                        </a>
-                      </p>
-                    </div>
-                  </div>
+
+                <p className="text-gray-300 mb-6">
+                  The National Service Scheme (NSS) is a voluntary program that
+                  aims to develop student's personality through community
+                  service. The NSS unit at NIT Jamshedpur works with the motto
+                  "Not Me But You."
+                </p>
+
+                <p className="text-gray-300 mb-6">
+                  Our activities include blood donation camps, environmental
+                  conservation, educational programs for underprivileged
+                  children, health awareness campaigns, and disaster management
+                  training.
+                </p>
+
+                <div className="bg-gradient-to-r from-blue-900/30 to-violet-900/30 p-6 rounded-xl border border-blue-800/30">
+                  <h3 className="text-lg font-semibold mb-2 text-blue-300">
+                    Our Vision
+                  </h3>
+                  <p className="text-gray-300 text-[15px]">
+                    To foster a generation of young individuals who are not only sensitive to social issues but also actively engaged in community service. 
+                  </p>
                 </div>
-                
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Call Us</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        <a href="tel:+919876543210" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                          +91 98765 43210
-                        </a>
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-300 mt-1">
-                        <a href="tel:+919876543211" className="hover:text-primary dark:hover:text-secondary transition-colors">
-                          +91 98765 43211
-                        </a>
-                      </p>
-                    </div>
-                  </div>
+                <div className="bg-gradient-to-r mt-2 from-green-900/30 to-cyan-900/50 p-6 rounded-xl border border-blue-800/30">
+                  <h3 className="text-lg font-semibold mb-4 text-blue-300">
+                    Our Mission
+                  </h3>
+                  <p className="text-gray-300 text-[15px]">
+                  Our goal is to empower them with the skills, knowledge, and motivation to drive meaningful and sustainable positive change in society.
+                  </p>
                 </div>
-                
-                <div className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
-                  <div className="flex items-start">
-                    <div className="bg-primary/10 p-3 rounded-full mr-4">
-                      <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Office Hours</h3>
-                      <p className="text-gray-700 dark:text-gray-300">
-                        Monday - Friday: 10:00 AM - 5:00 PM<br />
-                        Saturday: 10:00 AM - 1:00 PM<br />
-                        Sunday: Closed
-                      </p>
-                    </div>
-                  </div>
+              </div>
+
+          
+            </motion.div>
+            {/* Right side: Contact Form*/}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:w-3/5 mb-12 lg:mb-0"
+              id="contact-form"
+            >
+              <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-800 rounded-2xl p-10 shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-rose-500 via-violet-500 to-cyan-500"></div>
+
+                <div className="mb-10">
+                  <span className="inline-block px-4 py-1.5 bg-rose-500/20 rounded-full text-rose-300 font-medium text-sm mb-4 border border-rose-500/20">
+                    Contact Form
+                  </span>
+                  <h2 className="text-3xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-rose-300 to-violet-300">
+                    Send Us A Message
+                  </h2>
+                  <p className="text-gray-400">
+                    Fill out the form and our team will get back to you within
+                    24 hours.
+                  </p>
                 </div>
+
+                <AnimatePresence mode="wait">
+                  {submitted ? (
+                    <motion.div
+                      key="success"
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      className="bg-green-500/10 border border-green-500/30 rounded-xl p-8 text-center"
+                    >
+                      <div className="flex justify-center mb-6">
+                        <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center">
+                          <MdCheck className="text-4xl text-green-400" />
+                        </div>
+                      </div>
+                      <h3 className="text-2xl font-semibold text-white mb-3">
+                        Message Sent Successfully!
+                      </h3>
+                      <p className="text-gray-300 mb-6">
+                        Thank you for reaching out to us. We'll get back to you
+                        as soon as possible.
+                      </p>
+                      <motion.div
+                        className="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden mt-8"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                      >
+                        <motion.div
+                          className="h-full bg-gradient-to-r from-green-400 to-emerald-500"
+                          initial={{ width: "0%" }}
+                          animate={{ width: "100%" }}
+                          transition={{ duration: 2.5, ease: "easeInOut" }}
+                        />
+                      </motion.div>
+                    </motion.div>
+                  ) : (
+                    <motion.form
+                      key="form"
+                      onSubmit={handleSubmit}
+                      className="space-y-6"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Name Field */}
+                        <div className="relative">
+                          <label className="flex items-center text-sm font-medium text-gray-300 mb-2">
+                            <FaUser className="mr-2 text-rose-400" />
+                            Your Name
+                          </label>
+                          <div className="relative">
+                            <input
+                              type="text"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleChange}
+                              onFocus={() => setFocusedField("name")}
+                              onBlur={() => setFocusedField(null)}
+                              required
+                              className="w-full px-4 py-3 bg-gray-800/50 rounded-lg border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-rose-500/30"
+                              placeholder="John Doe"
+                            />
+                            <motion.div
+                              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-rose-500 to-violet-500"
+                              initial={{ width: "0%" }}
+                              animate={{
+                                width: focusedField === "name" ? "100%" : "0%",
+                              }}
+                              transition={{ duration: 0.3 }}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Email Field */}
+                        <div className="relative">
+                          <label className="flex items-center text-sm font-medium text-gray-300 mb-2">
+                            <FaEnvelope className="mr-2 text-violet-400" />
+                            Your Email
+                          </label>
+                          <div className="relative">
+                            <input
+                              type="email"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              onFocus={() => setFocusedField("email")}
+                              onBlur={() => setFocusedField(null)}
+                              required
+                              className="w-full px-4 py-3 bg-gray-800/50 rounded-lg border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-violet-500/30"
+                              placeholder="your@email.com"
+                            />
+                            <motion.div
+                              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-violet-500 to-blue-500"
+                              initial={{ width: "0%" }}
+                              animate={{
+                                width: focusedField === "email" ? "100%" : "0%",
+                              }}
+                              transition={{ duration: 0.3 }}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Phone Field */}
+                        <div className="relative">
+                          <label className="flex items-center text-sm font-medium text-gray-300 mb-2">
+                            <FaPhone className="mr-2 text-blue-400" />
+                            Phone Number
+                          </label>
+                          <div className="relative">
+                            <input
+                              type="tel"
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              onFocus={() => setFocusedField("phone")}
+                              onBlur={() => setFocusedField(null)}
+                              className="w-full px-4 py-3 bg-gray-800/50 rounded-lg border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+                              placeholder="+91 XXXXXXXXXX"
+                            />
+                            <motion.div
+                              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500"
+                              initial={{ width: "0%" }}
+                              animate={{
+                                width: focusedField === "phone" ? "100%" : "0%",
+                              }}
+                              transition={{ duration: 0.3 }}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Subject Field */}
+                        <div className="relative">
+                          <label className="flex items-center text-sm font-medium text-gray-300 mb-2">
+                            <MdSubject className="mr-2 text-cyan-400" />
+                            Subject
+                          </label>
+                          <div className="relative">
+                            <input
+                              type="text"
+                              name="subject"
+                              value={formData.subject}
+                              onChange={handleChange}
+                              onFocus={() => setFocusedField("subject")}
+                              onBlur={() => setFocusedField(null)}
+                              required
+                              className="w-full px-4 py-3 bg-gray-800/50 rounded-lg border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/30"
+                              placeholder="How can we help you?"
+                            />
+                            <motion.div
+                              className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-cyan-500 to-rose-500"
+                              initial={{ width: "0%" }}
+                              animate={{
+                                width:
+                                  focusedField === "subject" ? "100%" : "0%",
+                              }}
+                              transition={{ duration: 0.3 }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Message Field */}
+                      <div className="relative">
+                        <label className="flex items-center text-sm font-medium text-gray-300 mb-2">
+                          <MdMessage className="mr-2 text-rose-400" />
+                          Your Message
+                        </label>
+                        <div className="relative">
+                          <textarea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            onFocus={() => setFocusedField("message")}
+                            onBlur={() => setFocusedField(null)}
+                            required
+                            rows={5}
+                            className="w-full px-4 py-3 bg-gray-800/50 rounded-lg border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-rose-500/30 resize-none"
+                            placeholder="Tell us how we can help you or how you'd like to collaborate with NSS NIT Jamshedpur..."
+                          />
+                          <motion.div
+                            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-rose-500 via-violet-500 to-cyan-500"
+                            initial={{ width: "0%" }}
+                            animate={{
+                              width: focusedField === "message" ? "100%" : "0%",
+                            }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Submit Button */}
+                      <motion.button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full py-4 px-6 bg-gradient-to-r from-rose-500 via-violet-500 to-blue-600 text-white font-medium rounded-lg flex items-center justify-center space-x-2 shadow-lg shadow-rose-500/10 hover:shadow-violet-500/30 disabled:opacity-70 disabled:cursor-not-allowed overflow-hidden relative"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <span className="relative z-10">
+                          {isSubmitting ? (
+                            <div className="flex items-center justify-center">
+                              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-3"></div>
+                              <span>Sending Message...</span>
+                            </div>
+                          ) : (
+                            <div className="flex items-center justify-center">
+                              <FaPaperPlane className="mr-2" />
+                              <span>Send Message</span>
+                            </div>
+                          )}
+                        </span>
+                      </motion.button>
+                    </motion.form>
+                  )}
+                </AnimatePresence>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-10">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">Find Us</h2>
-            <p className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              Visit our office at NIT Jamshedpur campus. We're located in the Student Activity Center.
-            </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="rounded-lg overflow-hidden shadow-md h-96 bg-gray-200 dark:bg-gray-700"
-          >
-            {/* Placeholder for Google Map */}
-            <div className="w-full h-full flex items-center justify-center">
-              <p className="text-gray-500 dark:text-gray-400">Google Map will be embedded here</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Featured Information Cards */}
+      <section className="py-16 relative">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-violet-800/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-rose-800/10 rounded-full blur-3xl"></div>
+        </motion.div>
 
-      {/* Social Media Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">
-              Connect With Us
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              Follow us on social media to stay updated with our latest events, activities, and announcements.
-            </p>
-            
-            <div className="flex justify-center space-x-6">
-              <motion.a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="bg-white dark:bg-gray-900 p-4 rounded-full shadow-md text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+        <div className="container mx-auto px-6">
+          <div className="max-w-lg mx-auto text-center mb-16">
+            <motion.span
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="inline-block px-4 py-1.5 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full text-blue-300 font-medium text-sm mb-4 border border-blue-500/20"
+            >
+                <FaHandsHelping className="inline-block mr-2 text-lg" />
+              How to Reach Us
+            </motion.span>
+
+            <motion.h2
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-cyan-300"
+            >
+              Get in Touch With Our Team
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="text-gray-300"
+            >
+              We're always eager to hear from you. Find the best way to connect
+              with our NSS unit through any of these channels.
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {contactCards.map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{
+                  y: -10,
+                  transition: { duration: 0.3 },
+                }}
+                onHoverStart={() => setHoverCard(index)}
+                onHoverEnd={() => setHoverCard(null)}
+                className="relative rounded-xl overflow-hidden group"
               >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-                </svg>
-              </motion.a>
-              
-              <motion.a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="bg-white dark:bg-gray-900 p-4 rounded-full shadow-md text-blue-400 hover:text-blue-500 dark:text-blue-300 dark:hover:text-blue-200 transition-colors"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
-              </motion.a>
-              
-              <motion.a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="bg-white dark:bg-gray-900 p-4 rounded-full shadow-md text-pink-600 hover:text-pink-700 dark:text-pink-400 dark:hover:text-pink-300 transition-colors"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
-                </svg>
-              </motion.a>
-              
-              <motion.a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="bg-white dark:bg-gray-900 p-4 rounded-full shadow-md text-blue-700 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400 transition-colors"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </motion.a>
-              
-              <motion.a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1 }}
-                className="bg-white dark:bg-gray-900 p-4 rounded-full shadow-md text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 transition-colors"
-              >
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-              </motion.a>
-            </div>
-          </motion.div>
+                <div
+                  className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"
+                  style={{
+                    backgroundImage: `radial-gradient(circle at center, ${
+                      index === 0
+                        ? "rgba(244,63,94,0.2)"
+                        : index === 1
+                        ? "rgba(139,92,246,0.2)"
+                        : index === 2
+                        ? "rgba(59,130,246,0.2)"
+                        : "rgba(34,211,238,0.2)"
+                    }, transparent 70%)`,
+                  }}
+                ></div>
+
+                <div
+                  className="bg-gray-900/60 backdrop-blur-sm border border-gray-800 rounded-xl p-8 h-full flex flex-col items-center text-center group transition-all duration-300 hover:border-opacity-50 hover:shadow-xl"
+                  style={{
+                    borderColor:
+                      hoverCard === index
+                        ? index === 0
+                          ? "rgb(244,63,94)"
+                          : index === 1
+                          ? "rgb(139,92,246)"
+                          : index === 2
+                          ? "rgb(59,130,246)"
+                          : "rgb(34,211,238)"
+                        : "",
+                  }}
+                >
+                  <div
+                    className={`p-4 rounded-full mb-6 bg-gradient-to-br ${card.color}`}
+                  >
+                    {card.icon}
+                  </div>
+
+                  <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+                  <p className="text-gray-400 mb-6 flex-grow">{card.content}</p>
+
+                  <a
+                    href={card.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center transition-colors duration-300"
+                    style={{
+                      color:
+                        index === 0
+                          ? "rgb(244,63,94)"
+                          : index === 1
+                          ? "rgb(139,92,246)"
+                          : index === 2
+                          ? "rgb(59,130,246)"
+                          : "rgb(34,211,238)",
+                    }}
+                  >
+                    <span>{card.action}</span>
+                    <FaArrowRight className="ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
   );
-};
-
-export default Contact; 
+}
