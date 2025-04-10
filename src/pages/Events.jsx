@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaCalendar, FaCalendarAlt } from "react-icons/fa";
 
 
 
@@ -99,94 +100,62 @@ const Events = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative z-10 min-h-screen flex items-center justify-center text-center overflow-hidden">
-        {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-gray-900 opacity-90"></div>
+      <section className="relative z-10 min-h-[400px] h-auto  flex items-center justify-center text-center overflow-hidden">
+        {/* Background with 3D layers */}
+        <div className="absolute inset-0 bg-black z-0">
+          {/* Star field background */}
+          <div className="absolute inset-0 bg-[url('/stars-bg.png')] opacity-70"></div>
 
-        {/* Floating Event-Related Objects */}
-        <motion.div
-          className="absolute top-10 left-10 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"
-          animate={{
-            y: [0, 20, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+          {/* Animated galaxy */}
+          <motion.div
+            className="absolute inset-0 bg-[url('/galaxy-nebula.png')] bg-center bg-cover opacity-40"
+            animate={{
+              scale: [1, 1.1, 1],
+              rotate: [0, 3, 0],
+            }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          {/* Glowing overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-purple-900/40 to-rose-900/40"></div>
+        </div>
+
+        {/* Floating light particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(50)].map((_, i) => (
+            <motion.div
+              key={`star-${i}`}
+              className="absolute rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                width: `${Math.random() * 3 + 1}px`,
+                height: `${Math.random() * 3 + 1}px`,
+                backgroundColor:
+                  i % 3 === 0 ? "#fff" : i % 3 === 1 ? "#a5f3fc" : "#c4b5fd",
+                boxShadow:
+                  i % 3 === 0
+                    ? "0 0 10px 2px rgba(255,255,255,0.8)"
+                    : i % 3 === 1
+                    ? "0 0 10px 2px rgba(165,243,252,0.8)"
+                    : "0 0 10px 2px rgba(196,181,253,0.8)",
+              }}
+              animate={{
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: 2 + Math.random() * 6,
+                repeat: Infinity,
+                delay: Math.random() * 5,
+              }}
             />
-          </svg>
-        </motion.div>
-        <motion.div
-          className="absolute bottom-20 right-20 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center"
-          animate={{
-            x: [0, 20, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-          </svg>
-        </motion.div>
-        <motion.div
-          className="absolute top-1/3 right-1/3 w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center"
-          animate={{
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        </motion.div>
+          ))}
+        </div>
 
         {/* Hero Content */}
         <motion.div
@@ -197,42 +166,73 @@ const Events = () => {
             visible: {
               opacity: 1,
               y: 0,
-              transition: { duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] },
+              transition: { duration: 2, ease: [0.6, 0.05, 0.01, 0.9] },
             },
           }}
           className="relative z-10 container mx-auto px-6 md:px-12"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-            Explore Our Events
-          </h1>
+          <div className="flex items-center justify-center space-x-4">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              Explore Our Events
+            </h1>
+            <motion.div
+              className="w-12 h-12 bg-gradient-to-r from-rose-500 to-blue-500 rounded-lg flex items-center justify-center shadow-lg"
+              animate={{
+                scale: [1, 1.2, 1],
+                rotate: [0, 360],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <FaCalendarAlt className="w-6 h-6 text-white" />
+            </motion.div>
+          </div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Discover the impactful events organized by NSS NIT Jamshedpur. Join
             us in making a difference in the community.
           </p>
         </motion.div>
       </section>
+
       {/* Events Section */}
-      <section className="relative py-12 overflow-hidden bg-gradient-to-br from-purple-900 via-blue-900 to-gray-900">
+      <section className="relative py-12 overflow-hidden bg-gradient-to-br from-purple-950/30 via-blue-950 to-gray-900 bg-clip-border opacity-90">
+        {/* Glowing upper Border */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-rose-600 via-blue-300 to-purple-600 blur-md "></div>
         {/* Gradient Background */}
-        <div className="custom-shape"></div>
+        <div className="bg-gradient-to-br from-purple-950/30 via-blue-950 to-gray-900 bg-clip-border opacity-90"></div>
 
         {/* Content */}
-        <div className="relative z-10 container-custom">
+        <div className="relative z-10 container-custom ">
           {/* Filter Tabs */}
-          <div className="flex justify-center mb-16">
-            <div className="inline-flex custom-container rounded-full p-4 shadow-lg space-x-4">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] },
+              },
+            }}
+            className="flex justify-center mb-16"
+          >
+            <div className="inline-flex custom-container rounded-full p-4 shadow-[0_0_15px_rgba(128,90,213,0.8)] border-2 border-purple-950 space-x-4 transition-all duration-500">
               {["all", "upcoming", "past"].map((tab) => (
                 <motion.button
                   key={tab}
                   onClick={() => setFilter(tab)}
                   className={`flex items-center px-8 py-3 rounded-full transition-all duration-500 ${
                     filter === tab
-                      ? "bg-gradient-to-r from-primary to-secondary text-white"
+                      ? "bg-gradient-to-r from-purple-500 to-blue-600 text-white font-medium "
                       : "text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
                   }`}
                   whileHover={{
                     scale: 1.1,
-                    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
+                    //boxShadow: "0 0 20px rgba(128, 90, 213, 0.8)", // Purple glow on hover
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -294,7 +294,7 @@ const Events = () => {
                 </motion.button>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Events Grid */}
           <AnimatePresence mode="wait">
@@ -313,7 +313,7 @@ const Events = () => {
                   },
                 },
               }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 bg-gradient-to-br from-purple-950/30 via-blue-950 to-gray-900 bg-clip-border opacity-90 hover:opacity-100"
             >
               {filteredEvents.map((event) => (
                 <motion.div
@@ -321,7 +321,7 @@ const Events = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.8 }}
                   whileHover={{
                     scale: 1.05,
                     boxShadow:
@@ -329,7 +329,7 @@ const Events = () => {
                         ? "0 0 20px 5px rgba(59, 130, 246, 0.6)" // Blue glow for upcoming events
                         : "0 0 20px 5px rgba(107, 114, 128, 0.6)", // Gray glow for past events
                   }}
-                  className="relative bg-white/30 dark:bg-gray-800/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 transition-transform duration-300"
+                  className="relative bg-white/30 dark:bg-gray-800/30 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-700 transition-transform duration-300"
                 >
                   {/* Event Image */}
                   <div className="relative overflow-hidden">
@@ -350,17 +350,22 @@ const Events = () => {
                   </div>
 
                   {/* Event Details */}
-                  <div className="p-6 space-y-4">
+                  <div className="p-6 space-y-4 group ">
                     {/* Event Title */}
-                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white">
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover:text-purple-500 transition-colors duration-300">
                       {event.title}
                     </h3>
 
+                    {/* Event Description */}
+                    <p className="text-gray-700 dark:text-gray-300 line-clamp-3">
+                      {event.description}
+                    </p>
+
                     {/* Event Date and Location */}
-                    <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400">
-                      <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400 p-1">
+                      <div className="flex items-center justify-center space-x-2 ">
                         <svg
-                          className="w-5 h-5 text-primary"
+                          className="w-5 h-5 text-primary "
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -400,16 +405,11 @@ const Events = () => {
                       </div>
                     </div>
 
-                    {/* Event Description */}
-                    <p className="text-gray-700 dark:text-gray-300 line-clamp-3">
-                      {event.description}
-                    </p>
-
                     {/* Event Button */}
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="max-w-75 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full shadow-lg transition-transform duration-300"
+                      className="max-w-75 bg-gradient-to-r from-purple-800 to-blue-700 rounded-full text-white font-medium hover:shadow-lg hover:shadow-purple-800/30 transition-all duration-300 px-6 py-3 mt-4"
                     >
                       {event.category === "upcoming"
                         ? "Register Now"
@@ -424,181 +424,58 @@ const Events = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative z-10 py-20 flex items-center justify-center text-center overflow-hidden">
+      <section className="relative z-10 py-40 flex items-center justify-center text-center overflow-hidden">
         {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-gray-900 opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-green-800/30 via-blue-950 to-green-900/30 bg-clip-border opacity-90"></div>
 
-        {/* Floating Objects */}
+        {/* CTA Content */}
         <motion.div
-          className="absolute top-10 left-10 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"
-          animate={{
-            y: [0, 20, 0],
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] },
+            },
           }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          className="relative z-10 container mx-auto px-6 md:px-12"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-6 h-6 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-        </motion.div>
-        <motion.div
-          className="absolute bottom-20 right-20 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center"
-          animate={{
-            x: [0, 20, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-          </svg>
-        </motion.div>
+          <h2 className="text-4xl p-1 md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-teal-400 transition duration-300  drop-shadow-[0_0_10px_rgba(34, 231, 169, 0.8)]">
+            Want to Organize an Event with Us?
+          </h2>
 
-        {/* CTA Section */}
-        <section className="relative z-10 py-40 flex items-center justify-center text-center overflow-hidden">
-          {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-gray-900 opacity-90"></div>
-
-          {/* Floating Objects */}
-          <motion.div
-            className="absolute top-10 left-10 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center"
-            animate={{
-              y: [0, 20, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
+            Have an idea for a community service event or want to collaborate
+            with NSS NIT Jamshedpur? Let’s work together to create a positive
+            impact.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                boxShadow:
+                  "0 10px 20px rgba(23, 79, 55, 0.6), 0 5px 10px rgba(90, 64, 185, 0.4)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-green-900  to-teal-700 text-white px-8 py-3 rounded-full shadow-lg"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-          </motion.div>
-          <motion.div
-            className="absolute bottom-20 right-20 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center"
-            animate={{
-              x: [0, 20, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
+              Propose an Event
+            </motion.button>
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                boxShadow:
+                  "0 10px 20px rgba(59, 130, 246, 0.6), 0 5px 10px rgba(59, 130, 246, 0.4)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="border-2 border-blue-900 text-blue-600 dark:hover:text-blue-500 bg-transparent px-8 py-3 rounded-full shadow-md transition-transform duration-300"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-          </motion.div>
-
-          {/* CTA Content */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] },
-              },
-            }}
-            className="relative z-10 container mx-auto px-6 md:px-12"
-          >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-              Want to Organize an Event with Us?
-            </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-              Have an idea for a community service event or want to collaborate
-              with NSS NIT Jamshedpur? Let’s work together to create a positive
-              impact.
-            </p>
-            <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow:
-                    "0 10px 20px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.1)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-green-400 to-green-500 text-white px-8 py-3 rounded-full shadow-lg"
-              >
-                Propose an Event
-              </motion.button>
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow:
-                    "0 10px 20px rgba(59, 130, 246, 0.6), 0 5px 10px rgba(59, 130, 246, 0.4)",
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-blue-400 text-blue-400 bg-transparent px-8 py-3 rounded-full shadow-md transition-transform duration-300"
-              >
-                Contact Us
-              </motion.button>
-            </div>
-          </motion.div>
-        </section>
+              Contact Us
+            </motion.button>
+          </div>
+        </motion.div>
       </section>
     </div>
   );
