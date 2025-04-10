@@ -1,260 +1,178 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  FaCrown, 
+  FaStar, 
+  FaUsers, 
+  FaEnvelope, 
+  FaLinkedin, 
+  FaTwitter
+} from 'react-icons/fa';
 
 const Team = () => {
-  const [activeCategory, setActiveCategory] = useState('faculty');
+  const [activeCategory, setActiveCategory] = useState('superCore');
+  const [hoveredMember, setHoveredMember] = useState(null);
 
-  // Sample team data
+  // Updated team data with categories
   const teamMembers = {
-    faculty: [
+    superCore: [
       {
         id: 1,
         name: 'Dr. Rajesh Kumar',
         position: 'Program Officer',
-        image: 'https://via.placeholder.com/300x300',
+        image: 'src/assets/core team images/Dr Rajesh Kumar.jpg',
         department: 'Department of Mechanical Engineering',
         email: 'rajesh.kumar@nitjsr.ac.in',
-        description: 'Dr. Rajesh Kumar has been leading the NSS unit at NIT Jamshedpur for the past 5 years. Under his guidance, the unit has achieved numerous milestones and recognition.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
       {
         id: 2,
         name: 'Dr. Priya Singh',
         position: 'Faculty Coordinator',
-        image: 'https://via.placeholder.com/300x300',
+        image: 'src/assets/core team images/Dr Priya Singh.jpg',
         department: 'Department of Computer Science',
         email: 'priya.singh@nitjsr.ac.in',
-        description: 'Dr. Priya Singh is responsible for coordinating various activities and ensuring smooth functioning of the NSS unit. She has been associated with NSS for over 3 years.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
-    ],
-    coordinators: [
       {
         id: 3,
         name: 'Shyamali Rupam',
-        position: 'VICE PRESIDENT',
+        position: 'Vice President',
         image: 'src/assets/core team images/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'shyamali.rupam@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
+    ],
+    core: [
       {
         id: 4,
         name: 'Neeraj Bhatt',
         position: 'EM Head',
         image: 'src/assets/core team images/Neeraj.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'neeraj.bhatt@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
+      {
         id: 5,
         name: 'Doddy Mourya',
-        position: 'EM HEAD',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
+        position: 'EM Head',
+        image: 'src/assets/core team images/Doddy Mourya.jpg',
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'doddy.mourya@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
+      {
         id: 6,
         name: 'Pratyush Kumar',
         position: 'Creative Head',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
+        image: 'src/assets/core team images/Pratyush Kumar.jpg',
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'pratyush.kumar@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
+      {
         id: 7,
-        name: 'Utkarsh Shukhla',
+        name: 'Utkarsh Shukla',
         position: 'Content Head',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
+        image: 'src/assets/core team images/Utkarsh Shukhla.jpg',
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'utkarsh.shukla@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
+      {
         id: 8,
         name: 'Gourab Bistu',
         position: 'Web Head',
         image: 'src/assets/core team images/GourabBistu.jpeg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'gourab.bistu@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
       {
         id: 9,
         name: 'Rupam Kumari',
         position: 'PR Head',
-        image: 'src/assets/core team images/IMG-20250327-WA0004.jpg     ',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
+        image: 'src/assets/core team images/Rupam Kumari.jpg',
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'rupam.kumari@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
+      {
         id: 10,
         name: 'Kajal Shaw',
         position: 'PR Head',
         image: 'src/assets/core team images/kajal shaw.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      }, 
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'kajal.shaw@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
       {
-        id: 11,
-        name: 'Ankit Aryan',
-        position: ' Strategic & Planing Head',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 12,
-        name: 'Basundhra Singhdeo',
-        position: 'Strategic & Planning Head',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
         id: 13,
         name: 'Rinki Kumari',
         position: 'Media Head',
         image: 'src/assets/core team images/Rinki kumari .jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 14,
-        name: 'Sushant kachhap',
-        position: 'Media Head',
-        image: 'src/assets/core team images/Sushant Kachhap .jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 15,
-        name: 'Santosh Kumar Sahani',
-        position: 'PG Representative',
-        image: 'src/assets/core team images/Santosh Kumar Sahani.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 16,
-        name: 'Bhavesh Gupta',
-        position: 'PG Representative',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 17,
-        name: 'Saransh',
-        position: 'Gen Secretary',
-        image: 'src/assets/core team images/Saransh.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 18,
-        name: 'Nirmal Niranjan Patil',
-        position: 'Gen Secretary',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 19,
-        name: 'Mrinal Ayush Raj',
-        position: 'Joint Secretary',
-        image: 'src/assets/core team images/Mrinal Ayush Raj.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 20,
-        name: 'Pranay Parasana',
-        position: 'Joint Secretary',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 21,
-        name: 'Ekangsh sah',
-        position: 'Joint Secretary',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 22,
-        name: 'Aman Kumar Jha',
-        position: 'Joint Secretary',
-        image: 'src/assets/Shyamli Rupam.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 23,
-        name: 'Kriti Srivastava',
-        position: 'Joint Secretary',
-        image: 'src/assets/core team images/kriti.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 24,
-        name: 'Ravi Ranjan',
-        position: 'Joint Secretary',
-        image: 'src/assets/core team images/Ravi.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 25,
-        name: 'Sumant Nanda',
-        position: 'Joint Secretary',
-        image: 'src/assets/core team images/Sumant Nanda .jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 26,
-        name: 'Saksham Shubh',
-        position: 'Joint Secretary',
-        image: 'src/assets/core team images/Saksham Shubh.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 27,
-        name: 'Ritika Rani',
-        position: 'Joint Secretary',
-        image: 'src/assets/core team images/Ritika Rani.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },  {
-        id: 28,
-        name: 'Ayush Das',
-        position: 'Joint Secretary',
-        image: 'src/assets/core team images/Ayush.jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
-      },   {
-        id: 29,
-        name: 'Aman Kumar',
-        position: 'Joint Secretary',
-        image: 'src/assets/core team images/Aman kumar .jpg',
-        department: 'B.Tech,  Electronics and Communication Engineering.',
-        email: 'amit.sharma@nitjsr.ac.in',
-        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'rinki.kumari@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
       {
-        id: 30,
-        name: 'Sneha Patel',
-        position: 'Student Coordinator',
-        image: 'https://via.placeholder.com/300x300',
-        department: 'B.Tech, Civil Engineering',
-        email: 'sneha.patel@nitjsr.ac.in',
-        description: 'Sneha manages the planning and execution of various events and activities. She is known for her organizational skills and dedication to social service.',
+        id: 14,
+        name: 'Sushant Kachhap',
+        position: 'Media Head',
+        image: 'src/assets/core team images/Sushant Kachhap .jpg',
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: 'sushant.kachhap@nitjsr.ac.in',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
     ],
     volunteers: [
@@ -262,248 +180,316 @@ const Team = () => {
         id: 31,
         name: 'Rahul Verma',
         position: 'Volunteer',
-        image: 'https://via.placeholder.com/300x300',
+        image: 'src/assets/volunteers/Rahul Verma.jpg',
         department: 'B.Tech, Mechanical Engineering',
         email: 'rahul.verma@nitjsr.ac.in',
-        description: 'Rahul is an enthusiastic volunteer who actively participates in all NSS activities. He is particularly interested in environmental conservation projects.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
       {
         id: 32,
         name: 'Neha Gupta',
         position: 'Volunteer',
-        image: 'https://via.placeholder.com/300x300',
+        image: 'src/assets/volunteers/Neha Gupta.jpg',
         department: 'B.Tech, Computer Science',
         email: 'neha.gupta@nitjsr.ac.in',
-        description: 'Neha is passionate about teaching and regularly conducts educational workshops for underprivileged children as part of NSS activities.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
       {
         id: 33,
         name: 'Vikram Singh',
         position: 'Volunteer',
-        image: 'https://via.placeholder.com/300x300',
+        image: 'src/assets/volunteers/Vikram Singh.jpg',
         department: 'B.Tech, Electronics Engineering',
         email: 'vikram.singh@nitjsr.ac.in',
-        description: 'Vikram is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
       {
         id: 34,
         name: 'Ananya Reddy',
         position: 'Volunteer',
-        image: 'https://via.placeholder.com/300x300',
+        image: 'src/assets/volunteers/Ananya Reddy.jpg',
         department: 'B.Tech, Chemical Engineering',
         email: 'ananya.reddy@nitjsr.ac.in',
-        description: 'Ananya is dedicated to social service and has been actively involved in various community outreach programs organized by NSS.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
       },
     ],
   };
-
+  
+  // Categories array
   const categories = [
-    { id: 'faculty', label: 'Faculty Advisors' },
-    { id: 'coordinators', label: 'Student Coordinators' },
-    { id: 'volunteers', label: 'Active Volunteers' },
+    { id: 'superCore', label: 'Super Core', icon: FaCrown },
+    { id: 'core', label: 'Core', icon: FaStar },
+    { id: 'volunteers', label: 'Volunteers', icon: FaUsers },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.08
+      }
+    }
+  };
+  
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        type: "spring",
+        stiffness: 300,
+        damping: 24
+      }
+    }
+  };
+
+  // Dynamic 3D hover effect
+  const handleHover = (id) => {
+    setHoveredMember(id);
+  };
+
+  const handleHoverEnd = () => {
+    setHoveredMember(null);
+  };
+
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary via-primary/90 to-secondary/80 text-white">
-        <div className="absolute inset-0 bg-[url('https://via.placeholder.com/1920x1080')] opacity-10 bg-cover bg-center mix-blend-overlay"></div>
-        <div className="container-custom relative z-10">
+    <div className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white min-h-screen relative overflow-hidden">
+      {/* Enhanced animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-600/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-6000"></div>
+   
+      </div>
+
+      {/* Enhanced modern header with 3D elements */}
+      <header className="relative py-32 overflow-hidden">
+             
+        {/* Enhanced subtle grid */}
+        <div className="absolute inset-0" style={{ 
+          backgroundImage: `linear-gradient(to right, rgba(99, 102, 241, 0.09) 1px, transparent 1px), 
+                             linear-gradient(to bottom, rgba(99, 102, 241, 0.09) 1px, transparent 1px)`, 
+          backgroundSize: '70px 70px' 
+        }}></div>
+        <div className="container mx-auto px-4 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-md">Our Team</h1>
-            <p className="text-lg md:text-xl text-white/90">
-              Meet the dedicated individuals who make our mission possible.
-            </p>
+            <motion.div className="flex justify-center mb-8">
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0, rotateY: -90 }}
+                animate={{ scale: 1, opacity: 1, rotateY: 0 }}
+                transition={{ duration: 0.8, type: "spring" }}
+                className="relative w-28 h-28"
+              >
+                <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600 to-purple-600 rounded-2xl transform rotate-12 shadow-lg shadow-indigo-500/40"></div>
+                <div className="absolute inset-1 bg-gray-900 rounded-xl transform rotate-12 flex items-center justify-center">
+                  <FaUsers className="text-white text-4xl transform -rotate-12" />
+                </div>
+              </motion.div>
+            </motion.div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+              className="text-6xl md:text-7xl font-bold mb-6 tracking-tight"
+            >
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                Meet Our Team
+              </span>
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light"
+            >
+              The passionate individuals driving social change through the National Service Scheme at NIT Jamshedpur.
+            </motion.p>
+
+            {/* Enhanced decorative elements */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 1 }}
+              className="mt-10 flex justify-center"
+            >
+              <div className="h-1 w-32 bg-gradient-to-r from-transparent via-purple-500 to-transparent rounded-full"></div>
+            </motion.div>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
-      </section>
+      </header>
 
-      {/* Team Section */}
-      <section className="py-20">
-        <div className="container-custom">
-          {/* Category Tabs */}
-          <div className="flex justify-center mb-16 flex-wrap">
-            <div className="inline-flex bg-gray-100 dark:bg-gray-800 rounded-full p-1.5 shadow-lg flex-wrap justify-center">
-              {categories.map((category) => (
-                <motion.button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 m-1 rounded-full transition-all duration-300 ${
-                    activeCategory === category.id
-                      ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-md'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {category.label}
-                </motion.button>
-              ))}
-            </div>
-          </div>
-
-          {/* Team Members Grid */}
+      {/* Enhanced 3D Category Navigation */}
+      <section className="py-8 relative z-20 mb-16">
+        <div className="container mx-auto px-4">
           <motion.div
-            key={activeCategory}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className={`grid grid-cols-1 ${
-              ['volunteers', 'coordinators'].includes(activeCategory)? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2'
-            } gap-8`}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center"
           >
-            {teamMembers[activeCategory].map((member) => (
-              <motion.div
-                key={member.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                whileHover={{ y: -10, boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }}
-                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-800"
-              >
-                <div className="relative overflow-hidden group">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-64  rounded-md  object-cover object-center transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 w-full">
-                      <div className="flex justify-center space-x-4">
-                        <motion.a
-                          href={`mailto:${member.email}`}
-                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/40 transition-colors"
-                          aria-label="Email"
-                          whileHover={{ scale: 1.2, rotate: 5 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
-                        </motion.a>
-                        <motion.a
-                          href="#"
-                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/40 transition-colors"
-                          aria-label="LinkedIn"
-                          whileHover={{ scale: 1.2, rotate: -5 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                          </svg>
-                        </motion.a>
+            <div className="flex bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden p-2 shadow-2xl shadow-indigo-500/10 border border-white/10">
+              {categories.map((category) => {
+                const Icon = category.icon;
+                const isActive = activeCategory === category.id;
+                
+                return (
+                  <motion.button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`relative px-8 py-4 flex items-center gap-3 transition-all duration-300 rounded-xl ${
+                      isActive
+                        ? 'text-white font-medium'
+                        : 'text-gray-400 hover:text-white'
+                    }`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {isActive && (
+                      <motion.div 
+                        layoutId="activeTabBg"
+                        className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 rounded-xl -z-10"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                    <Icon className={`text-xl ${isActive ? 'text-white' : 'text-gray-400'}`} />
+                    <span>{category.label}</span>
+                  </motion.button>
+                );
+              })}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Enhanced Team Members Section with Advanced Cards */}
+      <section className="py-10 mb-24">
+        <div className="container mx-auto px-4">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+            >
+              {teamMembers[activeCategory].map((member) => (
+                <motion.div
+                  key={member.id}
+                  variants={cardVariants}
+                  onMouseEnter={() => handleHover(member.id)}
+                  onMouseLeave={handleHoverEnd}
+                  style={{
+                    transform: hoveredMember === member.id ? 'perspective(1000px) rotateY(5deg)' : 'perspective(1000px) rotateY(0deg)',
+                    transition: 'transform 0.5s ease-out'
+                  }}
+                  className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/10 shadow-xl hover:shadow-2xl hover:border-indigo-500/40 transition-all duration-300"
+                >
+                  {/* Enhanced status indicator */}
+                  <div className="absolute top-6 right-6 z-10">
+                    <div className="flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">
+                      <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+                      <span className="text-xs text-green-400 font-medium">Active</span>
+                    </div>
+                  </div>
+                  
+                  {/* Enhanced image with modern treatment */}
+                  <div className="p-6 pb-4">
+                    <div className="aspect-square overflow-hidden rounded-xl relative bg-gradient-to-br from-indigo-900/30 to-purple-900/30 shadow-inner">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/0"></div>
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                      />
+                      
+                      {/* Enhanced modern social overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/40 to-black/90 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center p-6">
+                        <div className="flex gap-4">
+                          <motion.a
+                            href={`mailto:${member.email}`}
+                            className="p-4 bg-white/10 hover:bg-indigo-600 text-white rounded-full transition-colors backdrop-blur-md shadow-lg shadow-black/30"
+                            whileHover={{ scale: 1.2, rotate: 5 }}
+                            whileTap={{ scale: 0.9 }}
+                          >
+                            <FaEnvelope size={20} />
+                          </motion.a>
+                          <motion.a
+                            href={member.social.linkedin}
+                            className="p-4 bg-white/10 hover:bg-indigo-600 text-white rounded-full transition-colors backdrop-blur-md shadow-lg shadow-black/30"
+                            whileHover={{ scale: 1.2, rotate: -5 }}
+                            whileTap={{ scale: 0.9 }}
+                          >
+                            <FaLinkedin size={20} />
+                          </motion.a>
+                          <motion.a
+                            href={member.social.twitter}
+                            className="p-4 bg-white/10 hover:bg-indigo-600 text-white rounded-full transition-colors backdrop-blur-md shadow-lg shadow-black/30"
+                            whileHover={{ scale: 1.2, rotate: 5 }}
+                            whileTap={{ scale: 0.9 }}
+                          >
+                            <FaTwitter size={20} />
+                          </motion.a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">{member.name}</h3>
-                  <div className="inline-block px-3 py-1 mb-2 bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary rounded-full text-sm font-medium">
-                    {member.position}
+                  
+                  {/* Enhanced modern content layout */}
+                  <div className="p-6 pt-2">
+                    <h3 className="text-xl font-semibold text-white group-hover:text-indigo-300 transition-colors">
+                      {member.name}
+                    </h3>
+                    <div className="flex items-center gap-2 mt-2">
+                      <div className="inline-block px-4 py-1.5 bg-indigo-500/20 text-indigo-300 rounded-full text-sm font-medium border border-indigo-500/20">
+                        {member.position}
+                      </div>
+                      {member.position === 'Program Officer' && (
+                        <FaCrown className="text-yellow-400 text-sm" />
+                      )}
+                    </div>
+                    <p className="text-gray-400 text-sm mt-3 line-clamp-2">{member.department}</p>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{member.department}</p>
-                  <p className="text-gray-700 dark:text-gray-300 line-clamp-3">
-                    {member.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                  
+                  {/* Enhanced decorative elements */}
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
-      {/* Join Us Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-white">
-                Join Our Team
-              </h2>
-              <div className="w-20 h-1.5 bg-gradient-to-r from-primary to-secondary rounded-full mb-6"></div>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Becoming a part of NSS NIT Jamshedpur is not just about volunteering; it's about making a difference, developing leadership skills, and creating lasting memories.
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 mb-8">
-                We welcome students who are passionate about social service and want to contribute to the betterment of society. Join us in our mission to create a positive impact in the community.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' }}
-                whileTap={{ scale: 0.95 }}
-                className="btn bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-full shadow-md"
-              >
-                Apply to Join
-              </motion.button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-xl border border-gray-100 dark:border-gray-800"
-            >
-              <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white">Benefits of Joining NSS</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700 dark:text-gray-300">Develop leadership and organizational skills</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700 dark:text-gray-300">Make a positive impact in the community</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700 dark:text-gray-300">Network with like-minded individuals</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700 dark:text-gray-300">Enhance your resume with valuable experience</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700 dark:text-gray-300">Participate in national level NSS camps and events</span>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+   
     </div>
   );
 };
 
-export default Team; 
+export default Team;
