@@ -29,15 +29,226 @@ const Team = () => {
     coordinators: [
       {
         id: 3,
-        name: 'Amit Sharma',
-        position: 'Student Coordinator',
-        image: 'https://via.placeholder.com/300x300',
-        department: 'B.Tech, Electrical Engineering',
+        name: 'Shyamali Rupam',
+        position: 'VICE PRESIDENT',
+        image: 'src/assets/core team images/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
         email: 'amit.sharma@nitjsr.ac.in',
         description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
       },
       {
         id: 4,
+        name: 'Neeraj Bhatt',
+        position: 'EM Head',
+        image: 'src/assets/core team images/Neeraj.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 5,
+        name: 'Doddy Mourya',
+        position: 'EM HEAD',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 6,
+        name: 'Pratyush Kumar',
+        position: 'Creative Head',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 7,
+        name: 'Utkarsh Shukhla',
+        position: 'Content Head',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 8,
+        name: 'Gourab Bistu',
+        position: 'Web Head',
+        image: 'src/assets/core team images/GourabBistu.jpeg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },
+      {
+        id: 9,
+        name: 'Rupam Kumari',
+        position: 'PR Head',
+        image: 'src/assets/core team images/IMG-20250327-WA0004.jpg     ',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 10,
+        name: 'Kajal Shaw',
+        position: 'PR Head',
+        image: 'src/assets/core team images/kajal shaw.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      }, 
+      {
+        id: 11,
+        name: 'Ankit Aryan',
+        position: ' Strategic & Planing Head',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 12,
+        name: 'Basundhra Singhdeo',
+        position: 'Strategic & Planning Head',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 13,
+        name: 'Rinki Kumari',
+        position: 'Media Head',
+        image: 'src/assets/core team images/Rinki kumari .jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 14,
+        name: 'Sushant kachhap',
+        position: 'Media Head',
+        image: 'src/assets/core team images/Sushant Kachhap .jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 15,
+        name: 'Santosh Kumar Sahani',
+        position: 'PG Representative',
+        image: 'src/assets/core team images/Santosh Kumar Sahani.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 16,
+        name: 'Bhavesh Gupta',
+        position: 'PG Representative',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 17,
+        name: 'Saransh',
+        position: 'Gen Secretary',
+        image: 'src/assets/core team images/Saransh.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 18,
+        name: 'Nirmal Niranjan Patil',
+        position: 'Gen Secretary',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 19,
+        name: 'Mrinal Ayush Raj',
+        position: 'Joint Secretary',
+        image: 'src/assets/core team images/Mrinal Ayush Raj.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 20,
+        name: 'Pranay Parasana',
+        position: 'Joint Secretary',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 21,
+        name: 'Ekangsh sah',
+        position: 'Joint Secretary',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 22,
+        name: 'Aman Kumar Jha',
+        position: 'Joint Secretary',
+        image: 'src/assets/Shyamli Rupam.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 23,
+        name: 'Kriti Srivastava',
+        position: 'Joint Secretary',
+        image: 'src/assets/core team images/kriti.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 24,
+        name: 'Ravi Ranjan',
+        position: 'Joint Secretary',
+        image: 'src/assets/core team images/Ravi.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 25,
+        name: 'Sumant Nanda',
+        position: 'Joint Secretary',
+        image: 'src/assets/core team images/Sumant Nanda .jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 26,
+        name: 'Saksham Shubh',
+        position: 'Joint Secretary',
+        image: 'src/assets/core team images/Saksham Shubh.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 27,
+        name: 'Ritika Rani',
+        position: 'Joint Secretary',
+        image: 'src/assets/core team images/Ritika Rani.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },  {
+        id: 28,
+        name: 'Ayush Das',
+        position: 'Joint Secretary',
+        image: 'src/assets/core team images/Ayush.jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },   {
+        id: 29,
+        name: 'Aman Kumar',
+        position: 'Joint Secretary',
+        image: 'src/assets/core team images/Aman kumar .jpg',
+        department: 'B.Tech,  Electronics and Communication Engineering.',
+        email: 'amit.sharma@nitjsr.ac.in',
+        description: 'Amit is responsible for overall coordination of NSS activities and leads the team of volunteers. He has been an active NSS volunteer since his first year.',
+      },
+      {
+        id: 30,
         name: 'Sneha Patel',
         position: 'Student Coordinator',
         image: 'https://via.placeholder.com/300x300',
@@ -48,7 +259,7 @@ const Team = () => {
     ],
     volunteers: [
       {
-        id: 5,
+        id: 31,
         name: 'Rahul Verma',
         position: 'Volunteer',
         image: 'https://via.placeholder.com/300x300',
@@ -57,7 +268,7 @@ const Team = () => {
         description: 'Rahul is an enthusiastic volunteer who actively participates in all NSS activities. He is particularly interested in environmental conservation projects.',
       },
       {
-        id: 6,
+        id: 32,
         name: 'Neha Gupta',
         position: 'Volunteer',
         image: 'https://via.placeholder.com/300x300',
@@ -66,7 +277,7 @@ const Team = () => {
         description: 'Neha is passionate about teaching and regularly conducts educational workshops for underprivileged children as part of NSS activities.',
       },
       {
-        id: 7,
+        id: 33,
         name: 'Vikram Singh',
         position: 'Volunteer',
         image: 'https://via.placeholder.com/300x300',
@@ -75,7 +286,7 @@ const Team = () => {
         description: 'Vikram is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
       },
       {
-        id: 8,
+        id: 34,
         name: 'Ananya Reddy',
         position: 'Volunteer',
         image: 'https://via.placeholder.com/300x300',
@@ -145,7 +356,7 @@ const Team = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             className={`grid grid-cols-1 ${
-              activeCategory === 'volunteers' ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2'
+              ['volunteers', 'coordinators'].includes(activeCategory)? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2'
             } gap-8`}
           >
             {teamMembers[activeCategory].map((member) => (
@@ -162,7 +373,7 @@ const Team = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-64  rounded-md  object-cover object-center transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-4 w-full">
