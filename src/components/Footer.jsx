@@ -1,193 +1,304 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { 
+  FaFacebookF, 
+  FaTwitter, 
+  FaInstagram, 
+  FaLinkedinIn,
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhone,
+  FaChevronRight,
+  FaYoutube,
+  FaGithub,
+  FaDiscord
+} from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [stars, setStars] = useState([]);
+  
+  // Generate random stars for the background
+  useEffect(() => {
+    const generateStars = () => {
+      const numberOfStars = 50;
+      const newStars = [];
+      
+      for (let i = 0; i < numberOfStars; i++) {
+        newStars.push({
+          id: i,
+          top: Math.random() * 100,
+          left: Math.random() * 100,
+          size: Math.random() * 2 + 1,
+          animationDuration: Math.random() * 3 + 2
+        });
+      }
+      
+      setStars(newStars);
+    };
+    
+    generateStars();
+  }, []);
+  
+  // Enhanced animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (custom) => ({ 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.7,
+        delay: custom * 0.1,
+        ease: "easeOut"
+      }
+    })
+  };
+
+  const socialHover = {
+    rest: { scale: 1 },
+    hover: { 
+      scale: 1.15, 
+      rotate: 5,
+      transition: { 
+        type: "spring", 
+        stiffness: 400, 
+        damping: 10 
+      }
+    }
+  };
+
+  const linkHover = {
+    rest: { x: 0 },
+    hover: { 
+      x: 6,
+      color: "#60a5fa",
+      transition: { type: "tween", duration: 0.2 }
+    }
+  };
 
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 pt-12 pb-8">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
-          <div className="col-span-1 md:col-span-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Link to="/" className="flex items-center mb-4">
-                <span className="text-2xl font-bold text-primary dark:text-white">
-                  NSS <span className="text-secondary">NIT-JSR</span>
-                </span>
-              </Link>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                National Service Scheme at NIT Jamshedpur - Serving the community and developing leadership skills.
-              </p>
-              <div className="flex space-x-4">
-                <motion.a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary"
+    <footer className="bg-gradient-to-b from-[#0b1325] to-[#0f172a] text-white relative overflow-hidden">
+      {/* Animated Stars Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {stars.map((star) => (
+          <motion.div
+            key={star.id}
+            className="absolute rounded-full bg-white z-0"
+            style={{
+              top: `${star.top}%`,
+              left: `${star.left}%`,
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+            }}
+            animate={{
+              opacity: [0.2, 0.8, 0.2],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: star.animationDuration,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </div>
+      
+      <div className="container mx-auto px-6 pt-24 pb-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          {/* Brand section with enhanced animation */}
+          <motion.div 
+            className="col-span-1 md:col-span-4"
+            initial="hidden"
+            whileInView="visible"
+            custom={0}
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+          >
+            <Link to="/" className="inline-block mb-6 group">
+              <span className="text-3xl font-bold">
+                <motion.span 
+                  className="text-[#60a5fa]"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-                  </svg>
-                </motion.a>
-                <motion.a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary"
+                  NSS
+                </motion.span>{" "}
+                <motion.span 
+                  className="bg-gradient-to-r from-[#c084fc] to-[#a855f7] bg-clip-text text-transparent"
+                  whileHover={{ scale: 1.05 }}
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                  </svg>
-                </motion.a>
-                <motion.a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
-                  </svg>
-                </motion.a>
-              </div>
-            </motion.div>
-          </div>
+                  NIT-JSR
+                </motion.span>
+              </span>
+            </Link>
+            <p className="text-gray-300 mb-8 leading-relaxed">
+              National Service Scheme at NIT Jamshedpur - Empowering students through community service, 
+              fostering leadership skills, and creating positive social impact through meaningful volunteer initiatives.
+            </p>
+      
+          </motion.div>
 
-          {/* Quick Links */}
-          <div className="col-span-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link to="/" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors">
-                    Home
+          {/* Quick Links with hover animations */}
+          <motion.div 
+            className="col-span-1 md:col-span-2"
+            initial="hidden"
+            whileInView="visible"
+            custom={1}
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+          >
+            <h3 className="text-lg font-semibold mb-6 relative inline-block">
+              <span className="bg-gradient-to-r from-[#60a5fa] to-[#93c5fd] bg-clip-text text-transparent">Quick Links</span>
+              <span className="block h-1 w-1/2 bg-gradient-to-r from-[#60a5fa] to-[#93c5fd] mt-1 rounded-full"></span>
+            </h3>
+            <ul className="space-y-3">
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'About Us', path: '/about' },
+                { name: 'Events', path: '/events' },
+                { name: 'Gallery', path: '/gallery' },
+                { name: 'Our Team', path: '/team' },
+                { name: 'Contact', path: '/contact' }
+              ].map((link, index) => (
+                <motion.li key={index} className="group">
+                  <Link to={link.path} className="text-gray-300 transition-colors duration-300 inline-flex items-center">
+                    <motion.div
+                      initial="rest"
+                      whileHover="hover"
+                      variants={linkHover}
+                      className="flex items-center"
+                    >
+                      <FaChevronRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>{link.name}</span>
+                    </motion.div>
                   </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/events" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors">
-                    Events
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/gallery" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors">
-                    Gallery
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/team" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors">
-                    Our Team
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
 
-          {/* Contact Info */}
-          <div className="col-span-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">Contact Us</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-primary dark:text-secondary mt-1 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                  </svg>
-                  <span className="text-gray-600 dark:text-gray-400">
-                    NIT Jamshedpur, Adityapur, Jamshedpur, Jharkhand - 831014
-                  </span>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-primary dark:text-secondary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                  </svg>
-                  <a href="mailto:nss@nitjsr.ac.in" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors">
-                    nss@nitjsr.ac.in
-                  </a>
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-primary dark:text-secondary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                  </svg>
-                  <a href="tel:+919876543210" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors">
-                    +91 98765 43210
-                  </a>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-
-          {/* Newsletter */}
-          <div className="col-span-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">Newsletter</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Subscribe to our newsletter to get updates on our latest events and activities.
-              </p>
-              <form className="space-y-2">
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary"
-                    required
-                  />
+          {/* Contact Info with hover effects */}
+          <motion.div 
+            className="col-span-1 md:col-span-3"
+            initial="hidden"
+            whileInView="visible"
+            custom={2}
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+          >
+            <h3 className="text-lg font-semibold mb-6 relative inline-block">
+              <span className="bg-gradient-to-r from-[#60a5fa] to-[#c084fc] bg-clip-text text-transparent">Contact Us</span>
+              <span className="block h-1 w-1/2 bg-gradient-to-r from-[#60a5fa] to-[#c084fc] mt-1 rounded-full"></span>
+            </h3>
+            <ul className="space-y-5">
+              <motion.li 
+                className="flex items-start"
+                whileHover={{ x: 3 }}
+              >
+                <div className="w-9 h-9 rounded-full bg-[#1e293b] flex items-center justify-center mr-3 flex-shrink-0 shadow-lg">
+                  <FaMapMarkerAlt className="w-4 h-4 text-[#60a5fa]" />
                 </div>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full btn btn-primary"
+                <span className="text-gray-300 mt-1">
+                  NIT Jamshedpur, Adityapur, Jamshedpur, Jharkhand - 831014
+                </span>
+              </motion.li>
+              <motion.li 
+                className="flex items-center"
+                whileHover={{ x: 3 }}
+              >
+                <div className="w-9 h-9 rounded-full bg-[#1e293b] flex items-center justify-center mr-3 flex-shrink-0 shadow-lg">
+                  <FaEnvelope className="w-4 h-4 text-[#c084fc]" />
+                </div>
+                <a href="mailto:nss@nitjsr.ac.in" className="text-gray-300 hover:text-[#60a5fa] transition-colors duration-300">
+                  nss@nitjsr.ac.in
+                </a>
+              </motion.li>
+              <motion.li 
+                className="flex items-center"
+                whileHover={{ x: 3 }}
+              >
+                <div className="w-9 h-9 rounded-full bg-[#1e293b] flex items-center justify-center mr-3 flex-shrink-0 shadow-lg">
+                  <FaPhone className="w-4 h-4 text-[#60a5fa]" />
+                </div>
+                <a href="tel:+919876543210" className="text-gray-300 hover:text-[#60a5fa] transition-colors duration-300">
+                  +91 98765 43210
+                </a>
+              </motion.li>
+            </ul>
+          </motion.div>
+
+          {/* Enhanced Social Media Section with Animated Background */}
+          <motion.div 
+            className="col-span-1 md:col-span-3"
+            initial="hidden"
+            whileInView="visible"
+            custom={3}
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+          >
+            <h3 className="text-lg font-semibold mb-6 relative inline-block">
+              <span className="bg-gradient-to-r from-[#c084fc] to-[#60a5fa] bg-clip-text text-transparent">Connect With Us</span>
+              <span className="block h-1 w-1/2 bg-gradient-to-r from-[#c084fc] to-[#60a5fa] mt-1 rounded-full"></span>
+            </h3>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Follow us on social media and stay connected with all our initiatives and impact stories.
+            </p>
+            
+            <div className="flex space-x-4 mb-8">
+              {[
+                { icon: FaFacebookF, color: "#4267B2", link: "https://facebook.com" },
+                { icon: FaTwitter, color: "#1DA1F2", link: "https://twitter.com" },
+                { icon: FaInstagram, color: "#E1306C", link: "https://instagram.com" },
+                { icon: FaLinkedinIn, color: "#0077B5", link: "https://linkedin.com" }
+              ].map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-300 hover:text-white shadow-md"
+                  initial="rest"
+                  whileHover="hover"
+                  variants={socialHover}
+                  style={{ boxShadow: `0 0 15px rgba(${social.color === '#4267B2' ? '66, 103, 178' : social.color === '#1DA1F2' ? '29, 161, 242' : social.color === '#E1306C' ? '225, 48, 108' : '0, 119, 181'}, 0.15)` }}
                 >
-                  Subscribe
-                </motion.button>
-              </form>
-            </motion.div>
-          </div>
+                  <motion.div
+                    whileHover={{
+                      backgroundColor: social.color,
+                      transition: { duration: 0.3 }
+                    }}
+                    className="w-full h-full rounded-full flex items-center justify-center"
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </motion.div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-200 dark:border-gray-800 mt-12 pt-8 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
+        {/* Copyright with subtle animation */}
+        <motion.div
+          className="border-t border-gray-800 mt-16 pt-8 text-center md:text-left md:flex md:justify-between md:items-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 1, delay: 0.3 } }}
+          viewport={{ once: true }}
+        >
+          <p className="text-gray-400">
             © {currentYear} NSS NIT Jamshedpur. All rights reserved.
           </p>
-        </div>
+          <div className="mt-4 md:mt-0 flex justify-center md:justify-end space-x-6 text-sm">
+            <Link to="/privacy" className="text-gray-400 hover:text-[#60a5fa] transition-colors duration-300">Privacy Policy</Link>
+            <span className="text-gray-600">•</span>
+            <Link to="/terms" className="text-gray-400 hover:text-[#60a5fa] transition-colors duration-300">Terms of Service</Link>
+          </div>
+        </motion.div>
       </div>
+      
+      {/* Accent gradient line at bottom */}
+      <div className="h-1 bg-gradient-to-r from-[#60a5fa]/30 via-[#c084fc]/20 to-[#60a5fa]/20"></div>
     </footer>
   );
 };
 
-export default Footer; 
+export default Footer;
