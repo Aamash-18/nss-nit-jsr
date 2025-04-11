@@ -1,4 +1,4 @@
-import gourabImg from "../../public/core-team/gourab-bistu.webp";
+import gourabImg from "/core-team/gourab-bistu.webp";
 
 export const events = [
     {
@@ -309,7 +309,7 @@ export const galleryEventsDetailed = {
     // Additional events would be defined here...
   };
 
-export   const teamMembers = {
+export const teamMembers = {
   superCore: [
     {
       id: 1,
