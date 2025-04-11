@@ -1,4 +1,3 @@
-import gourabImg from "/core-team/gourab-bistu.webp";
 
 export const events = [
     {
@@ -74,7 +73,7 @@ export const galleryEvents = [
     id: 1,
     eventId: "blood-donation-camp",
     title: "Blood Donation Camp",
-    thumbnailSrc: "/src/assets/Gallery_Images/Blood_Donation_Camp/image1.jpg",
+    thumbnailSrc: "/Gallery_Images/Blood_Donation_Camp/image1.jpg",
     category: "events",
     description:
       "Students participating in the annual blood donation camp, contributing to the community's health and wellbeing.",
@@ -88,7 +87,7 @@ export const galleryEvents = [
     eventId: "tree-plantation-drive",
     title: "Tree Plantation Drive",
     thumbnailSrc:
-      "/src/assets/Gallery_Images/Tree_Plantation_Drive/image1.jpg",
+      "/Gallery_Images/Tree_Plantation_Drive/image1.jpg",
     category: "environment",
     description:
       "Volunteers planting trees as part of the green initiative to combat climate change and promote sustainability.",
@@ -102,7 +101,7 @@ export const galleryEvents = [
     eventId: "educational-workshop",
     title: "Educational Workshop",
     thumbnailSrc:
-      "/src/assets/Gallery_Images/Educational_Workshop/image1.jpg",
+      "/Gallery_Images/Educational_Workshop/image1.jpg",
     category: "education",
     description:
       "Teaching basic computer skills to underprivileged children, empowering them with digital literacy for the future.",
@@ -115,7 +114,7 @@ export const galleryEvents = [
     id: 4,
     eventId: "cleanliness-drive",
     title: "Cleanliness Drive",
-    thumbnailSrc: "/src/assets/Gallery_Images/Cleanliness_Drive/image1.jpg",
+    thumbnailSrc: "/Gallery_Images/Cleanliness_Drive/image1.jpg",
     category: "environment",
     description:
       "NSS volunteers cleaning the local beach area and raising awareness about plastic pollution and waste management.",
@@ -129,7 +128,7 @@ export const galleryEvents = [
     eventId: "health-awareness-camp",
     title: "Health Awareness Camp",
     thumbnailSrc:
-      "/src/assets/Gallery_Images/Health_Awareness_Camp/image1.jpg",
+      "/Gallery_Images/Health_Awareness_Camp/image1.jpg",
     category: "health",
     description:
       "Free health check-up camp organized in a rural area, providing essential medical services to underserved communities.",
@@ -142,7 +141,7 @@ export const galleryEvents = [
     id: 6,
     eventId: "cultural-program",
     title: "Cultural Program",
-    thumbnailSrc: "/src/assets/Gallery_Images/Cultural_Program/image1.jpg",
+    thumbnailSrc: "/Gallery_Images/Cultural_Program/image1.jpg",
     category: "events",
     description:
       "Cultural performance during the NSS Annual Day celebration, showcasing diverse talents and traditions.",
@@ -155,7 +154,7 @@ export const galleryEvents = [
     id: 7,
     eventId: "yoga-session",
     title: "Yoga Session",
-    thumbnailSrc: "/src/assets/Gallery_Images/Yoga_Session/image1.jpg",
+    thumbnailSrc: "/Gallery_Images/Yoga_Session/image1.jpg",
     category: "health",
     description:
       "Morning yoga session conducted for the community, promoting physical and mental wellbeing through ancient practices.",
@@ -168,7 +167,7 @@ export const galleryEvents = [
     id: 8,
     eventId: "awareness-rally",
     title: "Awareness Rally",
-    thumbnailSrc: "/src/assets/Gallery_Images/Awareness_Rally/image1.jpg",
+    thumbnailSrc: "/Gallery_Images/Awareness_Rally/image1.jpg",
     category: "events",
     description:
       "Rally organized to spread awareness about social issues, mobilizing community support for positive change.",
@@ -181,7 +180,7 @@ export const galleryEvents = [
     id: 9,
     eventId: "village-outreach",
     title: "Village Outreach",
-    thumbnailSrc: "/src/assets/Gallery_Images/Village_Outreach/image1.jpg",
+    thumbnailSrc: "/Gallery_Images/Village_Outreach/image1.jpg",
     category: "education",
     description:
       "Volunteers teaching children in a nearby village, bridging educational gaps and inspiring young minds.",
@@ -204,56 +203,56 @@ export const galleryEventsDetailed = {
       images: [
         {
           id: 1,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image1.jpg",
+          src: "/Gallery_Images/Blood_Donation_Camp/image1.jpg",
           alt: "Students donating blood",
           width: 1200,
           height: 800
         },
         {
           id: 2,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image2.jpg",
+          src: "/Gallery_Images/Blood_Donation_Camp/image2.jpg",
           alt: "Medical staff collecting blood samples",
           width: 800,
           height: 1200
         },
         {
           id: 3,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image3.jpg",
+          src: "/Gallery_Images/Blood_Donation_Camp/image3.jpg",
           alt: "Volunteers organizing the camp",
           width: 1200,
           height: 900
         },
         {
           id: 4,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image4.jpg",
+          src: "/Gallery_Images/Blood_Donation_Camp/image4.jpg",
           alt: "Student receiving post-donation care",
           width: 900,
           height: 1200
         },
         {
           id: 5,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image5.jpg",
+          src: "/Gallery_Images/Blood_Donation_Camp/image5.jpg",
           alt: "Camp registration desk",
           width: 1200,
           height: 800
         },
         {
           id: 6,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image6.jpg",
+          src: "/Gallery_Images/Blood_Donation_Camp/image6.jpg",
           alt: "Doctor explaining the importance of blood donation",
           width: 800,
           height: 800
         },
         {
           id: 7,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image7.jpg",
+          src: "/Gallery_Images/Blood_Donation_Camp/image7.jpg",
           alt: "Blood donation awareness posters",
           width: 1200,
           height: 900
         },
         {
           id: 8,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image8.jpg",
+          src: "/Gallery_Images/Blood_Donation_Camp/image8.jpg",
           alt: "Group photo of donors and organizers",
           width: 1600,
           height: 900
@@ -271,35 +270,35 @@ export const galleryEventsDetailed = {
       images: [
         {
           id: 1,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image1.jpg",
+          src: "/Gallery_Images/Tree_Plantation_Drive/image1.jpg",
           alt: "Volunteers planting saplings",
           width: 1200,
           height: 800
         },
         {
           id: 2,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image2.jpg",
+          src: "/Gallery_Images/Tree_Plantation_Drive/image2.jpg",
           alt: "Children learning about tree planting",
           width: 800,
           height: 1200
         },
         {
           id: 3,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image3.jpg",
+          src: "/Gallery_Images/Tree_Plantation_Drive/image3.jpg",
           alt: "Team preparing the soil",
           width: 1200,
           height: 900
         },
         {
           id: 4,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image4.jpg",
+          src: "/Gallery_Images/Tree_Plantation_Drive/image4.jpg",
           alt: "Watering the newly planted trees",
           width: 900,
           height: 1200
         },
         {
           id: 5,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image5.jpg",
+          src: "/Gallery_Images/Tree_Plantation_Drive/image5.jpg",
           alt: "Group photo with tree saplings",
           width: 1600,
           height: 900
@@ -415,7 +414,7 @@ export const teamMembers = {
       id: 8,
       name: 'Gourab Bistu',
       position: 'Web Head',
-      image: gourabImg,
+      image: "/core-team/gourab-bistu.webp",
       department: 'B.Tech, Electronics and Communication Engineering',
       email: 'gourab.bistu@nitjsr.ac.in',
       description: 'Gourab leads the web development team, ensuring digital presence and technical resources for NSS initiatives.',

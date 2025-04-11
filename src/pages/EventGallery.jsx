@@ -35,7 +35,7 @@ const EventGallery = () => {
       
       // Short timeout to simulate API call
       setTimeout(() => {
-        const eventData = galleryEventsDetailedv[eventId];
+        const eventData = galleryEventsDetailed[eventId];
         
         if (eventData) {
           setEvent(eventData);
