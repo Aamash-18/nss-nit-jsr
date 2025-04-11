@@ -22,8 +22,8 @@ const TeamMemberCard = ({ member }) => {
       {/* Main card */}
       <div className="relative bg-[#0a0a20]/80 backdrop-blur-lg rounded-2xl p-6 border border-blue-500/10 shadow-lg transition-all duration-500 group-hover:border-blue-500/30 overflow-hidden z-10">
         {/* Background pattern */}
-        <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full -mr-20 -mt-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-purple-500/10 to-transparent rounded-full -ml-20 -mb-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/30 to-transparent rounded-full -mr-20 -mt-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-purple-500/30 to-transparent rounded-full -ml-20 -mb-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         
         {/* Content */}
         <div className="relative z-10 text-center">

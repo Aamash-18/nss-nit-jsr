@@ -16,6 +16,7 @@ import {
   FaTimes,
   FaInfoCircle
 } from "react-icons/fa";
+import { galleryEventsDetailed } from "../utils/data";
 
 const EventGallery = () => {
   const { eventId } = useParams();
@@ -26,122 +27,6 @@ const EventGallery = () => {
   const [loading, setLoading] = useState(true);
 
   // Mock events database - in a real application this would come from an API
-  const eventsDatabase = {
-    "blood-donation-camp": {
-      id: 1,
-      eventId: "blood-donation-camp",
-      title: "Blood Donation Camp",
-      date: "March 15, 2025",
-      location: "University Campus",
-      category: "events",
-      description: "Students participating in the annual blood donation camp, contributing to the community's health and wellbeing. Our student volunteers organized this camp in collaboration with the Red Cross, collecting over 100 units of blood that will help save numerous lives in our local hospitals.",
-      images: [
-        {
-          id: 1,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image1.jpg",
-          alt: "Students donating blood",
-          width: 1200,
-          height: 800
-        },
-        {
-          id: 2,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image2.jpg",
-          alt: "Medical staff collecting blood samples",
-          width: 800,
-          height: 1200
-        },
-        {
-          id: 3,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image3.jpg",
-          alt: "Volunteers organizing the camp",
-          width: 1200,
-          height: 900
-        },
-        {
-          id: 4,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image4.jpg",
-          alt: "Student receiving post-donation care",
-          width: 900,
-          height: 1200
-        },
-        {
-          id: 5,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image5.jpg",
-          alt: "Camp registration desk",
-          width: 1200,
-          height: 800
-        },
-        {
-          id: 6,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image6.jpg",
-          alt: "Doctor explaining the importance of blood donation",
-          width: 800,
-          height: 800
-        },
-        {
-          id: 7,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image7.jpg",
-          alt: "Blood donation awareness posters",
-          width: 1200,
-          height: 900
-        },
-        {
-          id: 8,
-          src: "/src/assets/Gallery_Images/Blood_Donation_Camp/image8.jpg",
-          alt: "Group photo of donors and organizers",
-          width: 1600,
-          height: 900
-        },
-      ]
-    },
-    "tree-plantation-drive": {
-      id: 2,
-      eventId: "tree-plantation-drive",
-      title: "Tree Plantation Drive",
-      date: "April 22, 2025",
-      location: "City Park",
-      category: "environment",
-      description: "Volunteers planting trees as part of the green initiative to combat climate change and promote sustainability. Our team planted over 200 native saplings that will help restore the local ecosystem and provide a green cover for future generations.",
-      images: [
-        {
-          id: 1,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image1.jpg",
-          alt: "Volunteers planting saplings",
-          width: 1200,
-          height: 800
-        },
-        {
-          id: 2,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image2.jpg",
-          alt: "Children learning about tree planting",
-          width: 800,
-          height: 1200
-        },
-        {
-          id: 3,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image3.jpg",
-          alt: "Team preparing the soil",
-          width: 1200,
-          height: 900
-        },
-        {
-          id: 4,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image4.jpg",
-          alt: "Watering the newly planted trees",
-          width: 900,
-          height: 1200
-        },
-        {
-          id: 5,
-          src: "/src/assets/Gallery_Images/Tree_Plantation_Drive/image5.jpg",
-          alt: "Group photo with tree saplings",
-          width: 1600,
-          height: 900
-        }
-      ]
-    },
-    // Additional events would be defined here...
-  };
 
   useEffect(() => {
     // Simulate loading data from API
@@ -150,7 +35,7 @@ const EventGallery = () => {
       
       // Short timeout to simulate API call
       setTimeout(() => {
-        const eventData = eventsDatabase[eventId];
+        const eventData = galleryEventsDetailedv[eventId];
         
         if (eventData) {
           setEvent(eventData);

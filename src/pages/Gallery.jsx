@@ -21,6 +21,7 @@ import {
 import { Layers, Calendar, Leaf, BookOpen, Heart } from 'lucide-react';
 import { BsImages } from "react-icons/bs";
 import CreativeGalleryHero from "../components/CreativeGalleryHero";
+import { galleryEvents } from "../utils/data";
 
 const Gallery = () => {
   const [filter, setFilter] = useState("all");
@@ -39,130 +40,7 @@ const Gallery = () => {
     { id: "education", label: "Education", icon: <BookOpen size={20} /> },
     { id: "health", label: "Health", icon: <Heart size={20} /> },
   ];
-  // Sample gallery data - enhanced with eventId and expanded description
-  const galleryEvents = [
-    {
-      id: 1,
-      eventId: "blood-donation-camp",
-      title: "Blood Donation Camp",
-      thumbnailSrc: "/src/assets/Gallery_Images/Blood_Donation_Camp/image1.jpg",
-      category: "events",
-      description:
-        "Students participating in the annual blood donation camp, contributing to the community's health and wellbeing.",
-      date: "March 15, 2025",
-      location: "University Campus",
-      imageCount: 8,
-      featured: true,
-    },
-    {
-      id: 2,
-      eventId: "tree-plantation-drive",
-      title: "Tree Plantation Drive",
-      thumbnailSrc:
-        "/src/assets/Gallery_Images/Tree_Plantation_Drive/image1.jpg",
-      category: "environment",
-      description:
-        "Volunteers planting trees as part of the green initiative to combat climate change and promote sustainability.",
-      date: "April 22, 2025",
-      location: "City Park",
-      imageCount: 12,
-      featured: true,
-    },
-    {
-      id: 3,
-      eventId: "educational-workshop",
-      title: "Educational Workshop",
-      thumbnailSrc:
-        "/src/assets/Gallery_Images/Educational_Workshop/image1.jpg",
-      category: "education",
-      description:
-        "Teaching basic computer skills to underprivileged children, empowering them with digital literacy for the future.",
-      date: "February 10, 2025",
-      location: "Community Center",
-      imageCount: 6,
-      featured: false,
-    },
-    {
-      id: 4,
-      eventId: "cleanliness-drive",
-      title: "Cleanliness Drive",
-      thumbnailSrc: "/src/assets/Gallery_Images/Cleanliness_Drive/image1.jpg",
-      category: "environment",
-      description:
-        "NSS volunteers cleaning the local beach area and raising awareness about plastic pollution and waste management.",
-      date: "January 8, 2025",
-      location: "Silver Beach",
-      imageCount: 9,
-      featured: false,
-    },
-    {
-      id: 5,
-      eventId: "health-awareness-camp",
-      title: "Health Awareness Camp",
-      thumbnailSrc:
-        "/src/assets/Gallery_Images/Health_Awareness_Camp/image1.jpg",
-      category: "health",
-      description:
-        "Free health check-up camp organized in a rural area, providing essential medical services to underserved communities.",
-      date: "March 2, 2025",
-      location: "Rural Health Center",
-      imageCount: 10,
-      featured: true,
-    },
-    {
-      id: 6,
-      eventId: "cultural-program",
-      title: "Cultural Program",
-      thumbnailSrc: "/src/assets/Gallery_Images/Cultural_Program/image1.jpg",
-      category: "events",
-      description:
-        "Cultural performance during the NSS Annual Day celebration, showcasing diverse talents and traditions.",
-      date: "December 12, 2024",
-      location: "University Auditorium",
-      imageCount: 15,
-      featured: true,
-    },
-    {
-      id: 7,
-      eventId: "yoga-session",
-      title: "Yoga Session",
-      thumbnailSrc: "/src/assets/Gallery_Images/Yoga_Session/image1.jpg",
-      category: "health",
-      description:
-        "Morning yoga session conducted for the community, promoting physical and mental wellbeing through ancient practices.",
-      date: "January 21, 2025",
-      location: "Community Garden",
-      imageCount: 7,
-      featured: false,
-    },
-    {
-      id: 8,
-      eventId: "awareness-rally",
-      title: "Awareness Rally",
-      thumbnailSrc: "/src/assets/Gallery_Images/Awareness_Rally/image1.jpg",
-      category: "events",
-      description:
-        "Rally organized to spread awareness about social issues, mobilizing community support for positive change.",
-      date: "November 30, 2024",
-      location: "Downtown City",
-      imageCount: 11,
-      featured: false,
-    },
-    {
-      id: 9,
-      eventId: "village-outreach",
-      title: "Village Outreach",
-      thumbnailSrc: "/src/assets/Gallery_Images/Village_Outreach/image1.jpg",
-      category: "education",
-      description:
-        "Volunteers teaching children in a nearby village, bridging educational gaps and inspiring young minds.",
-      date: "February 28, 2025",
-      location: "Greenfield Village",
-      imageCount: 14,
-      featured: true,
-    },
-  ];
-
+  
   // Filter events based on selected category
   const filteredEvents =
     filter === "all"

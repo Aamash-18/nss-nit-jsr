@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {events} from "../utils/data";
 
 import {
   FaCalendarAlt,
@@ -40,74 +41,6 @@ const Events = () => {
   };
 
   // Sample event data
-  const events = [
-    {
-      id: 1,
-      title: "Blood Donation Camp",
-      date: "2025-04-15",
-      category: "upcoming",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "Join us for our annual blood donation camp in collaboration with the Red Cross Society. Your small contribution can save lives.",
-      location: "NIT Jamshedpur Campus",
-      time: "10:00 AM - 4:00 PM",
-    },
-    {
-      id: 2,
-      title: "Tree Plantation Drive",
-      date: "2025-05-05",
-      category: "upcoming",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "Help us make our planet greener by participating in our tree plantation drive. We aim to plant 500 trees in a day.",
-      location: "Jubilee Park, Jamshedpur",
-      time: "9:00 AM - 1:00 PM",
-    },
-    {
-      id: 3,
-      title: "Health Awareness Workshop",
-      date: "2025-06-10",
-      category: "upcoming",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "A workshop on health awareness focusing on preventive measures and healthy lifestyle choices.",
-      location: "Central Auditorium, NIT Jamshedpur",
-      time: "2:00 PM - 5:00 PM",
-    },
-    {
-      id: 4,
-      title: "Cleanliness Drive",
-      date: "2024-12-15",
-      category: "past",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "A successful cleanliness drive conducted in the nearby villages to promote hygiene and sanitation.",
-      location: "Adityapur Village",
-      time: "9:00 AM - 12:00 PM",
-    },
-    {
-      id: 5,
-      title: "Educational Outreach Program",
-      date: "2024-11-20",
-      category: "past",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "An educational outreach program for underprivileged children, providing them with books, stationery, and basic education.",
-      location: "Government School, Jamshedpur",
-      time: "10:00 AM - 3:00 PM",
-    },
-    {
-      id: 6,
-      title: "COVID-19 Awareness Campaign",
-      date: "2024-10-05",
-      category: "past",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "A campaign to spread awareness about COVID-19 prevention measures and distribute masks and sanitizers.",
-      location: "Various locations in Jamshedpur",
-      time: "All Day",
-    },
-  ];
 
   // Filter events based on selected category
   const filteredEvents =
