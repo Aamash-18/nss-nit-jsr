@@ -1,4 +1,4 @@
-
+import gourabImg from "../../public/core-team/gourab-bistu.webp";
 
 export const events = [
     {
@@ -415,7 +415,7 @@ export   const teamMembers = {
       id: 8,
       name: 'Gourab Bistu',
       position: 'Web Head',
-      image: 'src/assets/core team images/Gourab.png',
+      image: gourabImg,
       department: 'B.Tech, Electronics and Communication Engineering',
       email: 'gourab.bistu@nitjsr.ac.in',
       description: 'Gourab leads the web development team, ensuring digital presence and technical resources for NSS initiatives.',
