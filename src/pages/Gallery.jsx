@@ -582,7 +582,7 @@ const Gallery = () => {
 
                     {/* Button */}
                     <button
-                      className="bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-white rounded-full px-6 py-2 text-sm font-medium w-full flex items-center justify-center gap-2 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-300"
+                      className="bg-white/20 hover:bg-gray-800/30 hover:text-white backdrop-blur-md border border-white/40 text-white rounded-full px-6 py-2 text-sm font-medium w-fit flex items-center justify-center gap-2 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-300"
                       onClick={() => openEventGallery(event.eventId)}
                     >
                       <FaExpand size={12} />

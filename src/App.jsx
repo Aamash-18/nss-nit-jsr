@@ -10,6 +10,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
             <Route path="events" element={<Events />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="/gallery/:eventId" element={<EventGallery />} />
-            <Route path="team" element={<Team />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="/team" element={<Team />} />/
+            <Route path="/contact" element={<Contact />} />
           </Route>
+            <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </ThemeProvider>
