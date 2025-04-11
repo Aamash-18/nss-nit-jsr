@@ -476,7 +476,7 @@ const Events = () => {
           </motion.div>
 
           {/* Events Grid */}
-          <AnimatePresence mode="wait">
+          {/* <AnimatePresence mode="wait"> */}
             <motion.div
               key={filter}
               initial="hidden"
@@ -604,7 +604,7 @@ const Events = () => {
                 </motion.div>
               ))}
             </motion.div>
-          </AnimatePresence>
+          {/* </AnimatePresence> */}
 
           {/* No Events Message */}
           {filteredEvents.length === 0 && (

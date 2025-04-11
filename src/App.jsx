@@ -5,20 +5,24 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
+import EventGallery from "./pages/EventGallery";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="events" element={<Events />} />
             <Route path="gallery" element={<Gallery />} />
+            <Route path="/gallery/:eventId" element={<EventGallery />} />
             <Route path="team" element={<Team />} />
             <Route path="contact" element={<Contact />} />
           </Route>

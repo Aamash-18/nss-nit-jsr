@@ -19,6 +19,8 @@ export default {
         sans: ['Inter', 'sans-serif'],
         heading: ['Montserrat', 'sans-serif'],
       },
+    
+      
     },
   },
   plugins: [],
