@@ -1,72 +1,72 @@
 
 export const events = [
-    {
-      id: 1,
-      title: "Blood Donation Camp",
-      date: "2025-04-15",
-      category: "upcoming",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "Join us for our annual blood donation camp in collaboration with the Red Cross Society. Your small contribution can save lives.",
-      location: "NIT Jamshedpur Campus",
-      time: "10:00 AM - 4:00 PM",
-    },
-    {
-      id: 2,
-      title: "Tree Plantation Drive",
-      date: "2025-05-05",
-      category: "upcoming",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "Help us make our planet greener by participating in our tree plantation drive. We aim to plant 500 trees in a day.",
-      location: "Jubilee Park, Jamshedpur",
-      time: "9:00 AM - 1:00 PM",
-    },
-    {
-      id: 3,
-      title: "Health Awareness Workshop",
-      date: "2025-06-10",
-      category: "upcoming",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "A workshop on health awareness focusing on preventive measures and healthy lifestyle choices.",
-      location: "Central Auditorium, NIT Jamshedpur",
-      time: "2:00 PM - 5:00 PM",
-    },
-    {
-      id: 4,
-      title: "Cleanliness Drive",
-      date: "2024-12-15",
-      category: "past",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "A successful cleanliness drive conducted in the nearby villages to promote hygiene and sanitation.",
-      location: "Adityapur Village",
-      time: "9:00 AM - 12:00 PM",
-    },
-    {
-      id: 5,
-      title: "Educational Outreach Program",
-      date: "2024-11-20",
-      category: "past",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "An educational outreach program for underprivileged children, providing them with books, stationery, and basic education.",
-      location: "Government School, Jamshedpur",
-      time: "10:00 AM - 3:00 PM",
-    },
-    {
-      id: 6,
-      title: "COVID-19 Awareness Campaign",
-      date: "2024-10-05",
-      category: "past",
-      image: "https://via.placeholder.com/600x400",
-      description:
-        "A campaign to spread awareness about COVID-19 prevention measures and distribute masks and sanitizers.",
-      location: "Various locations in Jamshedpur",
-      time: "All Day",
-    },
-  ];
+  {
+    id: 1,
+    title: "Blood Donation Camp",
+    date: "2025-03-15",
+    category: "past",
+    image: "/Gallery_Images/Blood_Donation_Camp/image1.jpg",
+    description:
+      "Join us for our annual blood donation camp in collaboration with the Red Cross Society. Your small contribution can save lives.",
+    location: "NIT Jamshedpur Campus",
+    time: "10:00 AM - 4:00 PM",
+  },
+  {
+    id: 2,
+    title: "Tree Plantation Drive",
+    date: "2025-04-22",
+    category: "past",
+    image: "/Gallery_Images/Tree_Plantation_Drive/image1.jpg",
+    description:
+      "Help us make our planet greener by participating in our tree plantation drive. We aim to plant 500 trees in a day.",
+    location: "Jubilee Park, Jamshedpur",
+    time: "9:00 AM - 1:00 PM",
+  },
+  {
+    id: 3,
+    title: "Health Awareness Workshop",
+    date: "2025-03-02",
+    category: "past",
+    image: "/Gallery_Images/Health_Awareness_Camp/image5.jpg",
+    description:
+      "A workshop on health awareness focusing on preventive measures and healthy lifestyle choices.",
+    location: "Central Auditorium, NIT Jamshedpur",
+    time: "2:00 PM - 5:00 PM",
+  },
+  {
+    id: 4,
+    title: "Cleanliness Drive",
+    date: "2024-12-15",
+    category: "past",
+    image: "/Gallery_Images/Cleanliness_Drive/image1.jpg",
+    description:
+      "A successful cleanliness drive conducted in the nearby villages to promote hygiene and sanitation.",
+    location: "Adityapur Village",
+    time: "9:00 AM - 12:00 PM",
+  },
+  {
+    id: 5,
+    title: "Educational Outreach Program",
+    date: "2024-11-20",
+    category: "past",
+    image: "/Gallery_Images/Village_Outreach/image1.jpg",
+    description:
+      "An educational outreach program for underprivileged children, providing them with books, stationery, and basic education.",
+    location: "Government School, Jamshedpur",
+    time: "10:00 AM - 3:00 PM",
+  },
+  {
+    id: 6,
+    title: "COVID-19 Awareness Campaign",
+    date: "2024-10-05",
+    category: "past",
+    image: "/Gallery_Images/Health_Awareness_Camp/image1.jpg",
+    description:
+      "A campaign to spread awareness about COVID-19 prevention measures and distribute masks and sanitizers.",
+    location: "Various locations in Jamshedpur",
+    time: "All Day",
+  },
+];
 
 export const galleryEvents = [
   {
@@ -93,7 +93,7 @@ export const galleryEvents = [
       "Volunteers planting trees as part of the green initiative to combat climate change and promote sustainability.",
     date: "April 22, 2025",
     location: "City Park",
-    imageCount: 12,
+    imageCount: 5,
     featured: true,
   },
   {
@@ -107,7 +107,7 @@ export const galleryEvents = [
       "Teaching basic computer skills to underprivileged children, empowering them with digital literacy for the future.",
     date: "February 10, 2025",
     location: "Community Center",
-    imageCount: 6,
+    imageCount: 9,
     featured: false,
   },
   {
@@ -120,7 +120,7 @@ export const galleryEvents = [
       "NSS volunteers cleaning the local beach area and raising awareness about plastic pollution and waste management.",
     date: "January 8, 2025",
     location: "Silver Beach",
-    imageCount: 9,
+    imageCount: 10,
     featured: false,
   },
   {
@@ -134,7 +134,7 @@ export const galleryEvents = [
       "Free health check-up camp organized in a rural area, providing essential medical services to underserved communities.",
     date: "March 2, 2025",
     location: "Rural Health Center",
-    imageCount: 10,
+    imageCount: 6,
     featured: true,
   },
   {
@@ -147,7 +147,7 @@ export const galleryEvents = [
       "Cultural performance during the NSS Annual Day celebration, showcasing diverse talents and traditions.",
     date: "December 12, 2024",
     location: "University Auditorium",
-    imageCount: 15,
+    imageCount: 6,
     featured: true,
   },
   {
@@ -160,7 +160,7 @@ export const galleryEvents = [
       "Morning yoga session conducted for the community, promoting physical and mental wellbeing through ancient practices.",
     date: "January 21, 2025",
     location: "Community Garden",
-    imageCount: 7,
+    imageCount: 5,
     featured: false,
   },
   {
@@ -173,7 +173,7 @@ export const galleryEvents = [
       "Rally organized to spread awareness about social issues, mobilizing community support for positive change.",
     date: "November 30, 2024",
     location: "Downtown City",
-    imageCount: 11,
+    imageCount: 8,
     featured: false,
   },
   {
@@ -186,127 +186,562 @@ export const galleryEvents = [
       "Volunteers teaching children in a nearby village, bridging educational gaps and inspiring young minds.",
     date: "February 28, 2025",
     location: "Greenfield Village",
-    imageCount: 14,
+    imageCount: 7,
     featured: true,
   },
 ];
 
 export const galleryEventsDetailed = {
-    "blood-donation-camp": {
-      id: 1,
-      eventId: "blood-donation-camp",
-      title: "Blood Donation Camp",
-      date: "March 15, 2025",
-      location: "University Campus",
-      category: "events",
-      description: "Students participating in the annual blood donation camp, contributing to the community's health and wellbeing. Our student volunteers organized this camp in collaboration with the Red Cross, collecting over 100 units of blood that will help save numerous lives in our local hospitals.",
-      images: [
-        {
-          id: 1,
-          src: "/Gallery_Images/Blood_Donation_Camp/image1.jpg",
-          alt: "Students donating blood",
-          width: 1200,
-          height: 800
-        },
-        {
-          id: 2,
-          src: "/Gallery_Images/Blood_Donation_Camp/image2.jpg",
-          alt: "Medical staff collecting blood samples",
-          width: 800,
-          height: 1200
-        },
-        {
-          id: 3,
-          src: "/Gallery_Images/Blood_Donation_Camp/image3.jpg",
-          alt: "Volunteers organizing the camp",
-          width: 1200,
-          height: 900
-        },
-        {
-          id: 4,
-          src: "/Gallery_Images/Blood_Donation_Camp/image4.jpg",
-          alt: "Student receiving post-donation care",
-          width: 900,
-          height: 1200
-        },
-        {
-          id: 5,
-          src: "/Gallery_Images/Blood_Donation_Camp/image5.jpg",
-          alt: "Camp registration desk",
-          width: 1200,
-          height: 800
-        },
-        {
-          id: 6,
-          src: "/Gallery_Images/Blood_Donation_Camp/image6.jpg",
-          alt: "Doctor explaining the importance of blood donation",
-          width: 800,
-          height: 800
-        },
-        {
-          id: 7,
-          src: "/Gallery_Images/Blood_Donation_Camp/image7.jpg",
-          alt: "Blood donation awareness posters",
-          width: 1200,
-          height: 900
-        },
-        {
-          id: 8,
-          src: "/Gallery_Images/Blood_Donation_Camp/image8.jpg",
-          alt: "Group photo of donors and organizers",
-          width: 1600,
-          height: 900
-        },
-      ]
-    },
-    "tree-plantation-drive": {
-      id: 2,
-      eventId: "tree-plantation-drive",
-      title: "Tree Plantation Drive",
-      date: "April 22, 2025",
-      location: "City Park",
-      category: "environment",
-      description: "Volunteers planting trees as part of the green initiative to combat climate change and promote sustainability. Our team planted over 200 native saplings that will help restore the local ecosystem and provide a green cover for future generations.",
-      images: [
-        {
-          id: 1,
-          src: "/Gallery_Images/Tree_Plantation_Drive/image1.jpg",
-          alt: "Volunteers planting saplings",
-          width: 1200,
-          height: 800
-        },
-        {
-          id: 2,
-          src: "/Gallery_Images/Tree_Plantation_Drive/image2.jpg",
-          alt: "Children learning about tree planting",
-          width: 800,
-          height: 1200
-        },
-        {
-          id: 3,
-          src: "/Gallery_Images/Tree_Plantation_Drive/image3.jpg",
-          alt: "Team preparing the soil",
-          width: 1200,
-          height: 900
-        },
-        {
-          id: 4,
-          src: "/Gallery_Images/Tree_Plantation_Drive/image4.jpg",
-          alt: "Watering the newly planted trees",
-          width: 900,
-          height: 1200
-        },
-        {
-          id: 5,
-          src: "/Gallery_Images/Tree_Plantation_Drive/image5.jpg",
-          alt: "Group photo with tree saplings",
-          width: 1600,
-          height: 900
-        }
-      ]
-    },
-    // Additional events would be defined here...
-  };
+  "blood-donation-camp": {
+    id: 1,
+    eventId: "blood-donation-camp",
+    title: "Blood Donation Camp",
+    date: "March 15, 2025",
+    location: "University Campus",
+    category: "events",
+    description: "Students participating in the annual blood donation camp, contributing to the community's health and wellbeing. Our student volunteers organized this camp in collaboration with the Red Cross, collecting over 100 units of blood that will help save numerous lives in our local hospitals.",
+    images: [
+      {
+        id: 1,
+        src: "/Gallery_Images/Blood_Donation_Camp/image1.jpg",
+        alt: "Students donating blood",
+        width: 1200,
+        height: 800
+      },
+      {
+        id: 2,
+        src: "/Gallery_Images/Blood_Donation_Camp/image2.jpg",
+        alt: "Medical staff collecting blood samples",
+        width: 800,
+        height: 1200
+      },
+      {
+        id: 3,
+        src: "/Gallery_Images/Blood_Donation_Camp/image3.jpg",
+        alt: "Volunteers organizing the camp",
+        width: 1200,
+        height: 900
+      },
+      {
+        id: 4,
+        src: "/Gallery_Images/Blood_Donation_Camp/image4.jpg",
+        alt: "Student receiving post-donation care",
+        width: 900,
+        height: 1200
+      },
+      {
+        id: 5,
+        src: "/Gallery_Images/Blood_Donation_Camp/image5.jpg",
+        alt: "Camp registration desk",
+        width: 1200,
+        height: 800
+      },
+      {
+        id: 6,
+        src: "/Gallery_Images/Blood_Donation_Camp/image6.jpg",
+        alt: "Doctor explaining the importance of blood donation",
+        width: 800,
+        height: 800
+      },
+      {
+        id: 7,
+        src: "/Gallery_Images/Blood_Donation_Camp/image7.jpg",
+        alt: "Blood donation awareness posters",
+        width: 1200,
+        height: 900
+      },
+      {
+        id: 8,
+        src: "/Gallery_Images/Blood_Donation_Camp/image8.jpg",
+        alt: "Group photo of donors and organizers",
+        width: 1600,
+        height: 900
+      },
+    ]
+  },
+  "tree-plantation-drive": {
+    id: 2,
+    eventId: "tree-plantation-drive",
+    title: "Tree Plantation Drive",
+    date: "April 22, 2025",
+    location: "City Park",
+    category: "environment",
+    description: "Volunteers planting trees as part of the green initiative to combat climate changes and promote sustainability. Our team planted over 200 native saplings that will help restore the local ecosystem and provide a green cover for future generations.",
+    images: [
+      {
+        id: 1,
+        src: "/Gallery_Images/Tree_Plantation_Drive/image1.jpg",
+        alt: "Volunteers planting saplings",
+        width: 1200,
+        height: 800
+      },
+      {
+        id: 2,
+        src: "/Gallery_Images/Tree_Plantation_Drive/image2.jpg",
+        alt: "Children learning about tree planting",
+        width: 800,
+        height: 1200
+      },
+      {
+        id: 3,
+        src: "/Gallery_Images/Tree_Plantation_Drive/image3.jpg",
+        alt: "Team preparing the soil",
+        width: 1200,
+        height: 900
+      },
+      {
+        id: 4,
+        src: "/Gallery_Images/Tree_Plantation_Drive/image4.jpg",
+        alt: "Watering the newly planted trees",
+        width: 900,
+        height: 1200
+      },
+      {
+        id: 5,
+        src: "/Gallery_Images/Tree_Plantation_Drive/image5.jpg",
+        alt: "Group photo with tree saplings",
+        width: 1600,
+        height: 900
+      }
+    ]
+  },
+  "educational-workshop": {
+    "id": 2,
+    "eventId": "educational-workshop",
+    "title": "Educational Workshop",
+    "date": "February 10, 2025",
+    "location": "University Campus",
+    "category": "education",
+    "description": "Teaching basic computer skills to underprivileged children, empowering them with essential digital literacy.The workshop bridged the digital divide by teaching basic computer skills like browsing, word processing, and internet use. Volunteers mentored participants, boosting their digital confidence.",
+    "images": [
+      {
+        "id": 1,
+        "src": "/Gallery_Images/Educational_Workshop/image1.jpg",
+        "alt": "Participantions from different students and volunteers in learning digital skills",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "id": 2,
+        "src": "/Gallery_Images/Educational_Workshop/image2.jpg",
+        "alt": "Faculty felicitated with a plaque for contribution to the workshop",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "id": 3,
+        "src": "/Gallery_Images/Educational_Workshop/image3.jpg",
+        "alt": "Speaker explaining computer concepts on stage",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "id": 4,
+        "src": "/Gallery_Images/Educational_Workshop/image4.jpg",
+        "alt": "Participants listening attentively to the speaker",
+        "width": 900,
+        "height": 1200
+      },
+      {
+        "id": 5,
+        "src": "/Gallery_Images/Educational_Workshop/image5.jpg",
+        "alt": "Volunteers and students getting certificates of participation",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "id": 6,
+        "src": "/Gallery_Images/Educational_Workshop/image6.jpg",
+        "alt": "Audience seated in a large hall participating in the session",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "id": 7,
+        "src": "/Gallery_Images/Educational_Workshop/image7.jpg",
+        "alt": "Group of volunteers and attendees posing for a picture",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "id": 8,
+        "src": "/Gallery_Images/Educational_Workshop/image8.jpg",
+        "alt": "Group photo of all participants and organizers in the hall",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "id": 9,
+        "src": "/Gallery_Images/Educational_Workshop/image9.jpg",
+        "alt": "Guests were honored with tokens of appreciation for attending the event.",
+        "width": 1600,
+        "height": 900
+      }
+    ]
+  },
+  "cleanliness-drive": {
+    id: 4,
+    eventId: "cleanliness-drive",
+    title: "Cleanliness Drive",
+    date: "January 8, 2025",
+    location: "NIT College Campus",
+    category: "environment",
+    description: "NSS volunteers cleaning the NIT college campus and raising awareness about plastic pollution.The drive successfully promoted cleanliness and hygiene on campus. Informational banners were also used to spread the message of sustainability and cleanliness.",
+    images: [
+      {
+        id: 1,
+        src: "/Gallery_Images/Cleanliness_Drive/image1.jpg",
+        alt: "Group photo of volunteers after the successful completion of the cleanliness drive.",
+        width: 1200,
+        height: 800
+      },
+      {
+        id: 2,
+        src: "/Gallery_Images/Cleanliness_Drive/image2.jpg",
+        alt: "Students holding awareness banners",
+        width: 800,
+        height: 1200
+      },
+      {
+        id: 3,
+        src: "/Gallery_Images/Cleanliness_Drive/image3.jpg",
+        alt: "Collected waste segregated for recycling",
+        width: 1200,
+        height: 900
+      },
+      {
+        id: 4,
+        src: "/Gallery_Images/Cleanliness_Drive/image4.jpg",
+        alt: "Group of volunteers in action",
+        width: 900,
+        height: 1200
+      },
+      {
+        id: 5,
+        src: "/Gallery_Images/Cleanliness_Drive/image5.jpg",
+        alt: "Group photo after the drive",
+        width: 1600,
+        height: 900
+      },
+      {
+        id: 6,
+        src: "/Gallery_Images/Cleanliness_Drive/image6.jpg",
+        alt: "Volunteers segregating plastic waste",
+        width: 1200,
+        height: 900
+      },
+      {
+        id: 7,
+        src: "/Gallery_Images/Cleanliness_Drive/image7.jpg",
+        alt: "Volunteers collecting waste near hostel blocks",
+        width: 1200,
+        height: 900
+      },
+      {
+        id: 8,
+        src: "/Gallery_Images/Cleanliness_Drive/image8.jpg",
+        alt: "Plastic waste collected in sacks",
+        width: 900,
+        height: 1200
+      },
+      {
+        id: 9,
+        src: "/Gallery_Images/Cleanliness_Drive/image9.jpg",
+        alt: "Volunteers cleaning garden areas in the college",
+        width: 1600,
+        height: 900
+      },
+      {
+        id: 10,
+        src: "/Gallery_Images/Cleanliness_Drive/image10.jpg",
+        alt: "Volunteers cleaning every corner of the college",
+        width: 1600,
+        height: 900
+      }
+    ]
+  },
+  "health-awareness-camp": {
+    id: 5,
+    eventId: "health-awareness-camp",
+    title: "Health Awareness Camp",
+    date: "March 2, 2025",
+    location: "NIT college campus",
+    category: "health",
+    description: "Free health check-up camp organized in a rural area, providing essential medical services to underserved communities. The camp featured screenings for BP, sugar, and vision, along with awareness sessions on hygiene and nutrition. Volunteers and medical staff ensured smooth coordination and distributed medicines and pamphlets",
+    images: [
+      {
+        id: 1,
+        src: "/Gallery_Images/Health_Awareness_Camp/image1.jpg",
+        alt: "Doctors conducting health check-ups",
+        width: 1200,
+        height: 800
+      },
+      {
+        id: 2,
+        src: "/Gallery_Images/Health_Awareness_Camp/image2.jpg",
+        alt: "Eye check up of students and elderly",
+        width: 800,
+        height: 1200
+      },
+      {
+        id: 3,
+        src: "/Gallery_Images/Health_Awareness_Camp/image3.jpg",
+        alt: "Medical staff collecting blood samples",
+        width: 1200,
+        height: 900
+      },
+      {
+        id: 4,
+        src: "/Gallery_Images/Health_Awareness_Camp/image4.jpg",
+        alt: "Health awareness posters and banners displayed",
+        width: 900,
+        height: 1200
+      },
+      {
+        id: 5,
+        src: "/Gallery_Images/Health_Awareness_Camp/image5.jpg",
+        alt: "Volunteers guiding villagers at the venue",
+        width: 1600,
+        height: 900
+      },
+      {
+        id: 6,
+        src: "/Gallery_Images/Health_Awareness_Camp/image6.jpg",
+        alt: "Group photo with doctors and volunteers",
+        width: 1600,
+        height: 900
+      }
+    ]
+  },
+  "cultural-program": {
+    "id": 6,
+    "eventId": "cultural-program",
+    "title": "Cultural Program",
+    "date": "December 12, 2024",
+    "location": "NIT college",
+    "category": "event",
+    "description": "Cultural performance during the NSS Annual Day celebration, showcasing diverse traditions and artistic expressions. The program featured a range of performances, from traditional dances to modern music, celebrating the rich cultural heritage of the community. The event provided a platform for students to showcase their talents and foster a sense of unity and pride.",
+    "images": [
+      {
+        "id": 1,
+        "src": "/Gallery_Images/Cultural_Program/image1.jpg",
+        "alt": "Students performing traditional dance and skit",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "id": 2,
+        "src": "/Gallery_Images/Cultural_Program/image2.jpg",
+        "alt": "Group photo of all the students and performers",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "id": 3,
+        "src": "/Gallery_Images/Cultural_Program/image3.jpg",
+        "alt": "Students outside from nit college were called to perform in the cultural program",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "id": 4,
+        "src": "/Gallery_Images/Cultural_Program/image4.jpg",
+        "alt": "Students performing their regional traditional dance during the cultural program",
+        "width": 900,
+        "height": 1200
+      },
+      {
+        "id": 5,
+        "src": "/Gallery_Images/Cultural_Program/image5.jpg",
+        "alt": "Group photo of all the performers and the volunteers",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "id": 6,
+        "src": "/Gallery_Images/Cultural_Program/image6.jpg",
+        "alt": "Students showcasing vibrant attire and heritage through their dance",
+        "width": 1600,
+        "height": 900
+      }
+    ]
+  },
+  "yoga-session": {
+    "id": 7,
+    "eventId": "yoga-session",
+    "title": "Yoga Session",
+    "date": "January 21, 2025",
+    "location": "NIT College Campus",
+    "category": "health",
+    "description": "Morning yoga session conducted for the community, promoting physical and mental well-being. The session encouraged students, faculty, and residents to adopt yoga in daily life. Participants practiced yoga poses and breathing exercises, promoting flexibility, strength, and stress relief.",
+    "images": [
+      {
+        "id": 1,
+        "src": "/Gallery_Images/Yoga_Session/image1.jpg",
+        "alt": "Participants performing yoga poses in the morning",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "id": 2,
+        "src": "/Gallery_Images/Yoga_Session/image2.jpg",
+        "alt": "Instructor guiding the group through a yoga session",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "id": 3,
+        "src": "/Gallery_Images/Yoga_Session/image3.jpg",
+        "alt": "Group practicing yoga under the indtructor supervision",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "id": 4,
+        "src": "/Gallery_Images/Yoga_Session/image4.jpg",
+        "alt": "The participants deeply engaged in yoga practice",
+        "width": 900,
+        "height": 1200
+      },
+      {
+        "id": 5,
+        "src": "/Gallery_Images/Yoga_Session/image5.jpg",
+        "alt": "Close-up of a participant practicing yoga poses",
+        "width": 1600,
+        "height": 900
+      },
+    ]
+  },
+  "awareness-rally": {
+    "id": 8,
+    "eventId": "awareness-rally",
+    "title": "Awareness Rally",
+    "date": "November 30, 2024",
+    "location": "NIT Campus",
+    "category": "event",
+    "description": "Rally organized to spread awareness about social issues, mobilizing community support for causes such as gender equality, education, and environmental conservation. Students and faculty participated enthusiastically, holding informative placards and chanting slogans to engage the public. The rally aimed to inspire civic responsibility and create a positive impact through collective action and advocacy.",
+    "images": [
+      {
+        "id": 1,
+        "src": "/Gallery_Images/Awareness_Rally/image1.jpg",
+        "alt": "Volunteers and students marching with awareness placards",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "id": 2,
+        "src": "/Gallery_Images/Awareness_Rally/image2.jpg",
+        "alt": "Participants chanting slogans during the rally",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "id": 3,
+        "src": "/Gallery_Images/Awareness_Rally/image3.jpg",
+        "alt": "Students holding a large banner about social change",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "id": 4,
+        "src": "/Gallery_Images/Awareness_Rally/image4.jpg",
+        "alt": "Faculty members joining the rally",
+        "width": 900,
+        "height": 1200
+      },
+      {
+        "id": 5,
+        "src": "/Gallery_Images/Awareness_Rally/image5.jpg",
+        "alt": "Students creating awareness through posters",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "id": 6,
+        "src": "/Gallery_Images/Awareness_Rally/image6.jpg",
+        "alt": "Participants holding signs supporting education and equality",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "id": 7,
+        "src": "/Gallery_Images/Awareness_Rally/image7.jpg",
+        "alt": "Rally making its way through campus pathways",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "id": 8,
+        "src": "/Gallery_Images/Awareness_Rally/image8.jpg",
+        "alt": "Group marching vigoroulsly to create awareness and change",
+        "width": 1600,
+        "height": 900
+      }
+    ]
+  },
+  "village-outreach": {
+    "id": 9,
+    "eventId": "village-outreach",
+    "title": "Village Outreach",
+    "date": "February 28, 2025",
+    "location": "Nearby Village",
+    "category": "education",
+    "description": "Volunteers teaching children in a nearby village, bridging educational gaps and fostering community engagement.The outreach program focused on basic literacy, creative learning, and interactive sessions to make education enjoyable. Volunteers also conducted fun activities and provided essential resources like clothes to the villagers.",
+    "images": [
+      {
+        "id": 1,
+        "src": "/Gallery_Images/Village_Outreach/image1.jpg",
+        "alt": "Volunteers distributing clothes and interacting with villagers",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "id": 2,
+        "src": "/Gallery_Images/Village_Outreach/image2.jpg",
+        "alt": "Team handing out supplies to villagers",
+        "width": 800,
+        "height": 1200
+      },
+      {
+        "id": 3,
+        "src": "/Gallery_Images/Village_Outreach/image3.jpg",
+        "alt": "Volunteer distributing snacks to children from a school bus",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "id": 4,
+        "src": "/Gallery_Images/Village_Outreach/image4.jpg",
+        "alt": "Volunteer giving books to kids during outreach",
+        "width": 900,
+        "height": 1200
+      },
+      {
+        "id": 5,
+        "src": "/Gallery_Images/Village_Outreach/image5.jpg",
+        "alt": "Group photo of volunteers standing with outreach supplies",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "id": 6,
+        "src": "/Gallery_Images/Village_Outreach/image6.jpg",
+        "alt": "Volunteers distributing clothing items from the bus",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "id": 7,
+        "src": "/Gallery_Images/Village_Outreach/image7.jpg",
+        "alt": "Volunteers engaging with children during resource distribution",
+        "width": 1600,
+        "height": 900
+      }
+    ]
+
+  },
+  // Additional events would be defined here...
+};
 
 export const teamMembers = {
   superCore: [
