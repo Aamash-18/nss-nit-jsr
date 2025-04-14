@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
+import Home1 from "./pages/Home1";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";
@@ -19,7 +20,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<Home />} />
+            <Route index element={<Home1 />} />
             <Route path="about" element={<About />} />
             <Route path="events" element={<Events />} />
             <Route path="gallery" element={<Gallery />} />
