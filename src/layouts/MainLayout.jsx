@@ -30,7 +30,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
+import Navigation from '../components/Navigation';
 const MainLayout = () => {
   useEffect(() => {
     // Function to update scrollbar color based on scroll position
@@ -112,7 +112,9 @@ const MainLayout = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+      {/* <Navbar /> */}
+
+      <Navigation/>
       <AnimatePresence mode="wait">
         <motion.main
           initial={{ opacity: 0 }}
