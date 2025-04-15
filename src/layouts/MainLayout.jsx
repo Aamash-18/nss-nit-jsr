@@ -121,7 +121,7 @@ const MainLayout = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="flex-grow pt-16"
+          className="flex-grow md:pt-16"
         >
           <Outlet />
         </motion.main>
