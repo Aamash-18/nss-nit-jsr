@@ -775,125 +775,137 @@ export const teamMembers = {
     },
     {
       id: 3,
-      name: 'Shyamali Rupam',
-      position: 'Vice President',
-      image: 'src/assets/core team images/Shyamli Rupam.jpg',
-      department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'shyamali.rupam@nitjsr.ac.in',
-      description: 'Shyamali is responsible for overall coordination of NSS activities and leads the team of volunteers. She has been an active NSS volunteer since her first year.',
+      name: 'Shifan Akram ',
+      position: 'Civil engineering ',
+      image: 'public/core-team/Shifan Akram .webp',
+      department: 'B.Tech, Civil engineering ',
+      email: 'shifanakram35@gmail.com',
+      description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/shifan-akram-343326264?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         twitter: '#',
         instagram: '#'
       }
     },
-  ],
-  core: [
     {
       id: 4,
-      name: 'Neeraj Bhatt',
-      position: 'EM Head',
-      image: 'src/assets/core team images/Neeraj.jpg',
+      name: 'Shyamali Rupam',
+      position: 'Vice President',
+      image: 'public/core-team/Shyamli Rupam.webp',
       department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'neeraj.bhatt@nitjsr.ac.in',
-      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      email: 'rupamshy2307@gmail.com',
+      description: 'Shyamali is responsible for overall coordination of NSS activities and leads the team of volunteers. She has been an active NSS volunteer since her first year.',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/shyamli-rupam?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         twitter: '#',
         instagram: '#'
       }
     },
-    {
+     {
       id: 5,
-      name: 'Doddy Mourya',
+      name: 'Neeraj Bhatt',
       position: 'EM Head',
-      image: 'src/assets/core team images/Doddy Mourya.jpg',
-      department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'doddy.mourya@nitjsr.ac.in',
-      description: 'Doddy co-leads the Event Management division and specializes in coordinating large-scale community service projects.',
+      image: 'public/core-team/Neeraj.webp',
+      department: 'B.Tech, Master of Computer Applications',
+      email: 'neeraj.bhatt099@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/neerajbhatt099/',
         twitter: '#',
         instagram: '#'
       }
     },
     {
       id: 6,
-      name: 'Pratyush Kumar',
-      position: 'Creative Head',
-      image: 'src/assets/core team images/Pratyush Kumar.jpg',
-      department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'pratyush.kumar@nitjsr.ac.in',
-      description: 'Pratyush oversees all creative aspects of NSS campaigns and events, bringing innovation to social service initiatives.',
+      name: 'Doddy Mourya',
+      position: 'EM Head',
+      image: 'public/core-team/Doddy Mourya.webp',
+      department: 'B.Tech, \Metallurgical and materials engineering ',
+      email: 'mourya.doddi45@gmail.com',
+      description: 'Doddy co-leads the Event Management division and specializes in coordinating large-scale community service projects.',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/doddi-mourya-6b708727b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         twitter: '#',
         instagram: '#'
       }
     },
     {
       id: 7,
-      name: 'Utkarsh Shukla',
-      position: 'Content Head',
-      image: 'src/assets/core team images/Utkarsh Shukhla.jpg',
+      name: 'Pratyush Kumar',
+      position: 'Creative Head',
+      image: 'public/core-team/Pratyush Kumar.webp',
       department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'utkarsh.shukla@nitjsr.ac.in',
-      description: 'Utkarsh manages content creation and messaging strategy for all NSS communications and outreach materials.',
+      email: 'pratyush.dms30@gmail.com',
+      description: 'Pratyush oversees all creative aspects of NSS campaigns and events, bringing innovation to social service initiatives.',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/pratyush-kumar-gupta-05a492259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         twitter: '#',
         instagram: '#'
       }
     },
     {
       id: 8,
-      name: 'Gourab Bistu',
-      position: 'Web Head',
-      image: "/core-team/gourab-bistu.webp",
-      department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'gourab.bistu@nitjsr.ac.in',
-      description: 'Gourab leads the web development team, ensuring digital presence and technical resources for NSS initiatives.',
+      name: 'Utkarsh Shukla',
+      position: 'Content Head',
+      image: 'public/core-team/Utkarsh Shukhla.webp',
+      department: 'B.Tech, Production & Industrial Engineering ',
+      email: 'shuklautkarsh1027@gmail.com',
+      description: 'Utkarsh manages content creation and messaging strategy for all NSS communications and outreach materials.',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/utkarsh-shukla-bb1a01257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         twitter: '#',
         instagram: '#'
       }
     },
     {
       id: 9,
-      name: 'Rupam Kumari',
-      position: 'PR Head',
-      image: 'src/assets/core team images/Rupam Kumari.jpg',
-      department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'rupam.kumari@nitjsr.ac.in',
-      description: 'Rupam manages public relations and external communications for NSS, building partnerships with community stakeholders.',
+      name: 'Gourab Bistu',
+      position: 'Web Head',
+      image: "/core-team/gourab-bistu.webp",
+      department: 'B.Tech, Master of Computer Applications',
+      email: 'gourabbistu@gmail.com',
+      description: 'Gourab leads the web development team, ensuring digital presence and technical resources for NSS initiatives.',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/gourabbistu/',
         twitter: '#',
         instagram: '#'
       }
     },
     {
       id: 10,
-      name: 'Kajal Shaw',
+      name: 'Rupam Kumari',
       position: 'PR Head',
-      image: 'src/assets/core team images/kajal shaw.jpg',
-      department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'kajal.shaw@nitjsr.ac.in',
-      description: 'Kajal co-leads the public relations team, focusing on media engagement and institutional partnerships.',
+      image: 'public/core-team/Rupam Kumari.webp',
+      department: 'B.Tech, production and industrial engineering',
+      email: 'rumdaza@gmail.com',
+      description: 'Rupam manages public relations and external communications for NSS, building partnerships with community stakeholders.',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/rupam-kumari-64775b271?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         twitter: '#',
         instagram: '#'
       }
     },
     {
-      id: 13,
+      id: 11,
+      name: 'Kajal Shaw',
+      position: 'PR Head',
+      image: 'public/core-team/kajal shaw.webp',
+      department: 'B.Tech, Civil Engineering ',
+      email: '2022ugce067@gmail.com',
+      description: 'Kajal co-leads the public relations team, focusing on media engagement and institutional partnerships.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/kajal-shaw-94778a271',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 12,
       name: 'Rinki Kumari',
       position: 'Media Head',
-      image: 'src/assets/core team images/Rinki kumari .jpg',
-      department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'rinki.kumari@nitjsr.ac.in',
+      image: 'public/core-team/Rinki kumari .webp',
+      department: 'B.Tech,Civil engineering ',
+      email: 'rinkyie321@gmail.com',
       description: 'Rinki manages all media content and documentation of NSS activities, creating compelling visual narratives.',
       social: {
         linkedin: '#',
@@ -902,23 +914,238 @@ export const teamMembers = {
       }
     },
     {
-      id: 14,
+      id: 13,
       name: 'Sushant Kachhap',
       position: 'Media Head',
-      image: 'src/assets/core team images/Sushant Kachhap .jpg',
-      department: 'B.Tech, Electronics and Communication Engineering',
-      email: 'sushant.kachhap@nitjsr.ac.in',
+      image: 'public/core-team/Sushant Kachhap .webp',
+      department: 'B.Tech, Computer Science and Engineering',
+      email: 'sushantkachhap68@gmail.com',
       description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/sushant-kachhap-4153b1266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 14,
+      name: 'Basundhara Singhdeo ',
+      position: 'Strategic and Planning Head',
+      image: 'public/core-team/Basundhara Singhdeo .webp',
+      department: 'B.Tech, Electronics and Communication Engineering',
+      email: 'singhdeobasundhara@gmail.comn',
+      description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/basundhara-singhdeo-b5a74925b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 15,
+      name: 'Bhavesh Gupta',
+      position: 'PG Representative',
+      image: 'public/core-team/Bhavesh Gupta.webp',
+      department: 'B.Tech, Master of Computer Applications',
+      email: 'bhaveshguptanit@gmail.com',
+      description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/bhavesh-gupta-894141337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 16,
+      name: 'Santosh Kumar Sahani',
+      position: 'PG Representative',
+      image: 'public/core-team/Santosh Kumar Sahani.webp',
+      department: 'B.Tech, Master of Computer Applications',
+      email: 'sks.vssems@gmail.com',
+      description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/santosh-kumar-sahani-13702828a/',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    
+  ],
+  core: [
+    {
+      id: 17,
+      name: 'Saransh',
+      position: 'General Secretary',
+      image: 'public/core-team/Saransh.webp',
+      department: 'B.Tech,Production & Industrial Engineering',
+      email: 'saransh7505@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'http://www.linkedin.com/in/saransh754',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 18,
+      name: 'NIRMAL NIRANJAN PATIL',
+      position: 'General Secretary',
+      image: 'public/core-team/Nirmal.webp',
+      department: 'B.Tech,Mechanical Engineering',
+      email: 'nirnalpatil9@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/nirmal-niranjan-patil-ab274a289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 19,
+      name: 'Sumant Nanda ',
+      position: 'Joint Secretary ',
+      image: 'public/core-team/Sumant Nanda.webp',
+      department: 'B.Tech,Electrical Engineering ',
+      email: 'sumantnandadi09@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/sumant-nanda-a2578a28a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 20,
+      name: 'kangsh Sah',
+      position: 'Joint Secretary',
+      image: 'public/core-team/Kangsh Sah.webp',
+      department: 'B.Tech,Production & Industrial Engineering',
+      email: 'sekangsh@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'http://www.linkedin.com/in/ekangsh-sah-14a84428a',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 21,
+      name: 'Ayush Das',
+      position: 'Joint Secretary',
+      image: 'public/core-team/Ayush 1.webp',
+      department: 'B.Tech,Master of Computer Applications',
+      email: 'ayushdas7354@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'http://www.linkedin.com/in/ayushdas84',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 20,
+      name: 'Ritika Rani',
+      position: 'Joint Secretary',
+      image: 'public/core-team/Ritika Rani.webp',
+      department: 'B.Tech,Mechanical Engineering',
+      email: 'ritika130482@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/ritika-rani-7302a5298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 22,
+      name: 'Kriti Srivastava ',
+      position: 'Joint Secretary',
+      image: 'public/core-team/kriti.webp',
+      department: 'B.Tech,Civil Engineering ',
+      email: 'srikritivastava11@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/kriti-srivastava-0707a128a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 23,
+      name: 'Saksham Shubh',
+      position: 'Joint Secretary',
+      image: 'public/core-team/Saksham Shubh.webp',
+      department: 'B.Tech,Production & Industrial Engineering ',
+      email: 'sakshamshubh04@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
       social: {
         linkedin: '#',
         twitter: '#',
         instagram: '#'
       }
     },
+    {
+      id: 23,
+      name: 'MRINAL AYUSH RAJ',
+      position: 'Joint Secretary',
+      image: 'public/core-team/MRINAL AYUSH RAJ.webp',
+      department: 'B.Tech,MECHANICAL ENGINEERING',
+      email: 'mrinalayush1437@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/mrinal-ayush-raj-65300527a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 24,
+      name: 'Pranay Parasana ',
+      position: 'Joint Secretary',
+      image: 'public/core-team/Pranay Parasana.webp',
+      department: 'B.Tech,Metallurgical and Materials Engineering ',
+      email: 'pranay.raja.25@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/pranay-parasana-744867258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 25,
+      name: 'Aman kumar ',
+      position: 'Joint Secretary',
+      image: 'public/core-team/Aman kumar .webp',
+      department: 'B.Tech,Master of Computer Applications ',
+      email: 'rajamanofficial1@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/aman-kumar-a2b425324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 26,
+      name: 'AMAN KUMAR JHA ',
+      position: 'Joint Secretary',
+      image: 'public/core-team/Aman kumar jha.webp',
+      department: 'B.Tech,Civil Engineering  ',
+      email: 'aman.ac.5673@gmail.com',
+      description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'http://www.linkedin.com/in/aman-kumar-jha-13211027b',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+
+    
   ],
   volunteers: [
     {
-      id: 31,
+      id: 27,
       name: 'Rahul Verma',
       position: 'Volunteer',
       image: 'src/assets/volunteers/Rahul Verma.jpg',
@@ -932,7 +1159,7 @@ export const teamMembers = {
       }
     },
     {
-      id: 32,
+      id: 28,
       name: 'Neha Gupta',
       position: 'Volunteer',
       image: 'src/assets/volunteers/Neha Gupta.jpg',
@@ -946,7 +1173,7 @@ export const teamMembers = {
       }
     },
     {
-      id: 33,
+      id: 29,
       name: 'Vikram Singh',
       position: 'Volunteer',
       image: 'src/assets/volunteers/Vikram Singh.jpg',
@@ -960,7 +1187,7 @@ export const teamMembers = {
       }
     },
     {
-      id: 34,
+      id: 30,
       name: 'Ananya Reddy',
       position: 'Volunteer',
       image: 'src/assets/volunteers/Ananya Reddy.jpg',
