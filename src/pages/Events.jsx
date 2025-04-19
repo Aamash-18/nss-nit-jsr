@@ -27,9 +27,11 @@ import {
   ChevronRight,
   Star,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Events = () => {
   const [filter, setFilter] = useState("all");
+  const navigate = useNavigate();
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
@@ -47,6 +49,15 @@ const Events = () => {
     filter === "all"
       ? events
       : events.filter((event) => event.category === filter);
+
+  // Navigate to event detail page
+  const handleEventClick = (eventId) => {
+    console.log(eventId);
+    navigate(`/gallery/${eventId}`);
+
+  };
+
+
 
   return (
     <div>
@@ -507,11 +518,12 @@ const Events = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      onClick={() => handleEventClick(event.link)}
                       className={`w-full mt-2 bg-gradient-to-r rounded-full text-white font-medium hover:shadow-lg hover:shadow-purple-800/30 transition-all duration-300 px-6 py-3 flex items-center justify-center gap-2 
                       ${
                         event.category === "upcoming"
-                          ? "from-blue-600 to-indigo-700"
-                          : "from-gray-600 to-gray-800"
+                          ? "from-green-600 to-teal-700"
+                          : "from-blue-600 to-indigo-800"
                       }
                       `}
                     >
@@ -520,20 +532,11 @@ const Events = () => {
                           ? "Register Now"
                           : "View Details"}
                       </span>
-                      <BsArrowUpRight className="text-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      {/* <BsArrowUpRight className="text-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" /> */}
                     </motion.button>
                   </div>
 
-                  {/* Corner decoration */}
-                  <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden pointer-events-none">
-                    <div
-                      className={`absolute transform rotate-45 w-28 h-28 top-[-14px] right-[-14px] ${
-                        event.category === "upcoming"
-                          ? "bg-gradient-to-br from-blue-500/20 to-purple-500/20"
-                          : "bg-gradient-to-br from-gray-500/20 to-gray-700/20"
-                      } backdrop-blur-md`}
-                    ></div>
-                  </div>
+                  
                 </motion.div>
               ))}
             </motion.div>

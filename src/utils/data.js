@@ -10,6 +10,7 @@ export const events = [
       "Join us for our annual blood donation camp in collaboration with the Red Cross Society. Your small contribution can save lives.",
     location: "NIT Jamshedpur Campus",
     time: "10:00 AM - 4:00 PM",
+    link:"blood-donation-camp",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ export const events = [
       "Help us make our planet greener by participating in our tree plantation drive. We aim to plant 500 trees in a day.",
     location: "Jubilee Park, Jamshedpur",
     time: "9:00 AM - 1:00 PM",
+    link:"tree-plantation-drive",
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ export const events = [
       "A workshop on health awareness focusing on preventive measures and healthy lifestyle choices.",
     location: "Central Auditorium, NIT Jamshedpur",
     time: "2:00 PM - 5:00 PM",
+    link:"health-awareness-camp",
   },
   {
     id: 4,
@@ -43,6 +46,7 @@ export const events = [
       "A successful cleanliness drive conducted in the nearby villages to promote hygiene and sanitation.",
     location: "Adityapur Village",
     time: "9:00 AM - 12:00 PM",
+    link:"cleanliness-drive",
   },
   {
     id: 5,
@@ -54,10 +58,11 @@ export const events = [
       "An educational outreach program for underprivileged children, providing them with books, stationery, and basic education.",
     location: "Government School, Jamshedpur",
     time: "10:00 AM - 3:00 PM",
+    link:"educational-workshop",
   },
   {
     id: 6,
-    title: "COVID-19 Awareness Campaign",
+    title: "Health Awareness Campaign",
     date: "2024-10-05",
     category: "past",
     image: "/Gallery_Images/Health_Awareness_Camp/image1.jpg",
@@ -65,6 +70,7 @@ export const events = [
       "A campaign to spread awareness about COVID-19 prevention measures and distribute masks and sanitizers.",
     location: "Various locations in Jamshedpur",
     time: "All Day",
+    link:"health-awareness-camp",
   },
 ];
 
@@ -747,10 +753,10 @@ export const teamMembers = {
   superCore: [
     {
       id: 1,
-      name: 'Dr. Rajesh Kumar',
-      position: 'Program Officer',
-      image: 'src/assets/core team images/Dr Rajesh Kumar.jpg',
-      department: 'Department of Mechanical Engineering',
+      name: 'Dr Jayendra Kumar',
+      position: 'Professor Incharge',
+      image: '/core-team/dr-jayendra-kumar.webp',
+      department: 'Electronics and Communication Engineering',
       email: 'rajesh.kumar@nitjsr.ac.in',
       description: 'Dr. Rajesh Kumar has been leading the NSS unit at NIT Jamshedpur for the past 5 years. Under his guidance, the unit has achieved numerous milestones and recognition.',
       social: {
@@ -760,23 +766,9 @@ export const teamMembers = {
       }
     },
     {
-      id: 2,
-      name: 'Dr. Priya Singh',
-      position: 'Faculty Coordinator',
-      image: 'src/assets/core team images/Dr Priya Singh.jpg',
-      department: 'Department of Computer Science',
-      email: 'priya.singh@nitjsr.ac.in',
-      description: 'Dr. Priya Singh is responsible for coordinating various activities and ensuring smooth functioning of the NSS unit. She has been associated with NSS for over 3 years.',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        instagram: '#'
-      }
-    },
-    {
       id: 3,
       name: 'Shifan Akram ',
-      position: 'Civil engineering ',
+      position: 'President ',
       image: '/core-team/Shifan Akram .webp',
       department: 'B.Tech, Civil engineering ',
       email: 'shifanakram35@gmail.com',
@@ -797,6 +789,20 @@ export const teamMembers = {
       description: 'Shyamali is responsible for overall coordination of NSS activities and leads the team of volunteers. She has been an active NSS volunteer since her first year.',
       social: {
         linkedin: 'https://www.linkedin.com/in/shyamli-rupam?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 9,
+      name: 'Gourab Bistu',
+      position: 'Web Head',
+      image: "/core-team/gourab-bistu.webp",
+      department: 'Master of Computer Applications',
+      email: 'gourabbistu@gmail.com',
+      description: 'Gourab leads the web development team, ensuring digital presence and technical resources for NSS initiatives.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/gourabbistu/',
         twitter: '#',
         instagram: '#'
       }
@@ -853,20 +859,6 @@ export const teamMembers = {
       description: 'Utkarsh manages content creation and messaging strategy for all NSS communications and outreach materials.',
       social: {
         linkedin: 'https://www.linkedin.com/in/utkarsh-shukla-bb1a01257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-        twitter: '#',
-        instagram: '#'
-      }
-    },
-    {
-      id: 9,
-      name: 'Gourab Bistu',
-      position: 'Web Head',
-      image: "/core-team/gourab-bistu.webp",
-      department: 'B.Tech, Master of Computer Applications',
-      email: 'gourabbistu@gmail.com',
-      description: 'Gourab leads the web development team, ensuring digital presence and technical resources for NSS initiatives.',
-      social: {
-        linkedin: 'https://www.linkedin.com/in/gourabbistu/',
         twitter: '#',
         instagram: '#'
       }

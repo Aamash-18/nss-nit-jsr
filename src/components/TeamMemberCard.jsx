@@ -13,14 +13,14 @@ const TeamMemberCard = ({ member }) => {
   return (
     <motion.div
       variants={cardVariants}
-      className="relative group"
+      className="relative group "
       whileHover="hover"
     >
       {/* Outer glow effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
       
       {/* Main card */}
-      <div className="relative bg-[#0a0a20]/80 backdrop-blur-lg rounded-2xl p-6 border border-blue-500/10 shadow-lg transition-all duration-500 group-hover:border-blue-500/30 overflow-hidden z-10">
+      <div className="relative bg-[#0a0a20]/80 backdrop-blur-lg rounded-2xl p-6 border border-blue-500/10 shadow-lg transition-all duration-500 group-hover:border-blue-500/30 overflow-hidden z-10 max-h-[350px] min-h-[350px] ">
         {/* Background pattern */}
         <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-blue-500/30 to-transparent rounded-full -mr-20 -mt-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-purple-500/30 to-transparent rounded-full -ml-20 -mb-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
