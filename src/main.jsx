@@ -1,10 +1,13 @@
-import { StrictMode } from 'react'
+import { lazy, StrictMode , Suspense} from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
+import NSSLoader from './components/NSSLoader'
+const App = lazy(() => import('./App'))
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <Suspense fallback={<NSSLoader />}>
+      <App />
+    </Suspense>
   </StrictMode>,
 )

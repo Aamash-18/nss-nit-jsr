@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 import NotFoundPage from "./pages/NotFoundPage";
+import NSSLoader from "./components/NSSLoader";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/team" element={<Team />} />/
             <Route path="/contact" element={<Contact />} />
           </Route>
+            <Route path="/a" element={<NSSLoader/>} />
             <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>

@@ -104,7 +104,7 @@ const Footer = () => {
         ))}
       </div>
       
-      <div className="container mx-auto px-6 pt-24 pb-12 relative z-10">
+      <div className="container mx-auto px-6 md:px-20 pt-24 pb-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Brand section with enhanced animation */}
           <motion.div 
@@ -131,10 +131,16 @@ const Footer = () => {
                 </motion.span>
               </span>
             </Link>
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              National Service Scheme at NIT Jamshedpur - Empowering students through community service, 
-              fostering leadership skills, and creating positive social impact through meaningful volunteer initiatives.
-            </p>
+            
+          <motion.div className="flex flex-wrap gap-4 items-center">
+            <div>
+            <img src="./logo/logo1.webp" className='md:w-[171px] w-[120px]' alt="" />
+            </div>
+            <div>
+            {/* <img src="./logo/NSSlogo.webp" className='md:w-[141px] w-[90px]' alt="" /> */}
+            </div>
+          </motion.div>
+           
       
           </motion.div>
 
