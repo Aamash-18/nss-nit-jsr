@@ -17,6 +17,8 @@ import {
   FaInfoCircle
 } from "react-icons/fa";
 import { galleryEventsDetailed } from "../utils/data";
+import { CgArrowLeft } from "react-icons/cg";
+import { ChevronLeft } from "lucide-react";
 
 const EventGallery = () => {
   const { eventId } = useParams();
@@ -193,18 +195,18 @@ const EventGallery = () => {
         </div>
         
         {/* Navigation Bar */}
-        <div className="absolute top-0 left-0 right-0 z-20 px-6 py-8">
+        <div className="absolute md:top-0 top-2 md:left-0 right-0 z-20 px-3 py-2 md:px-6 md:py-4">
           <div className="container mx-auto">
             <motion.button
               onClick={() => navigate("/gallery")}
-              className="flex items-center gap-2 text-white backdrop-blur-md bg-white/10 rounded-xl px-5 py-3 border border-white/10 hover:bg-white/20 transition-all"
+              className="flex items-center gap-2 text-white backdrop-blur-md bg-white/10 rounded-xl md:px-5 md:py-3 px-2 py-1 border border-white/10 hover:bg-white/20 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <FaArrowLeft size={16} />
+              <ChevronLeft size={16} />
               <span>Back to Gallery</span>
             </motion.button>
           </div>
@@ -219,13 +221,13 @@ const EventGallery = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                <span className={`inline-block px-4 py-2 bg-gradient-to-r ${getCategoryColor(event.category)} text-white text-sm font-medium rounded-xl mb-6`}>
+                <span className={`inline-block px-2 py-1 md:px-4 md:py-2 bg-gradient-to-r ${getCategoryColor(event.category)} text-white text-sm font-medium rounded-xl mb-6 hidden md:inline`}>
                   {event.category.charAt(0).toUpperCase() + event.category.slice(1)}
                 </span>
               </motion.div>
               
               <motion.h1 
-                className="text-5xl sm:text-6xl font-bold text-white mb-6 leading-tight"
+                className="md:text-5xl sm:text-4xl text-4xl font-bold text-white mb-6 leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
@@ -234,7 +236,7 @@ const EventGallery = () => {
               </motion.h1>
               
               <motion.div 
-                className="flex flex-wrap gap-8 text-white/90"
+                className="flex flex-col md:flex-row  md:gap-8 gap-3 text-white/90"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
