@@ -1,54 +1,133 @@
-import React from 'react';
+import React, { useState } from "react";
+
 const events = [
   {
-    name: 'Blood Donation',
-    bg: 'bg-[#0b1120]', 
-    image: './images/cloth.jpg',
+    name: "Blood Donation Camp",
+    category: "Health",
+    description: "Join our annual blood donation drive in collaboration with the local hospital.",
+    icon: "🩸"
   },
   {
-    name: 'Cloth Donation',
-    bg: 'bg-gradient-to-b from-[#2C3E50] to-[#1a2e44]',
-    image: './images/cloth.jpg',
+    name: "Tree Plantation Drive",
+    category: "Environment",
+    description: "Help us make our planet greener by planting trees in and around our campus.",
+    icon: "🌱"
   },
   {
-    name: 'Swachchhata Pakhwara',
-    bg: 'bg-[#1d1d1d]', 
-    image: './images/cloth.jpg',
+    name: "Leadership Workshop",
+    category: "Skill Development",
+    description: "Develop your leadership skills through interactive sessions by industry experts.",
+    icon: "👥"
   },
   {
-    name: 'Run For Unity',
-    bg: 'bg-gradient-to-b from-[#0a0a1a] to-[#111133]', // dark gray with a subtle purple undertone (solid color)
-    image: './images/cloth.jpg',
+    name: "Swachchhata Pakhwara",
+    category: "Environment",
+    description: "Clean surroundings. Clean habits. Clean future.",
+    icon: "🧹"
   },
+  {
+    name: "Run For Unity",
+    category: "Health",
+    description: "Race towards a united India. One stride at a time.",
+    icon: "🏃"
+  },
+  {
+    name: "Digital Literacy Workshop",
+    category: "Education",
+    description: "Learn essential digital skills for the modern world.",
+    icon: "💻"
+  }
 ];
 
+export default function EventShowcase() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const eventsPerPage = 3;
+  
+  // Calculate total pages
+  const totalPages = Math.ceil(events.length / eventsPerPage);
+  
+  // Get current events
+  const indexOfLastEvent = currentPage * eventsPerPage;
+  const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+  const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
 
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const getCategoryColor = (category) => {
+    switch(category) {
+      case "Health": return "text-blue-400";
+      case "Environment": return "text-purple-400";
+      case "Skill Development": return "text-teal-400";
+      case "Education": return "text-orange-400";
+      default: return "text-gray-400";
+    }
+  };
 
-export default function Intro() {
+  const getCategoryBgColor = (category) => {
+    switch(category) {
+      case "Health": return "bg-blue-900/20";
+      case "Environment": return "bg-purple-900/20";
+      case "Skill Development": return "bg-teal-900/20";
+      case "Education": return "bg-orange-900/20";
+      default: return "bg-gray-800/30";
+    }
+  };
+
   return (
-    <div className="relative w-full">
-      {events.map((event, idx) => (
-        <div
-        key={idx}
-        className={`sticky top-0 h-screen z-[${10 + idx * 10}] ${event.bg} flex flex-col ${idx % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}
-      >
-          <div className="w-full md:w-1/2 h-1/2 md:h-full relative">
-            <img
-              src={event.image}
-              alt={event.name}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30" />
-          </div>
-
-          <div className="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center px-6 md:px-12 text-white">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center md:text-left">
-              {event.name}
-            </h1>
-          </div>
+    <section className="w-full bg-black text-white py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-5xl font-bold mb-2">
+            Our <span className="text-pink-500">Events</span>
+          </h2>
+          <div className="w-24 h-1 bg-pink-500 mx-auto mt-2 mb-6"></div>
+          <p className="text-lg max-w-3xl mx-auto">
+            Join us in our upcoming events and be a part of the change. 
+            Find the perfect opportunity to contribute and make a difference.
+          </p>
         </div>
-      ))}
-    </div>
+
+        {/* Events Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          {currentEvents.map((event, index) => (
+            <div 
+              key={index} 
+              className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden transition-transform hover:translate-y-1 h-64 flex flex-col"
+            >
+              <div className={`p-6 ${getCategoryBgColor(event.category)} flex-1 flex flex-col`}>
+                <div className="flex items-start justify-between mb-4">
+                  <div className="bg-gray-800 p-4 rounded-lg">
+                    {event.icon && (
+                      <span className="text-2xl">{event.icon}</span>
+                    )}
+                  </div>
+                  <span className={getCategoryColor(event.category)}>
+                    {event.category}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold mb-2">{event.name}</h3>
+                <p className="text-gray-400 text-sm flex-1">{event.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="flex justify-center gap-2">
+          {Array.from({ length: totalPages }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => paginate(index + 1)}
+              className={`w-3 h-3 rounded-full transition ${
+                currentPage === index + 1 ? "bg-white" : "bg-white/30"
+              }`}
+              aria-label={`Page ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
