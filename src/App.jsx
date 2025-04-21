@@ -13,11 +13,13 @@ import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 import NotFoundPage from "./pages/NotFoundPage";
 import NSSLoader from "./components/NSSLoader";
+import Scrollbar from "./components/Scrollbar";
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
+        <Scrollbar/>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<MainLayout />}>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Calendar, ArrowRight, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const events = [
   {
@@ -205,12 +206,12 @@ export default function EventShowcase() {
 
         {/* View All Events Button */}
         <div className="text-center mt-8">
-          <a 
-            href="/events" 
+          <Link 
+            to="/events" 
             className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-pink-600 to-pink-500 hover:from-pink-500 hover:to-pink-400 text-white font-medium rounded-lg transition-all duration-300 transform hover:translate-y-1 shadow-lg hover:shadow-xl"
           >
             View All Events <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

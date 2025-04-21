@@ -31,6 +31,8 @@ import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
+import Scrollbar from '../components/Scrollbar';
+import BackToTopButton from '../components/BackToTopButton';
 const MainLayout = () => {
   useEffect(() => {
     // Function to update scrollbar color based on scroll position
@@ -111,9 +113,9 @@ const MainLayout = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen overflow-hidden">
+    <div className="flex flex-col min-h-screen overflow-hidden  relative">
       {/* <Navbar /> */}
-
+      {/* <Scrollbar/> */}
       <Navigation/>
       <AnimatePresence mode="wait">
         <motion.main
@@ -126,6 +128,7 @@ const MainLayout = () => {
           <Outlet />
         </motion.main>
       </AnimatePresence>
+      <BackToTopButton/>
       <Footer />
     </div>
   );

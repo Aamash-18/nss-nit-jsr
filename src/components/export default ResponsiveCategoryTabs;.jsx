@@ -22,7 +22,7 @@ const ResponsiveCategoryTabs = ({ categories, activeCategory, setActiveCategory 
   }, []);
 
   return (
-    <section className="py-8 relative z-20 mb-16">
+    <section className="py-8 relative z-20 mb:mb-8">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,12 +32,12 @@ const ResponsiveCategoryTabs = ({ categories, activeCategory, setActiveCategory 
         >
           {/* Responsive container - scrollable on mobile */}
           <div className={`
-            ${isMobile ? 'w-full overflow-x-auto pb-4 hide-scrollbar' : 'flex justify-center'}
+            ${isMobile ? 'w-full overflow-x-auto px-4 pb-4 hide-scrollbar' : 'flex justify-center'}
           `}>
             <div className={`
               flex bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden p-2 
-              shadow-2xl shadow-indigo-500/10 border border-white/10
-              ${isMobile ? 'w-max' : 'w-auto'}
+              shadow-2xl shadow-indigo-500/10 border mx-auto border-white/10
+              ${isMobile ? 'w-max gap-x-3' : 'w-max'}
             `}>
               {categories.map((category) => {
                 const Icon = category.icon;
@@ -62,8 +62,8 @@ const ResponsiveCategoryTabs = ({ categories, activeCategory, setActiveCategory 
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
                     )}
-                    <Icon className={`${isMobile ? 'text-lg' : 'text-xl'} ${isActive ? 'text-white' : 'text-gray-400'}`} />
-                    <span className={isMobile ? 'text-sm' : ''}>{category.label}</span>
+                    <Icon className={`${isMobile ? 'text-xl' : 'text-xl'} ${isActive ? 'text-white' : 'text-gray-400'}`} />
+                    <span className={isMobile ? 'hidden' : ''}>{category.label}</span>
                   </motion.button>
                 );
               })}

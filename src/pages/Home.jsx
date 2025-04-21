@@ -11,7 +11,9 @@ const Home = () => {
     <div className="w-full h-auto border-l-2 border-r-2 border-[#7134a289] max-[767px]:border-l-0 max-[767px]:border-r-0">
     <Hero />
     <ImpactDashboard />
+    <div id="event-section">
     <EventShowcase />
+    </div>
     <Impact />
     <TestimonialSection/>
   </div>

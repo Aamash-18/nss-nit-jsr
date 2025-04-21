@@ -106,7 +106,7 @@ const NSSLoader = () => {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -30, opacity: 0 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.5 }}
               className="flex items-center gap-3"
             >
               <Rocket className="text-purple-400 animate-pulse" />

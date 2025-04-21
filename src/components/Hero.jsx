@@ -1,7 +1,57 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CalendarCheck, ArrowRight } from 'lucide-react';
 
 export default function Hero() {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  const scrollToEventSection = () => {
+    const eventSection = document.getElementById('event-section');
+    if (eventSection) {
+      eventSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
+  const buttonVariants = {
+    initial: { 
+      scale: 1,
+      boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)"
+    },
+    hover: { 
+      scale: 1.03, 
+      boxShadow: "0px 8px 25px rgba(91, 33, 182, 0.35)" 
+    },
+    tap: { 
+      scale: 0.98,
+      boxShadow: "0px 3px 10px rgba(0, 0, 0, 0.15)" 
+    }
+  };
+  
+  const shineVariants = {
+    initial: { x: "-100%" },
+    hover: { 
+      x: "100%", 
+      transition: { duration: 1, ease: "easeInOut" } 
+    }
+  };
+  
+  const arrowVariants = {
+    initial: { x: -10, opacity: 0 },
+    hover: { 
+      x: 0, 
+      opacity: 1, 
+      transition: { duration: 0.3 } 
+    }
+  };
+  
+  const iconVariants = {
+    initial: { scale: 1 },
+    hover: { 
+      scale: 1.15,
+      transition: { duration: 0.3, yoyo: Infinity, repeatDelay: 0.5 } 
+    }
+  };
+  
   // Enhanced motto array with richer gradient definitions
   const mottos = [
     { 
@@ -93,31 +143,6 @@ export default function Hero() {
     }
   };
   
-  // Button animation
-  const buttonVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: { 
-      scale: 1, 
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 15,
-        delay: 1
-      }
-    },
-    hover: { 
-      scale: 1.05,
-      boxShadow: "0 15px 30px -5px rgba(0, 0, 0, 0.3)",
-      backgroundPosition: "right center",
-      transition: { duration: 0.4 }
-    },
-    tap: { 
-      scale: 0.95,
-      boxShadow: "0 5px 15px -5px rgba(0, 0, 0, 0.3)",
-      transition: { duration: 0.2 }
-    }
-  };
 
   // Social media icon animations
   const socialIconVariants = {
@@ -270,25 +295,46 @@ export default function Hero() {
         </motion.div>
         
         {/* Enhanced CTA Button with Animated Gradient */}
+
+
+
+    <div className="">
+      <motion.button
+        onClick={scrollToEventSection}
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        variants={buttonVariants}
+        initial="initial"
+        whileHover="hover"
+        whileTap="tap"
+        className="relative px-8 py-4 rounded-lg overflow-hidden"
+      >
+        {/* Base background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-800 via-purple-700 to-fuchsia-600 opacity-95  rounded-[2.5rem]"></div>
+        
+        {/* Shine effect */}
         <motion.div 
-          variants={childrenVariants} 
-          className="mt-4"
-        >
-          <motion.button 
-            variants={buttonVariants}
-            whileHover="hover"
-            whileTap="tap"
-            className="relative overflow-hidden bg-gradient-to-r from-violet-500 via-cyan-500 to-teal-300 bg-size-200 bg-pos-0 text-white font-bold py-4 px-10 rounded-full shadow-lg border border-white/10"
-          >
-            <motion.span
-              initial={{ left: "-100%" }}
-              whileHover={{ left: "100%" }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute top-0 bottom-0 w-1/2 -inset-y-full bg-gradient-to-r from-transparent via-white/10 to-transparent"
-            />
-            Join The Movement
-          </motion.button>
-        </motion.div>
+          className="absolute top-0 left-0 w-2/3 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent"
+          variants={shineVariants}
+          initial="initial"
+          whileHover="hover"
+        />
+        
+        {/* Button content with animations */}
+        <div className="relative flex items-center justify-center gap-3">
+          <motion.div variants={iconVariants} initial="initial" whileHover="hover">
+            <CalendarCheck className="w-5 h-5 text-violet-100" />
+          </motion.div>
+          
+          <span className="font-medium text-white tracking-wider">Register Event</span>
+          
+          <motion.div variants={arrowVariants} initial="initial" animate={isHovered ? "hover" : "initial"}>
+            <ArrowRight className="w-5 h-5 text-violet-100" />
+          </motion.div>
+        </div>
+      </motion.button>
+    </div>
+
       </motion.div>
 
       {/* Social Media Icons with Glass Morphism Effect */}

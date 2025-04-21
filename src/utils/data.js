@@ -1194,3 +1194,39 @@ export const teamMembers = {
     },
   ],
 };
+
+export const projectData = {
+  all: {
+    volunteers: 3842,
+    events: 197,
+    hours: 28564,
+    projects: [
+      { id: 1, title: "Mangrove Restoration", location: "Coastal Zone B", category: "Environment", people: 245, impact: "5,000+ trees planted", lat: 22.78, lng: 86.18 },
+      { id: 2, title: "Free Medical Camp", location: "Ghorabandha", category: "Health", people: 823, impact: "1,200+ patients treated", lat: 22.80, lng: 86.20 },
+      { id: 3, title: "Children's Education Drive", location: "Jamshedpur East", category: "Education", people: 156, impact: "500+ students mentored", lat: 22.79, lng: 86.19 },
+      { id: 4, title: "Clean River Initiative", location: "Subarnarekha Banks", category: "Environment", people: 312, impact: "8 km waterway cleaned", lat: 22.81, lng: 86.17 },
+      { id: 5, title: "Digital Literacy Program", location: "Sakchi", category: "Education", people: 178, impact: "300+ seniors trained", lat: 22.77, lng: 86.21 },
+      { id: 6, title: "Mental Health Awareness", location: "Bistupur", category: "Health", people: 203, impact: "25 workshops conducted", lat: 22.82, lng: 86.22 }
+    ]
+  },
+  "2024": {
+    volunteers: 1842,
+    events: 97,
+    hours: 14564,
+    projects: [
+      { id: 1, title: "Mangrove Restoration", location: "Coastal Zone B", category: "Environment", people: 245, impact: "5,000+ trees planted", lat: 22.78, lng: 86.18 },
+      { id: 2, title: "Free Medical Camp", location: "Ghorabandha", category: "Health", people: 823, impact: "1,200+ patients treated", lat: 22.80, lng: 86.20 },
+      { id: 3, title: "Children's Education Drive", location: "Jamshedpur East", category: "Education", people: 156, impact: "500+ students mentored", lat: 22.79, lng: 86.19 }
+    ]
+  },
+  "2023": {
+    volunteers: 2000,
+    events: 100,
+    hours: 14000,
+    projects: [
+      { id: 4, title: "Clean River Initiative", location: "Subarnarekha Banks", category: "Environment", people: 312, impact: "8 km waterway cleaned", lat: 22.81, lng: 86.17 },
+      { id: 5, title: "Digital Literacy Program", location: "Sakchi", category: "Education", people: 178, impact: "300+ seniors trained", lat: 22.77, lng: 86.21 },
+      { id: 6, title: "Mental Health Awareness", location: "Bistupur", category: "Health", people: 203, impact: "25 workshops conducted", lat: 22.82, lng: 86.22 }
+    ]
+  }
+};
