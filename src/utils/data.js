@@ -1201,12 +1201,28 @@ export const projectData = {
     events: 197,
     hours: 28564,
     projects: [
-      { id: 1, title: "Mangrove Restoration", location: "Coastal Zone B", category: "Environment", people: 245, impact: "5,000+ trees planted", lat: 22.78, lng: 86.18 },
-      { id: 2, title: "Free Medical Camp", location: "Ghorabandha", category: "Health", people: 823, impact: "1,200+ patients treated", lat: 22.80, lng: 86.20 },
-      { id: 3, title: "Children's Education Drive", location: "Jamshedpur East", category: "Education", people: 156, impact: "500+ students mentored", lat: 22.79, lng: 86.19 },
-      { id: 4, title: "Clean River Initiative", location: "Subarnarekha Banks", category: "Environment", people: 312, impact: "8 km waterway cleaned", lat: 22.81, lng: 86.17 },
-      { id: 5, title: "Digital Literacy Program", location: "Sakchi", category: "Education", people: 178, impact: "300+ seniors trained", lat: 22.77, lng: 86.21 },
-      { id: 6, title: "Mental Health Awareness", location: "Bistupur", category: "Health", people: 203, impact: "25 workshops conducted", lat: 22.82, lng: 86.22 }
+      { id: 1, title: "Blood Donation Camp", location: "Lecture Hall Complex, NIT Jamshedpur", category: "Health & Community Service", people: 250, impact: "promoted awareness on blood donation", lat: 22.7750, lng: 86.1485 },
+      { id: 2, title: "Session on Farm Animals and Us", location: "NIT Jamshedpur Campus", category: "Animal Welfare & Ethics", people: 100, impact: "Raised awareness on animal exploitation and promoted ethical consumption", lat: 22.7750, lng: 86.1485 },
+      { id: 3, title: "Blood Donation Camp organized by Shri Shanidev Bhakt Mandali Trust", location: "Near Aaieda Campus, Adityapur, Jamshedpur", category: "Health & Community Service", people: 300, impact: "Targeted 1500 blood units with strong NSS volunteer support", lat: 22.7890, lng: 86.1445 },
+      { id: 4, title: "Sandhya Pheri - Voter Awareness Rally", location: "NIT Jamshedpur Campus", category: "Civic Engagement", people: 250, impact: "Promoted youth awareness and responsibility towards voting rights", lat: 22.7755, lng: 86.1487 },
+      { id: 5, title: "Panel Discussion on No-Tobacco Day", location: "Online", category: "Health Awareness", people: 100, impact: "Raised awareness on tobacco risks and prevention strategies", lat: 22.7755, lng: 86.1487 },
+      { id: 6, title: "Cleanliness Drive - Swachhta Pakhwada", location: "NIT Jamshedpur", category: "Environmental Awareness", people: 100, impact: "Promoted cleanliness and waste segregation", lat: 22.7755, lng: 86.1487 },
+      { id: 7, title: "Cloth Donation", location: "NIT Jamshedpur", category: "Social Welfare", people: 200, impact: "Collected and distributed over 1000 clothes to support those in need", lat: 22.7755, lng: 86.1487},
+      { id: 8, title: "Tiranga Yatra", location: "NIT Jamshedpur", category: "Patriotic Event", people: 150, impact: "Promoted national pride and unity", lat: 22.7755, lng: 86.1487},
+      { id: 9, title: "Debate Competition", location: "Seminar Hall, NIT Jamshedpur", category: "Awareness", people: 120, impact: "Encouraged critical thinking and social responsibility", lat: 22.7766, lng: 86.1437 },
+      { id: 10, title: "World Bicycle Day Rally", location: "NIT Jamshedpur Campus", category: "Health & Awareness", people: 250, impact: "Promoted cycling for health and raised awareness", lat: 22.7753, lng: 86.1489 },
+      { id: 11, title: "Oath Taking Ceremony on World Environment Day", location: "NIT Jamshedpur Campus", category: "Environment", people: 200, impact: "Promoted environmental conservation and sustainability", lat: 22.7750, lng: 86.1485 },
+      { id: 12, title: "World Science Day Seminar", location: "NIT Jamshedpur", category: "Science Awareness", people: 150, impact: "Promoted scientific knowledge and its importance in society", lat: 22.7755, lng: 86.1487 },
+      { id: 13, title: "International Yoga Day", location: "Online", category: "Health and Wellness", people: 120, impact: "Promoted mindfulness and yoga practices for mental and physical well-being", lat: 22.7755, lng: 86.1487 },
+      { id: 14, title: "Doctors' Day Celebration", location: "NIT Jamshedpur Campus", category: "Health Awareness", people: 100, impact: "Honored medical professionals and raised awareness about healthcare", lat: 22.7755, lng: 86.1487 },
+      { id: 15, title: "Plantation Drive", location: "NIT Jamshedpur Campus", category: "Environment", people: 200, impact: "Promoted environmental sustainability through tree planting", lat: 22.7755, lng: 86.1487 },
+      { id: 16, title: "Social Awareness by School Visit", location: "Local Schools, Adityapur", category: "Social Outreach", people: 80, impact: "Raised awareness on social issues among school children", lat: 22.7755, lng: 86.1487 },
+      { id: 17, title: "Udgam", location: "NIT Jamshedpur Campus", category: "Educational Outreach", people: 70, impact: "Engaged school students in campus activities and inspired them towards academic and extracurricular excellence", lat: 22.7755, lng: 86.1487 },
+      { id: 18, title: "Raksha Bandhan with Security Guard and Rakhi for Army", location: "NIT Jamshedpur", category: "Cultural", people: 50, impact: "Fostered bonds of respect and gratitude between students and security guards", lat: 22.7755, lng: 86.1487},
+      { id: 19, title: "Fit India Freedom Run", location: "NIT Jamshedpur", category: "Sports", people: 150, impact: "Encouraged physical fitness and national pride through an inclusive run", lat: 22.7755, lng: 86.1487},
+      { id: 20, title: "Amrit Kalash Yatra", location: "NIT Jamshedpur", category: "Cultural", people: 200, impact: "Celebrated India’s heritage and promoted community participation in national celebrations", lat: 22.7755, lng: 86.1487},
+      { id: 21, title: "Swachhata hi Sewa Cleanliness Drive", location: "NIT Jamshedpur", category: "Environmental Awareness", people: 120, impact: "Encouraged cleanliness and environmental responsibility", lat: 22.7755, lng: 86.1487},
+      { id: 22, title: "Mental Health Awareness", location: "Bistupur", category: "Health", people: 203, impact: "25 workshops conducted", lat: 22.82, lng: 86.22 }
     ]
   },
   "2024": {
@@ -1214,9 +1230,14 @@ export const projectData = {
     events: 97,
     hours: 14564,
     projects: [
-      { id: 1, title: "Mangrove Restoration", location: "Coastal Zone B", category: "Environment", people: 245, impact: "5,000+ trees planted", lat: 22.78, lng: 86.18 },
-      { id: 2, title: "Free Medical Camp", location: "Ghorabandha", category: "Health", people: 823, impact: "1,200+ patients treated", lat: 22.80, lng: 86.20 },
-      { id: 3, title: "Children's Education Drive", location: "Jamshedpur East", category: "Education", people: 156, impact: "500+ students mentored", lat: 22.79, lng: 86.19 }
+      { id: 1, title: "Blood Donation Camp", location: "Lecture Hall Complex, NIT Jamshedpur", category: "Health & Community Service", people: 250, impact: "promoted awareness on blood donation", lat: 22.7750, lng: 86.1485 },
+      { id: 2, title: "Session on Farm Animals and Us", location: "NIT Jamshedpur Campus", category: "Animal Welfare & Ethics", people: 100, impact: "Raised awareness on animal exploitation and promoted ethical consumption", lat: 22.7750, lng: 86.1485 },
+      { id: 3, title: "Blood Donation Camp organized by Shri Shanidev Bhakt Mandali Trust", location: "Near Aaieda Campus, Adityapur, Jamshedpur", category: "Health & Community Service", people: 300, impact: "Targeted 1500 blood units with strong NSS volunteer support", lat: 22.7890, lng: 86.1445 },
+      { id: 4, title: "Sandhya Pheri - Voter Awareness Rally", location: "NIT Jamshedpur Campus", category: "Civic Engagement", people: 250, impact: "Promoted youth awareness and responsibility towards voting rights", lat: 22.7755, lng: 86.1487 },
+      { id: 5, title: "Panel Discussion on No-Tobacco Day", location: "Online", category: "Health Awareness", people: 100, impact: "Raised awareness on tobacco risks and prevention strategies", lat: 22.7755, lng: 86.1487 },
+      { id: 6, title: "Cleanliness Drive - Swachhta Pakhwada", location: "NIT Jamshedpur", category: "Environmental Awareness", people: 100, impact: "Promoted cleanliness and waste segregation", lat: 22.7755, lng: 86.1487 },
+      {id: 7, title: "Cloth Donation", location: "NIT Jamshedpur", category: "Social Welfare", people: 200, impact: "Collected and distributed over 1000 clothes to support those in need", lat: 22.7755, lng: 86.1487},
+      {id: 8, title: "Tiranga Yatra", location: "NIT Jamshedpur", category: "Patriotic Event", people: 150, impact: "Promoted national pride and unity", lat: 22.7755, lng: 86.1487},
     ]
   },
   "2023": {
@@ -1224,9 +1245,27 @@ export const projectData = {
     events: 100,
     hours: 14000,
     projects: [
-      { id: 4, title: "Clean River Initiative", location: "Subarnarekha Banks", category: "Environment", people: 312, impact: "8 km waterway cleaned", lat: 22.81, lng: 86.17 },
-      { id: 5, title: "Digital Literacy Program", location: "Sakchi", category: "Education", people: 178, impact: "300+ seniors trained", lat: 22.77, lng: 86.21 },
-      { id: 6, title: "Mental Health Awareness", location: "Bistupur", category: "Health", people: 203, impact: "25 workshops conducted", lat: 22.82, lng: 86.22 }
+      { id: 9, title: "Debate Competition", location: "Seminar Hall, NIT Jamshedpur", category: "Awareness", people: 120, impact: "Encouraged critical thinking and social responsibility", lat: 22.7766, lng: 86.1437 },
+      { id: 10, title: "World Bicycle Day Rally", location: "NIT Jamshedpur Campus", category: "Health & Awareness", people: 250, impact: "Promoted cycling for health and raised awareness", lat: 22.7753, lng: 86.1489 },
+      { id: 11, title: "Oath Taking Ceremony on World Environment Day", location: "NIT Jamshedpur Campus", category: "Environment", people: 200, impact: "Promoted environmental conservation and sustainability", lat: 22.7750, lng: 86.1485 },
+      { id: 12, title: "World Science Day Seminar", location: "NIT Jamshedpur", category: "Science Awareness", people: 150, impact: "Promoted scientific knowledge and its importance in society", lat: 22.7755, lng: 86.1487 },
+      { id: 13, title: "International Yoga Day", location: "Online", category: "Health and Wellness", people: 120, impact: "Promoted mindfulness and yoga practices for mental and physical well-being", lat: 22.7755, lng: 86.1487 },
+      { id: 14, title: "Doctors' Day Celebration", location: "NIT Jamshedpur Campus", category: "Health Awareness", people: 100, impact: "Honored medical professionals and raised awareness about healthcare", lat: 22.7755, lng: 86.1487 },
+      { id: 15, title: "Plantation Drive", location: "NIT Jamshedpur Campus", category: "Environment", people: 200, impact: "Promoted environmental sustainability through tree planting", lat: 22.7755, lng: 86.1487 },
+      { id: 16, title: "Social Awareness by School Visit", location: "Local Schools, Adityapur", category: "Social Outreach", people: 80, impact: "Raised awareness on social issues among school children", lat: 22.7755, lng: 86.1487 },
+      { id: 17, title: "Udgam", location: "NIT Jamshedpur Campus", category: "Educational Outreach", people: 70, impact: "Engaged school students in campus activities and inspired them towards academic and extracurricular excellence", lat: 22.7755, lng: 86.1487 },
+      {id: 18, title: "Raksha Bandhan with Security Guard and Rakhi for Army", location: "NIT Jamshedpur", category: "Cultural", people: 50, impact: "Fostered bonds of respect and gratitude between students and security guards", lat: 22.7755, lng: 86.1487},
+      {id: 19, title: "Fit India Freedom Run", location: "NIT Jamshedpur", category: "Sports", people: 150, impact: "Encouraged physical fitness and national pride through an inclusive run", lat: 22.7755, lng: 86.1487},
+      {id: 20, title: "Amrit Kalash Yatra", location: "NIT Jamshedpur", category: "Cultural", people: 200, impact: "Celebrated India’s heritage and promoted community participation in national celebrations", lat: 22.7755, lng: 86.1487},
+      {id: 21, title: "Swachhata hi Sewa Cleanliness Drive", location: "NIT Jamshedpur", category: "Environmental Awareness", people: 120, impact: "Encouraged cleanliness and environmental responsibility", lat: 22.7755, lng: 86.1487}
+   ]
+  },
+  "2022": {
+    volunteers: 1700,
+    events: 90,
+    hours: 13000,
+    projects: [
+      { id: 22, title: "Mental Health Awareness", location: "Bistupur", category: "Health", people: 203, impact: "25 workshops conducted", lat: 22.82, lng: 86.22 }
     ]
   }
 };
