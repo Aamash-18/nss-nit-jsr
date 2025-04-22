@@ -287,42 +287,63 @@ export const CharityImpactDashboard = () => {
             
             {/* Selected Project Info Box */}
             {selectedProject && (
-              <div 
-                className="absolute left-1/2 bottom-8 transform -translate-x-1/2 w-72 bg-slate-800/90 backdrop-blur-md rounded-xl p-4 shadow-2xl border border-slate-700/80 z-30"
-              >
-                <div className="flex items-start gap-3">
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${categoryConfig[selectedProject.category].gradient} flex items-center justify-center mt-1`}>
-                    {categoryConfig[selectedProject.category].icon}
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-white text-lg">{selectedProject.title}</h4>
-                    <p className="text-sm text-gray-300">{selectedProject.location}</p>
-                    
-                    <div className="mt-3 grid grid-cols-2 gap-2">
-                      <div className="bg-slate-700/50 rounded-lg p-2">
-                        <div className="text-xs text-gray-400">People Involved</div>
-                        <div className="font-semibold text-cyan-400">{selectedProject.people}</div>
-                      </div>
-                      <div className="bg-slate-700/50 rounded-lg p-2">
-                        <div className="text-xs text-gray-400">Impact</div>
-                        <div className="font-semibold text-sky-400">{selectedProject.impact}</div>
-                      </div>
-                    </div>
-                    
-                    <div className="mt-3 flex justify-between">
-                      <span className={`text-xs px-2 py-1 rounded-lg bg-${categoryConfig[selectedProject.category].accent}/20 text-${categoryConfig[selectedProject.category].accent}`}>
-                        {selectedProject.category}
-                      </span>
-                      <button 
-                        className="text-xs px-2 py-1 bg-slate-700/70 hover:bg-slate-600 rounded-lg text-gray-300 transition-colors duration-200"
-                        onClick={() => setSelectedProject(null)}
-                      >
-                        Close
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+             <div className="absolute left-1/2 bottom-8 transform -translate-x-1/2 w-96 bg-slate-800/95 backdrop-blur-md rounded-2xl p-5 shadow-2xl border border-slate-600/30 z-30">
+             {/* Header Section with Close Button */}
+             <div className="flex items-center justify-between mb-3">
+               <div className="flex items-center gap-3">
+                 <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${categoryConfig[selectedProject.category].gradient} flex items-center justify-center shadow-lg`}>
+                   {categoryConfig[selectedProject.category].icon}
+                 </div>
+                 <div>
+                   <h4 className="font-bold text-white text-xl leading-tight">{selectedProject.title}</h4>
+                   <div className="flex items-center mt-1">
+                     <svg className="w-3 h-3 text-gray-400 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                     </svg>
+                     <p className="text-xs text-gray-300">{selectedProject.location}</p>
+                   </div>
+                 </div>
+               </div>
+               <button
+                 className="w-8 h-8 flex items-center justify-center bg-red-500 hover:bg-red-600 rounded-full text-white transition-colors duration-200 shadow-md"
+                 onClick={() => setSelectedProject(null)}
+               >
+                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                 </svg>
+               </button>
+             </div>
+             
+             {/* Category Badge */}
+             <div className="mb-4">
+               <span className={`text-xs font-medium px-3 py-1.5 rounded-full bg-${categoryConfig[selectedProject.category].accent}/20 text-${categoryConfig[selectedProject.category].accent} border border-${categoryConfig[selectedProject.category].accent}/30 inline-block`}>
+                 {selectedProject.category}
+               </span>
+             </div>
+             
+             {/* Impact Section - Middle */}
+             <div className="mb-4 bg-slate-700/40 hover:bg-slate-700/60 transition-colors duration-300 rounded-xl p-3 border border-slate-600/20">
+               <div className="flex items-center mb-1">
+                 <svg className="w-4 h-4 mr-1 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                 </svg>
+                 <div className="text-sm font-medium text-gray-300">Impact</div>
+               </div>
+               <div className="font-semibold text-sky-400 text-base pl-5">{selectedProject.impact}</div>
+             </div>
+             
+             {/* People Involved - Bottom */}
+             <div className="bg-slate-700/40 hover:bg-slate-700/60 transition-colors duration-300 rounded-xl p-3 border border-slate-600/20">
+               <div className="flex items-center mb-1">
+                 <svg className="w-4 h-4 mr-1 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                 </svg>
+                 <div className="text-sm font-medium text-gray-300">People Involved</div>
+               </div>
+               <div className="font-semibold text-cyan-400 text-base pl-5">{selectedProject.people}</div>
+             </div>
+           </div>
             )}
           </div>
         </div>
