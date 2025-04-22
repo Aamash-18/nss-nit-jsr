@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { motion, AnimatePresence } from 'framer-motion'
 import './index.css'
 import NSSLoader from './components/NSSLoader'
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 // Regular import for App component to handle loading separately
 const App = lazy(() => import('./App'))
@@ -43,6 +44,7 @@ const Root = () => {
 
   return (
     <StrictMode>
+      <HelmetProvider>
       <div className="relative w-full h-full">
         {/* Cross-fade animation container */}
         <AnimatePresence>
@@ -78,6 +80,7 @@ const Root = () => {
           {appLoaded && <App />}
         </motion.div>
       </div>
+      </HelmetProvider>
     </StrictMode>
   )
 }
