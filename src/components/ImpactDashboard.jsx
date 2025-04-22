@@ -3,7 +3,7 @@ import {
   FaUsers, FaLeaf, FaGraduationCap, FaHeartbeat, 
   FaMapMarkerAlt, FaChartLine, FaCalendarAlt, FaTags 
 } from 'react-icons/fa';
-import { Leaf, HeartPulse, BookOpenText, ListFilter } from "lucide-react"; // Example icons for categories
+import { Leaf, HeartPulse, BookOpenText, ListFilter, Users } from "lucide-react"; // Example icons for categories
 import { projectData } from '../utils/data';
 
 // Category styling configuration
@@ -25,6 +25,12 @@ const categoryConfig = {
     gradient: "from-sky-600 to-blue-900",
     lightGradient: "from-sky-400 to-blue-600",
     accent: "sky-500"
+  },
+  Social: {
+    icon: <FaUsers />,
+    gradient: "from-violet-600 to-indigo-900",
+    lightGradient: "from-violet-400 to-indigo-600",
+    accent: "violet-500"
   }
 };
 
@@ -102,7 +108,7 @@ export const CharityImpactDashboard = () => {
           <div className="flex flex-col sm:flex-row gap-3">
             <div className="relative flex items-center w-fit mx-auto justify-center bg-slate-800/60 backdrop-blur-lg rounded-xl p-2 shadow-lg border border-slate-700">
               <FaCalendarAlt className="text-cyan-500 mx-3" />
-              {["all", "2023", "2024"].map((year) => (
+              {["all", "2022", "2023", "2024"].map((year) => (
                 <button
                   key={year}
                   onClick={() => setYearFilter(year)}
@@ -112,18 +118,19 @@ export const CharityImpactDashboard = () => {
                       : "text-gray-300 hover:bg-slate-700"
                   }`}
                 >
-                  {year === "all" ? "All Years" : year}
+                  {year === "all" ? "All " : year}
                 </button>
               ))}
             </div>
             <div className="relative flex items-center bg-slate-800/60 backdrop-blur-lg rounded-xl p-2 shadow-lg border border-slate-700 overflow-x-auto">
   <FaTags className="text-cyan-500 mx-3 min-w-max" />
-  {["all", "Environment", "Health", "Education"].map((cat) => {
+  {["all", "Environment", "Health", "Education", "Social"].map((cat) => {
     const iconMap = {
       all: <ListFilter className="w-5 h-5" />,
       Environment: <Leaf className="w-5 h-5" />,
       Health: <HeartPulse className="w-5 h-5" />,
       Education: <BookOpenText className="w-5 h-5" />,
+      Social: <Users className="w-5 h-5" />,
     };
 
     return (
@@ -184,7 +191,8 @@ export const CharityImpactDashboard = () => {
               value: yearData.hours,
               gradient: "from-emerald-500 to-green-700",
               decoration: "radial-gradient(circle at top right, rgba(16,185,129,0.3) 0%, transparent 60%)"
-            }
+            },
+            
           ].map((stat, index) => (
             <div
               key={index}
@@ -265,7 +273,7 @@ export const CharityImpactDashboard = () => {
                       background: `radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%)`
                     }}
                   >
-                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${categoryConfig[project.category].gradient} opacity-70 blur-sm group-hover:opacity-100 group-hover:blur-md transition-all duration-300`}></div>
+                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${categoryConfig[project.category].lightGradient} opacity-70 blur-sm group-hover:opacity-100 group-hover:blur-md transition-all duration-300`}></div>
                     <div className={`w-6 h-6 bg-gradient-to-br ${categoryConfig[project.category].lightGradient} rounded-full flex items-center justify-center relative z-10`}>
                       <FaMapMarkerAlt className="text-white text-xs" />
                     </div>
