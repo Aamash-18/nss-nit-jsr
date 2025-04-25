@@ -73,6 +73,56 @@ export const events = [
     link:"health-awareness-camp",
   },
 ];
+export const upcomingEvents = [
+  {
+    name: "Blood Donation Camp",
+    category: "Health",
+    description: "Join our annual blood donation drive in collaboration with the local hospital.",
+    icon: "🩸",
+    date: "May 15, 2025",
+    formLink: "https://forms.google.com/blooddonation"
+  },
+  {
+    name: "Tree Plantation Drive",
+    category: "Environment",
+    description: "Help us make our planet greener by planting trees in and around our campus.",
+    icon: "🌱",
+    date: "May 22, 2025",
+    formLink: "https://forms.google.com/treeplantation"
+  },
+  {
+    name: "Leadership Workshop",
+    category: "Skill Development",
+    description: "Develop your leadership skills through interactive sessions by industry experts.",
+    icon: "👥",
+    date: "June 5, 2025",
+    formLink: "https://forms.google.com/leadershipworkshop"
+  },
+  {
+    name: "Swachchhata Pakhwara",
+    category: "Environment",
+    description: "Clean surroundings. Clean habits. Clean future.",
+    icon: "🧹",
+    date: "June 12, 2025",
+    formLink: "https://forms.google.com/cleanliness"
+  },
+  {
+    name: "Run For Unity",
+    category: "Health",
+    description: "Race towards a united India. One stride at a time.",
+    icon: "🏃",
+    date: "June 20, 2025",
+    formLink: "https://forms.google.com/runforunity"
+  },
+  {
+    name: "Digital Literacy Workshop",
+    category: "Education",
+    description: "Learn essential digital skills for the modern world.",
+    icon: "💻",
+    date: "July 3, 2025",
+    formLink: "https://forms.google.com/digitalliteracy"
+  }
+];
 
 export const galleryEvents = [
   {
@@ -812,7 +862,7 @@ export const teamMembers = {
       name: 'Neeraj Bhatt',
       position: 'EM Head',
       image: '/core-team/Neeraj.webp',
-      department: 'B.Tech, Master of Computer Applications',
+      department: 'Master of Computer Applications',
       email: 'neeraj.bhatt099@gmail.com',
       description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
       social: {
@@ -938,7 +988,7 @@ export const teamMembers = {
       name: 'Bhavesh Gupta',
       position: 'PG Representative',
       image: '/core-team/bhavesh gupta.webp',
-      department: 'B.Tech, Master of Computer Applications',
+      department: 'Master of Computer Applications',
       email: 'bhaveshguptanit@gmail.com',
       description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
       social: {
@@ -952,7 +1002,7 @@ export const teamMembers = {
       name: 'Santosh Kumar Sahani',
       position: 'PG Representative',
       image: '/core-team/Santosh Kumar Sahani.webp',
-      department: 'B.Tech, Master of Computer Applications',
+      department: 'Master of Computer Applications',
       email: 'sks.vssems@gmail.com',
       description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
       social: {
@@ -1025,7 +1075,7 @@ export const teamMembers = {
       name: 'Ayush Das',
       position: 'Joint Secretary',
       image: '/core-team/Ayush 1.webp',
-      department: 'B.Tech,Master of Computer Applications',
+      department: 'Master of Computer Applications',
       email: 'ayushdas7354@gmail.com',
       description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
       social: {
@@ -1109,7 +1159,7 @@ export const teamMembers = {
       name: 'Aman kumar ',
       position: 'Joint Secretary',
       image: '/core-team/Aman kumar .webp',
-      department: 'B.Tech,Master of Computer Applications ',
+      department: 'Master of Computer Applications ',
       email: 'rajamanofficial1@gmail.com',
       description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
       social: {

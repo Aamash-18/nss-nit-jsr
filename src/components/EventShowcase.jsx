@@ -1,57 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Calendar, ArrowRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import {upcomingEvents} from "../utils/data";
 
-const events = [
-  {
-    name: "Blood Donation Camp",
-    category: "Health",
-    description: "Join our annual blood donation drive in collaboration with the local hospital.",
-    icon: "🩸",
-    date: "May 15, 2025",
-    formLink: "https://forms.google.com/blooddonation"
-  },
-  {
-    name: "Tree Plantation Drive",
-    category: "Environment",
-    description: "Help us make our planet greener by planting trees in and around our campus.",
-    icon: "🌱",
-    date: "May 22, 2025",
-    formLink: "https://forms.google.com/treeplantation"
-  },
-  {
-    name: "Leadership Workshop",
-    category: "Skill Development",
-    description: "Develop your leadership skills through interactive sessions by industry experts.",
-    icon: "👥",
-    date: "June 5, 2025",
-    formLink: "https://forms.google.com/leadershipworkshop"
-  },
-  {
-    name: "Swachchhata Pakhwara",
-    category: "Environment",
-    description: "Clean surroundings. Clean habits. Clean future.",
-    icon: "🧹",
-    date: "June 12, 2025",
-    formLink: "https://forms.google.com/cleanliness"
-  },
-  {
-    name: "Run For Unity",
-    category: "Health",
-    description: "Race towards a united India. One stride at a time.",
-    icon: "🏃",
-    date: "June 20, 2025",
-    formLink: "https://forms.google.com/runforunity"
-  },
-  {
-    name: "Digital Literacy Workshop",
-    category: "Education",
-    description: "Learn essential digital skills for the modern world.",
-    icon: "💻",
-    date: "July 3, 2025",
-    formLink: "https://forms.google.com/digitalliteracy"
-  }
-];
 
 export default function EventShowcase() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -59,12 +10,12 @@ export default function EventShowcase() {
   const eventsPerPage = 3;
   
   // Calculate total pages
-  const totalPages = Math.ceil(events.length / eventsPerPage);
+  const totalPages = Math.ceil(upcomingEvents.length / eventsPerPage);
   
   // Get current events
   const indexOfLastEvent = currentPage * eventsPerPage;
   const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
-  const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
+  const currentEvents = upcomingEvents.slice(indexOfFirstEvent, indexOfLastEvent);
 
   // Change page with animation
   const paginate = (pageNumber) => {

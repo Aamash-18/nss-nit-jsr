@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
-import Home1 from "./pages/Home1";
 import About from "./pages/About";
 import Events from "./pages/Events";
 import Gallery from "./pages/Gallery";

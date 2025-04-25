@@ -11,6 +11,7 @@ import {
 import TeamMemberCard from '../components/TeamMemberCard';
 import ResponsiveCategoryTabs from '../components/export default ResponsiveCategoryTabs;';
 import { teamMembers } from '../utils/data';
+import SEO from '../components/SEO';
 
 const Team = () => {
   const [activeCategory, setActiveCategory] = useState('superCore');
@@ -56,6 +57,12 @@ const Team = () => {
   };
 
   return (
+   <>
+    <SEO 
+    title="Our Team"
+    description="Meet the dedicated team of volunteers and coordinators behind NSS NIT Jamshedpur. Our leadership and volunteers drive our community service initiatives."
+    path="/team"
+  />
     <div className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white min-h-screen relative overflow-hidden">
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -154,6 +161,7 @@ const Team = () => {
 
    
     </div>
+   </>
   );
 };
 
