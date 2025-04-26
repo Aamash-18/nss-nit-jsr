@@ -346,7 +346,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           whileHover="hover"
-          href="#" 
+          href="#https://www.facebook.com/nssnitjamshedpur/" 
           className="bg-gradient-to-br from-blue-900/40 to-blue-800/20 backdrop-blur-md p-3 rounded-full text-blue-300 shadow-lg border border-white/10 relative overflow-hidden group"
           aria-label="Facebook"
         >
@@ -368,7 +368,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           whileHover="hover"
-          href="#" 
+          href="https://www.instagram.com/nss_nitjsr/" 
           className="bg-gradient-to-br from-rose-900/40 to-rose-800/20 backdrop-blur-md p-3 rounded-full text-rose-300 shadow-lg border border-white/10 relative overflow-hidden group"
           aria-label="Instagram"
         >
@@ -390,7 +390,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           whileHover="hover"
-          href="#" 
+          href="https://x.com/nss_nitjsr" 
           className="bg-gradient-to-br from-cyan-900/40 to-cyan-800/20 backdrop-blur-md p-3 rounded-full text-cyan-300 shadow-lg border border-white/10 relative overflow-hidden group"
           aria-label="Twitter"
         >
@@ -412,7 +412,7 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           whileHover="hover"
-          href="#" 
+          href="https://www.linkedin.com/in/gourabbistu/" 
           className="bg-gradient-to-br from-green-900/40 to-green-800/20 backdrop-blur-md p-3 rounded-full text-green-300 shadow-lg border border-white/10 relative overflow-hidden group"
           aria-label="LinkedIn"
         >

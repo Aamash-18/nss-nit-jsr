@@ -19,6 +19,7 @@ import {
 } from "react-icons/fa";
 import { MdSubject, MdMessage, MdCheck, MdStar } from "react-icons/md";
 import SEO from "../components/SEO";
+import sendEmail from "../utils/sendEmail";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -48,6 +49,8 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     // Simulate API call
+
+    sendEmail(e);
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     console.log("Form submitted:", formData);

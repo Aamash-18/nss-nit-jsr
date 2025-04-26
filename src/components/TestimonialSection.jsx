@@ -12,6 +12,7 @@ import {
   Building,
   Heart
 } from 'lucide-react';
+import { testimonials } from '../utils/data';
 
 // Icon mapper
 const IconMapper = ({ name }) => {
@@ -25,44 +26,7 @@ const IconMapper = ({ name }) => {
 };
 
 // Mock data for testimonials
-const testimonials = [
-  {
-    id: 1,
-    name: "Dr. Raj Kumar",
-    position: "Former NSS President (2020-2022)",
-    image: "/api/placeholder/400/400",
-    quote: "The NSS unit at NIT JSR exemplifies the true spirit of service before self. During my tenure, I witnessed remarkable growth in student participation and community engagement. The dedication with which students approach social challenges is truly inspiring.",
-    date: "February 2023",
-    icon: "user-tie"
-  },
-  {
-    id: 2,
-    name: "Prof. Meena Sharma",
-    position: "Head, Department of Computer Science",
-    image: "/api/placeholder/400/400",
-    quote: "The NSS activities at NIT JSR go beyond mere social service; they are educational experiences that complement classroom learning. I've observed students developing crucial soft skills and practical problem-solving abilities through their involvement.",
-    date: "November 2023",
-    icon: "graduation-cap"
-  },
-  {
-    id: 3,
-    name: "Shri Vikram Singh, IAS",
-    position: "District Collector, Jamshedpur",
-    image: "/api/placeholder/400/400",
-    quote: "The partnership between the local administration and NIT JSR's NSS unit has been transformative for our district. Their initiatives in digital literacy, healthcare awareness, and environmental conservation have reached remote villages.",
-    date: "January 2024",
-    icon: "landmark"
-  },
-  {
-    id: 4,
-    name: "Dr. Ananya Mishra",
-    position: "Director, City Medical Foundation",
-    image: "/api/placeholder/400/400",
-    quote: "The health camps organized by NIT JSR's NSS volunteers have been exemplary in their planning and execution. Their attention to detail and commitment to serving the underprivileged sections of society is commendable.",
-    date: "March 2024",
-    icon: "heartbeat"
-  }
-];
+
 
 export default function TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
