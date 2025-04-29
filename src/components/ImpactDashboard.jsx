@@ -1,56 +1,120 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
-  FaUsers, FaLeaf, FaGraduationCap, FaHeartbeat, 
-  FaMapMarkerAlt, FaChartLine, FaCalendarAlt, FaTags 
-} from 'react-icons/fa';
-import { Leaf, HeartPulse, BookOpenText, ListFilter, Users } from "lucide-react"; // Example icons for categories
-import { projectData } from '../utils/data';
+  Heart, Users, Calendar, Award, Leaf, 
+  GraduationCap, Globe, Zap, Trophy
+} from "lucide-react";
 
-// Category styling configuration
-const categoryConfig = {
-  Environment: {
-    icon: <FaLeaf />,
-    gradient: "from-emerald-600 to-green-900",
-    lightGradient: "from-emerald-400 to-teal-600",
-    accent: "emerald-500"
-  },
-  Health: {
-    icon: <FaHeartbeat />,
-    gradient: "from-rose-600 to-pink-900",
-    lightGradient: "from-rose-400 to-pink-600",
-    accent: "rose-500"
-  },
-  Education: {
-    icon: <FaGraduationCap />,
-    gradient: "from-sky-600 to-blue-900",
-    lightGradient: "from-sky-400 to-blue-600",
-    accent: "sky-500"
-  },
-  Social: {
-    icon: <FaUsers />,
-    gradient: "from-violet-600 to-indigo-900",
-    lightGradient: "from-violet-400 to-indigo-600",
-    accent: "violet-500"
-  }
+// Simplified dashboard data
+const dashboardData = {
+  stats: [
+    { 
+      id: 1,
+      title: "Volunteers",
+      value: 500,
+      icon: Users,
+      gradient: "from-indigo-500 to-purple-600",
+      increase: 23
+    },
+    { 
+      id: 2,
+      title: "Hours Donated", 
+      value: 18600,
+      icon: Calendar,
+      gradient: "from-cyan-500 to-blue-600",
+      increase: 18
+    },
+    { 
+      id: 3,
+      title: "People Helped",
+      value: 4320,
+      icon: Heart,
+      gradient: "from-pink-500 to-rose-600",
+      increase: 31
+    },
+    { 
+      id: 4,
+      title: "Communities",
+      value: 34,
+      icon: Globe,
+      gradient: "from-emerald-500 to-teal-600",
+      increase: 12
+    }
+  ],
+  categories: [
+    {
+      name: "Environment",
+      icon: Leaf,
+      color: "emerald",
+      progress: 78,
+      impact: "Protected 12,000+ acres of wildlife habitat",
+      projects: 23
+    },
+    {
+      name: "Healthcare",
+      icon: Heart,
+      color: "rose",
+      progress: 85,
+      impact: "Provided medical services to 28,500+ patients",
+      projects: 31
+    },
+    {
+      name: "Education",
+      icon: GraduationCap,
+      color: "blue",
+      progress: 62,
+      impact: "Sponsored education for 5,200+ students",
+      projects: 18
+    },
+    {
+      name: "Community",
+      icon: Users,
+      color: "indigo",
+      progress: 91,
+      impact: "Built 76 community centers and public spaces",
+      projects: 27
+    }
+  ],
+  achievements: [
+    {
+      icon: Trophy,
+      title: "Community Excellence Award",
+      description: "Recognized for outstanding community service"
+    },
+    {
+      icon: Award,
+      title: "Environmental Champion",
+      description: "Top-rated charity for ecological initiatives"
+    },
+    {
+      icon: Zap,
+      title: "Impact Leader",
+      description: "Highest volunteer engagement rate nationally"
+    }
+  ]
 };
 
-// Animated counter component
+// Animated counter component with optimized performance
 const AnimatedCounter = ({ value, duration = 2 }) => {
   const [count, setCount] = useState(0);
   
   useEffect(() => {
     let start = 0;
     const end = parseInt(value);
-    const incrementTime = (duration * 1000) / end;
+    // Calculate total time and steps for smooth animation with better performance
+    const totalTime = duration * 1000;
+    const step = Math.max(Math.floor(end / 50), 1);
+    const stepTime = totalTime / (end / step);
+    
     const timer = setInterval(() => {
-      start += Math.ceil(end / 100);
+      start += step;
       if (start > end) {
         setCount(end);
         clearInterval(timer);
       } else {
         setCount(start);
       }
-    }, incrementTime);
+    }, stepTime);
     
     return () => clearInterval(timer);
   }, [value, duration]);
@@ -58,304 +122,347 @@ const AnimatedCounter = ({ value, duration = 2 }) => {
   return <span>{count.toLocaleString()}</span>;
 };
 
-// Main Dashboard Component
-export const CharityImpactDashboard = () => {
-  const [yearFilter, setYearFilter] = useState("all");
-  const [categoryFilter, setCategoryFilter] = useState("all");
-  const [selectedProject, setSelectedProject] = useState(null);
-  const [animateCounters, setAnimateCounters] = useState(false);
-  
-  // Filter data based on year and category selections
-  const yearData = projectData[yearFilter];
-  const filteredProjects = categoryFilter === "all" 
-    ? yearData.projects 
-    : yearData.projects.filter(project => project.category === categoryFilter);
+// Progress bar with animation
+const AnimatedProgressBar = ({ value, color, height = 2, duration = 1.5 }) => {
+  const [width, setWidth] = useState(0);
   
   useEffect(() => {
-    // Initialize counter animations when component is in view
-    const observer = new IntersectionObserver(
-      ([entry]) => {
+    const timer = setTimeout(() => {
+      setWidth(value);
+    }, 200);
+    
+    return () => clearTimeout(timer);
+  }, [value]);
+  
+  const colorMap = {
+    emerald: "bg-emerald-500",
+    rose: "bg-rose-500",
+    blue: "bg-blue-500",
+    indigo: "bg-indigo-500"
+  };
+  
+  return (
+    <div className={`w-full bg-gray-700/30 rounded-full h-${height}`}>
+      <div 
+        className={`${colorMap[color]} h-${height} rounded-full transition-all duration-1000 ease-out`}
+        style={{ width: `${width}%` }}
+      ></div>
+    </div>
+  );
+};
+
+// Circle Progress Indicator
+const CircleProgress = ({ percentage, size = 120, strokeWidth = 8, color }) => {
+  const [progress, setProgress] = useState(0);
+  const radius = (size - strokeWidth) / 2;
+  const circumference = radius * 2 * Math.PI;
+  const offset = circumference - (progress / 100) * circumference;
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setProgress(percentage);
+    }, 300);
+    
+    return () => clearTimeout(timer);
+  }, [percentage]);
+  
+  const colorMap = {
+    emerald: "stroke-emerald-500",
+    rose: "stroke-rose-500",
+    blue: "stroke-blue-500",
+    indigo: "stroke-indigo-500"
+  };
+  
+  return (
+    <div className="relative inline-flex items-center justify-center">
+      <svg width={size} height={size} className="transform -rotate-90">
+        {/* Background circle */}
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          strokeWidth={strokeWidth}
+          stroke="rgba(255,255,255,0.1)"
+          fill="transparent"
+        />
+        {/* Progress circle */}
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          strokeWidth={strokeWidth}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          fill="transparent"
+          className={`transition-all duration-1000 ease-out ${colorMap[color]}`}
+        />
+      </svg>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="text-2xl font-bold">{progress}%</span>
+      </div>
+    </div>
+  );
+};
+
+// Main Dashboard Component
+const CharityImpactDashboard = () => {
+  const [animateStats, setAnimateStats] = useState(false);
+  const [animateCategories, setAnimateCategories] = useState(false);
+  const [animateAchievements, setAnimateAchievements] = useState(false);
+  
+  useEffect(() => {
+    // Set up intersection observers for each section
+    const observerOptions = { threshold: 0.15 };
+    
+    const createAndObserve = (elementId, setAnimateFunction) => {
+      const observer = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
-          setAnimateCounters(true);
+          setAnimateFunction(true);
           observer.disconnect();
         }
-      },
-      { threshold: 0.25 }
-    );
+      }, observerOptions);
+      
+      const element = document.getElementById(elementId);
+      if (element) observer.observe(element);
+      return observer;
+    };
     
-    const element = document.getElementById("stats-counters");
-    if (element) observer.observe(element);
+    const statsObserver = createAndObserve("stats-section", setAnimateStats);
+    const categoriesObserver = createAndObserve("categories-section", setAnimateCategories);
+    const achievementsObserver = createAndObserve("achievements-section", setAnimateAchievements);
     
-    return () => observer.disconnect();
+    return () => {
+      statsObserver.disconnect();
+      categoriesObserver.disconnect();
+      achievementsObserver.disconnect();
+    };
   }, []);
   
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-zinc-900 text-white relative">
-      <div className="max-w-7xl mx-auto px-4 py-16 relative z-10">
-        {/* Dashboard Header */}
-        <div className="mb-16 text-center">
-        <h2 className="text-5xl font-bold mb-2">
-            Impact <span className="text-cyan-600">Dashboard</span>
-          </h2>
-          <div className="w-24 h-1 bg-cyan-500 mx-auto mt-2 mb-6"></div>
-          <p className="max-w-2xl mx-auto text-gray-300 text-lg">
-            Visualizing the meaningful difference we've made in our communities through dedicated service and collaboration.
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-950 to-gray-900 text-white">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Glowing orbs */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-purple-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-emerald-900/10 rounded-full blur-3xl"></div>
         
-        {/* Filter Controls */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <div className="flex flex-col sm:flex-row gap-3">
-            <div className="relative flex items-center w-fit mx-auto justify-center bg-slate-800/60 backdrop-blur-lg rounded-xl p-2 shadow-lg border border-slate-700">
-              <FaCalendarAlt className="text-cyan-500 mx-3" />
-              {["all", "2022", "2023", "2024"].map((year) => (
-                <button
-                  key={year}
-                  onClick={() => setYearFilter(year)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                    yearFilter === year 
-                      ? "bg-gradient-to-r from-cyan-600 to-blue-700 text-white shadow-lg" 
-                      : "text-gray-300 hover:bg-slate-700"
-                  }`}
-                >
-                  {year === "all" ? "All " : year}
-                </button>
-              ))}
-            </div>
-            <div className="relative flex items-center bg-slate-800/60 backdrop-blur-lg rounded-xl p-2 shadow-lg border border-slate-700 overflow-x-auto">
-  <FaTags className="text-cyan-500 mx-3 min-w-max" />
-  {["all", "Environment", "Health", "Education", "Social"].map((cat) => {
-    const iconMap = {
-      all: <ListFilter className="w-5 h-5" />,
-      Environment: <Leaf className="w-5 h-5" />,
-      Health: <HeartPulse className="w-5 h-5" />,
-      Education: <BookOpenText className="w-5 h-5" />,
-      Social: <Users className="w-5 h-5" />,
-    };
-
-    return (
-      <div key={cat} className="relative group">
-        <button
-          onClick={() => setCategoryFilter(cat)}
-          className={`flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all duration-300 min-w-max ${
-            categoryFilter === cat
-              ? cat === "all"
-                ? "bg-gradient-to-r from-cyan-600 to-blue-700 text-white shadow-lg"
-                : `bg-gradient-to-r ${categoryConfig[cat].gradient} text-white shadow-lg`
-              : "text-gray-300 hover:bg-slate-700"
-          }`}
-        >
-          {/* Icon visible on mobile */}
-          <span className="sm:hidden">{iconMap[cat]}</span>
-
-          {/* Text visible on desktop */}
-          <span className="hidden sm:inline">
-            {cat === "all" ? "All Categories" : cat}
-          </span>
-        </button>
-
-        {/* Tooltip text on hover for mobile */}
-        <span className="absolute top-7 mb-1 bg-black/20 text-white text-[10px] px-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 sm:hidden z-0  whitespace-nowrap">
-          {cat === "all" ? "All Categories" : cat}
-        </span>
+        {/* Grid overlay */}
+        <div className="absolute inset-0" style={{ 
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), 
+                            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)`,
+          backgroundSize: '40px 40px' 
+        }}></div>
       </div>
-    );
-  })}
-</div>
+      
+      <div className="max-w-6xl mx-auto px-4 py-16 relative z-10">
+        {/* Animated Header */}
+        <header className="text-center mb-20 relative">
+          {/* Decorative dots pattern */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-6 flex justify-center gap-2">
+            {[0, 1, 2].map((i) => (
+              <div 
+                key={i} 
+                className="w-2 h-2 rounded-full bg-cyan-500"
+                style={{
+                  animation: 'pulse 2s infinite',
+                  animationDelay: `${i * 0.3}s`
+                }}
+              ></div>
+            ))}
           </div>
-        </div>
-        
-        {/* Stats Counters Section */}
-        <div 
-          id="stats-counters"
-          className="grid md:grid-cols-3 gap-6 mb-12"
-        >
-          {[
-            { 
-              icon: <FaUsers />, 
-              title: "Volunteers Mobilized", 
-              value: yearData.volunteers,
-              gradient: "from-rose-500 to-pink-700",
-              decoration: "radial-gradient(circle at top right, rgba(244,63,94,0.3) 0%, transparent 60%)"
-            },
-            { 
-              icon: <FaChartLine />, 
-              title: "Events Organized", 
-              value: yearData.events,
-              gradient: "from-sky-500 to-blue-700",
-              decoration: "radial-gradient(circle at top right, rgba(14,165,233,0.3) 0%, transparent 60%)"
-            },
-            { 
-              icon: <FaCalendarAlt />, 
-              title: "Service Hours", 
-              value: yearData.hours,
-              gradient: "from-emerald-500 to-green-700",
-              decoration: "radial-gradient(circle at top right, rgba(16,185,129,0.3) 0%, transparent 60%)"
-            },
-            
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-slate-700/50 group hover:shadow-2xl hover:shadow-cyan-900/20 transition duration-300"
-              style={{
-                background: `
-                  linear-gradient(to bottom right, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9)),
-                  ${stat.decoration}
-                `
-              }}
-            >
-              <div className={`absolute top-0 right-0 w-24 h-24 opacity-20 bg-gradient-to-br ${stat.gradient} rounded-bl-full transition-all duration-500 group-hover:opacity-30`}></div>
-              
-              <div className={`w-16 h-16 mb-4 rounded-2xl flex items-center justify-center bg-gradient-to-br ${stat.gradient} shadow-lg`}>
-                <span className="text-2xl text-white">{stat.icon}</span>
-              </div>
-              
-              <h3 className="text-xl font-semibold mb-1 text-white">{stat.title}</h3>
-              <div className="text-4xl font-bold bg-gradient-to-r from-cyan-200 via-cyan-400 to-sky-500 bg-clip-text text-transparent transition-all duration-500">
-                {animateCounters ? <AnimatedCounter value={stat.value} /> : "0"}
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Map Visualization */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
-            Community Impact Map
-          </h3>
           
-          <div className="relative h-96 bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
-            {/* Map Background with Grid */}
-            <div className="absolute inset-0" style={{
-              background: `
-                linear-gradient(to bottom right, #0f172a 0%, #0f172a 100%),
-                radial-gradient(circle at 25% 25%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(16, 185, 129, 0.1) 0%, transparent 50%)
-              `
-            }}>
-              <svg width="100%" height="100%" className="opacity-20">
-                <defs>
-                  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-                    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(203, 213, 225, 0.1)" strokeWidth="0.5" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#grid)" />
-              </svg>
-            </div>
-            
-            {/* Map Legend */}
-            <div className="absolute top-4 right-4 bg-slate-800/90 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-slate-700/50 z-10">
-              <div className="text-xs font-semibold text-gray-400 mb-2">Categories</div>
-              {Object.entries(categoryConfig).map(([name, config]) => (
-                <div key={name} className="flex items-center gap-2 mb-1 last:mb-0">
-                  <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${config.lightGradient}`}></div>
-                  <span className="text-xs text-gray-300">{name}</span>
-                </div>
-              ))}
-            </div>
-            
-            {/* Map Markers */}
-            {filteredProjects.map((project) => {
-              // Convert geographical coordinates to relative positions on the map
-              const xPos = ((project.lng - 86.17) / 0.06) * 60 + 20; 
-              const yPos = 80 - (((project.lat - 22.77) / 0.06) * 60);
+          <div className="inline-block mb-3 mt-8">
+            <span className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white text-xs py-1 px-3 rounded-full uppercase tracking-wide font-semibold">Impact Dashboard</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-white via-cyan-200 to-blue-200 text-transparent bg-clip-text">
+            Making a Difference
+          </h1>
+          
+          <p className="mt-6 text-cyan-100/80 max-w-2xl mx-auto text-lg">
+            Visualizing our collective impact on communities worldwide through service, dedication, and your generous support.
+          </p>
+          
+          {/* Animated underline */}
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mt-8 rounded-full"></div>
+        </header>
+        
+        {/* Stats Section with Animated Cards */}
+        <section id="stats-section" className="mb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {dashboardData.stats.map((stat, index) => {
+              const Icon = stat.icon;
               
               return (
-                <div
-                  key={project.id}
-                  className="absolute cursor-pointer z-20 transition-all duration-300 hover:scale-105"
-                  style={{ left: `${xPos}%`, top: `${yPos}%` }}
-                  onClick={() => setSelectedProject(project)}
+                <div 
+                  key={stat.id}
+                  className={`
+                    relative overflow-hidden bg-slate-800/30 backdrop-blur-sm 
+                    border border-slate-700/30 rounded-2xl p-6
+                    transform transition-all duration-700 hover:shadow-lg hover:shadow-cyan-900/20
+                    group
+                    ${animateStats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}
+                  `}
+                  style={{ 
+                    transitionDelay: `${index * 150}ms`,
+                  }}
                 >
-                  <div 
-                    className={`w-12 h-12 rounded-full flex items-center justify-center shadow-lg relative group`}
-                    style={{
-                      background: `radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%)`
-                    }}
-                  >
-                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${categoryConfig[project.category].lightGradient} opacity-70 blur-sm group-hover:opacity-100 group-hover:blur-md transition-all duration-300`}></div>
-                    <div className={`w-6 h-6 bg-gradient-to-br ${categoryConfig[project.category].lightGradient} rounded-full flex items-center justify-center relative z-10`}>
-                      <FaMapMarkerAlt className="text-white text-xs" />
+                  {/* Background glow effect */}
+                  <div className={`
+                    absolute -top-10 -right-10 w-32 h-32 rounded-full 
+                    bg-gradient-to-br ${stat.gradient} opacity-10
+                    blur-xl group-hover:opacity-20 transition-opacity duration-500
+                  `}></div>
+                  
+                  <div className={`
+                    w-14 h-14 mb-6 rounded-xl flex items-center justify-center
+                    bg-gradient-to-br ${stat.gradient} shadow-lg
+                    group-hover:scale-105 transition-transform duration-500
+                  `}>
+                    <Icon className="w-7 h-7 text-white" />
+                  </div>
+                  
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+                      {animateStats ? <AnimatedCounter value={stat.value} /> : '0'}
+                    </h3>
+                    
+                    <div className="flex items-center text-emerald-500 text-sm font-medium">
+                      <svg className="w-3 h-3 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                      </svg>
+                      {stat.increase}%
+                    </div>
+                  </div>
+                  
+                  <p className="text-lg text-cyan-100/70 font-medium">
+                    {stat.title}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+        
+        {/* Categories Section with Circle Progress */}
+        <section id="categories-section" className="mb-24">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 text-transparent bg-clip-text mb-4">Impact Categories</h2>
+            <p className="text-cyan-100/70 max-w-2xl mx-auto">
+              Our work spans across key focus areas, each contributing to sustainable development and community well-being.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {dashboardData.categories.map((category, index) => {
+              const Icon = category.icon;
+              
+              return (
+                <div 
+                  key={category.name}
+                  className={`
+                    relative overflow-hidden bg-slate-800/30 backdrop-blur-sm
+                    border border-slate-700/30 rounded-2xl p-6
+                    transform transition-all duration-700 text-center
+                    hover:border-${category.color}-500/30 group
+                    ${animateCategories ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}
+                  `}
+                  style={{ 
+                    transitionDelay: `${index * 150}ms`,
+                  }}
+                >
+                  {/* Subtle gradient background */}
+                  <div className={`
+                    absolute inset-0 bg-gradient-to-br from-${category.color}-900/10 to-transparent
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                  `}></div>
+                  
+                  <div className="flex flex-col items-center justify-center relative z-10">
+                    <CircleProgress 
+                      percentage={animateCategories ? category.progress : 0}
+                      color={category.color}
+                    />
+                    
+                    <div className={`
+                      w-16 h-16 mt-10 rounded-full flex items-center justify-center
+                      bg-${category.color}-500/20 text-${category.color}-400
+                      border-4 border-slate-900
+                    `}>
+                      <Icon className="w-8 h-8" />
                     </div>
                     
-                    {/* Pulsing Animation */}
-                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${categoryConfig[project.category].lightGradient} animate-ping opacity-30`} style={{animationDuration: '3s'}}></div>
+                    <h3 className="text-xl font-bold mt-3">{category.name}</h3>
+                    <p className="text-sm text-cyan-100/60 mb-4">{category.projects} active initiatives</p>
+                    
+                    <div className={`
+                      text-sm text-${category.color}-300 p-3 rounded-lg
+                      bg-${category.color}-900/20 border border-${category.color}-800/30
+                    `}>
+                      {category.impact}
+                    </div>
                   </div>
                 </div>
               );
             })}
-            
-            {/* Selected Project Info Box */}
-            {selectedProject && (
-             <div className="absolute left-1/2 bottom-8 transform -translate-x-1/2 w-96 bg-slate-800/95 backdrop-blur-md rounded-2xl p-5 shadow-2xl border border-slate-600/30 z-30">
-             {/* Header Section with Close Button */}
-             <div className="flex items-center justify-between mb-3">
-               <div className="flex items-center gap-3">
-                 <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${categoryConfig[selectedProject.category].gradient} flex items-center justify-center shadow-lg`}>
-                   {categoryConfig[selectedProject.category].icon}
-                 </div>
-                 <div>
-                   <h4 className="font-bold text-white text-xl leading-tight">{selectedProject.title}</h4>
-                   <div className="flex items-center mt-1">
-                     <svg className="w-3 h-3 text-gray-400 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                     </svg>
-                     <p className="text-xs text-gray-300">{selectedProject.location}</p>
-                   </div>
-                 </div>
-               </div>
-               <button
-                 className="w-8 h-8 flex items-center justify-center bg-red-500 hover:bg-red-600 rounded-full text-white transition-colors duration-200 shadow-md"
-                 onClick={() => setSelectedProject(null)}
-               >
-                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                 </svg>
-               </button>
-             </div>
-             
-             {/* Category Badge */}
-             <div className="mb-4">
-               <span className={`text-xs font-medium px-3 py-1.5 rounded-full bg-${categoryConfig[selectedProject.category].accent}/20 text-${categoryConfig[selectedProject.category].accent} border border-${categoryConfig[selectedProject.category].accent}/30 inline-block`}>
-                 {selectedProject.category}
-               </span>
-             </div>
-             
-             {/* Impact Section - Middle */}
-             <div className="mb-4 bg-slate-700/40 hover:bg-slate-700/60 transition-colors duration-300 rounded-xl p-3 border border-slate-600/20">
-               <div className="flex items-center mb-1">
-                 <svg className="w-4 h-4 mr-1 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                 </svg>
-                 <div className="text-sm font-medium text-gray-300">Impact</div>
-               </div>
-               <div className="font-semibold text-sky-400 text-base pl-5">{selectedProject.impact}</div>
-             </div>
-             
-             {/* People Involved - Bottom */}
-             <div className="bg-slate-700/40 hover:bg-slate-700/60 transition-colors duration-300 rounded-xl p-3 border border-slate-600/20">
-               <div className="flex items-center mb-1">
-                 <svg className="w-4 h-4 mr-1 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                 </svg>
-                 <div className="text-sm font-medium text-gray-300">People Involved</div>
-               </div>
-               <div className="font-semibold text-cyan-400 text-base pl-5">{selectedProject.people}</div>
-             </div>
-           </div>
-            )}
           </div>
-        </div>
+        </section>
         
+        {/* Achievements Section */}
+        <section id="achievements-section" className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-rose-400 to-purple-400 text-transparent bg-clip-text mb-4">Recognition & Achievements</h2>
+            <p className="text-cyan-100/70 max-w-2xl mx-auto">
+              Our commitment to excellence has been recognized by leading organizations and institutions.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {dashboardData.achievements.map((achievement, index) => {
+              const Icon = achievement.icon;
+              
+              return (
+                <div 
+                  key={index}
+                  className={`
+                    relative overflow-hidden bg-gradient-to-br from-slate-800/40 to-slate-900/40 backdrop-blur-sm
+                    border border-slate-700/30 rounded-2xl p-6
+                    transform transition-all duration-700
+                    hover:shadow-lg hover:border-yellow-500/30 group
+                    ${animateAchievements ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}
+                  `}
+                  style={{ transitionDelay: `${index * 200}ms` }}
+                >
+                  {/* Gold shimmer effect */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-yellow-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  <div className="w-16 h-16 mb-5 mx-auto rounded-full flex items-center justify-center bg-yellow-900/30 border border-yellow-700/30 text-yellow-500 group-hover:scale-110 transition-transform duration-500">
+                    <Icon className="w-8 h-8" />
+                  </div>
+                  
+                  <h3 className="text-center text-xl font-bold mb-2 text-yellow-100">{achievement.title}</h3>
+                  <p className="text-center text-yellow-100/70">{achievement.description}</p>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute bottom-3 left-3 w-8 h-8">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-yellow-700/30">
+                      <path d="M0,0 L100,0 L100,100" stroke="currentColor" strokeWidth="6"/>
+                    </svg>
+                  </div>
+                  <div className="absolute top-3 right-3 w-8 h-8 transform rotate-180">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-yellow-700/30">
+                      <path d="M0,0 L100,0 L100,100" stroke="currentColor" strokeWidth="6"/>
+                    </svg>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
         
-      </div>
-      
-      {/* Bottom Wave Decoration */}
-      <div className="absolute bottom-0 left-0 w-full h-20 overflow-hidden z-0 transform rotate-180">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="absolute w-full h-40 text-emerald-900/10">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" className="fill-current"></path>
-        </svg>
+     
       </div>
     </div>
   );

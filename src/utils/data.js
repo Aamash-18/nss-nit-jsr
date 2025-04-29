@@ -86,6 +86,7 @@ export const events = [
 },
 ];
 export const upcomingEvents = [
+  /*
   {
     name: "Blood Donation Camp",
     category: "Health",
@@ -134,9 +135,23 @@ export const upcomingEvents = [
     date: "July 3, 2025",
     formLink: "https://forms.google.com/digitalliteracy"
   }
+    */
 ];
 
 export const galleryEvents = [
+  {
+    id: 10,
+    eventId: "nss-cleanliness-drive-2025",
+    title: "NSS Cleanliness Drive 2025",
+    thumbnailSrc: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image1.webp",
+    category: "environment",
+    description:
+      "Over 50 NSS volunteers at NIT Jamshedpur, under the guidance of Dr. Jayendra Kumar, participated in a campus-wide cleanliness drive on 26th April 2025, promoting waste segregation and environmental awareness.",
+    date: "April 26, 2025",
+    location: "NIT Jamshedpur Campus",
+    imageCount: 8,
+    featured: true,
+  },
   {
     id: 1,
     eventId: "blood-donation-camp",
@@ -257,23 +272,78 @@ export const galleryEvents = [
     imageCount: 7,
     featured: true,
   },
-  {
-    id: 10,
-    eventId: "nss-cleanliness-drive-2025",
-    title: "NSS Cleanliness Drive 2025",
-    thumbnailSrc: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image1.webp",
-    category: "environment",
-    description:
-      "Over 50 NSS volunteers at NIT Jamshedpur, under the guidance of Dr. Jayendra Kumar, participated in a campus-wide cleanliness drive on 26th April 2025, promoting waste segregation and environmental awareness.",
-    date: "April 26, 2025",
-    location: "NIT Jamshedpur Campus",
-    imageCount: 8,
-    featured: true,
-  },
+
   
 ];
 
 export const galleryEventsDetailed = {
+  "nss-cleanliness-drive-2025": {
+    id:10,
+     eventId: "nss-cleanliness-drive-2025",
+     title: "NSS Cleanliness Drive 2025",
+     date: "April 26, 2025",
+     location: "NIT Jamshedpur Campus",
+     category: "environment",
+     description: "On 26th April 2025, NSS volunteers at NIT Jamshedpur, guided by Dr. Jayendra Kumar, organized a cleanliness drive across the campus. Over 50 volunteers enthusiastically participated, promoting proper waste segregation and sustainability. Around 7 kilograms of plastic waste was collected, contributing towards a cleaner, greener campus.",
+     images: [
+       {
+         id: 1,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image1.webp",
+         alt: "NSS volunteers assembled for the cleanliness drive.",
+         width: 1200,
+         height: 800
+       },
+       {
+         id: 2,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image2.webp",
+         alt: "Teams cleaning various parts of the campus.",
+         width: 800,
+         height: 1200
+       },
+       {
+         id: 3,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image3.webp",
+         alt: "Volunteers segregating plastic waste with gloves and bags.",
+         width: 1200,
+         height: 900
+       },
+       {
+         id: 4,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image4.webp",
+         alt: "Group cleaning the TSG area.",
+         width: 900,
+         height: 1200
+       },
+       {
+         id: 5,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image5.webp",
+         alt: "Cleaning of various part of campus",
+         width: 1600,
+         height: 900
+       },
+       {
+         id: 6,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image6.webp",
+         alt: "Volunteers displaying collected plastic waste bags.",
+         width: 1200,
+         height: 900
+       },
+       {
+         id: 7,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image7.webp",
+         alt: "Collected waste from different part of campus.",
+         width: 1200,
+         height: 900
+       },
+       {
+         id: 8,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image8.webp",
+         alt: "Team photo marking the successful completion of the drive.",
+         width: 900,
+         height: 1200
+       }
+     ]
+   },
   "blood-donation-camp": {
     id: 1,
     eventId: "blood-donation-camp",
@@ -822,73 +892,7 @@ export const galleryEventsDetailed = {
     ]
 
   },
-  "nss-cleanliness-drive-2025": {
-    id:10,
-     eventId: "nss-cleanliness-drive-2025",
-     title: "NSS Cleanliness Drive 2025",
-     date: "April 26, 2025",
-     location: "NIT Jamshedpur Campus",
-     category: "environment",
-     description: "On 26th April 2025, NSS volunteers at NIT Jamshedpur, guided by Dr. Jayendra Kumar, organized a cleanliness drive across the campus. Over 50 volunteers enthusiastically participated, promoting proper waste segregation and sustainability. Around 7 kilograms of plastic waste was collected, contributing towards a cleaner, greener campus.",
-     images: [
-       {
-         id: 1,
-         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image1.webp",
-         alt: "NSS volunteers assembled for the cleanliness drive.",
-         width: 1200,
-         height: 800
-       },
-       {
-         id: 2,
-         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image2.webp",
-         alt: "Teams cleaning various parts of the campus.",
-         width: 800,
-         height: 1200
-       },
-       {
-         id: 3,
-         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image3.webp",
-         alt: "Volunteers segregating plastic waste with gloves and bags.",
-         width: 1200,
-         height: 900
-       },
-       {
-         id: 4,
-         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image4.webp",
-         alt: "Group cleaning the TSG area.",
-         width: 900,
-         height: 1200
-       },
-       {
-         id: 5,
-         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image5.webp",
-         alt: "Cleaning of various part of campus",
-         width: 1600,
-         height: 900
-       },
-       {
-         id: 6,
-         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image6.webp",
-         alt: "Volunteers displaying collected plastic waste bags.",
-         width: 1200,
-         height: 900
-       },
-       {
-         id: 7,
-         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image7.webp",
-         alt: "Collected waste from different part of campus.",
-         width: 1200,
-         height: 900
-       },
-       {
-         id: 8,
-         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image8.webp",
-         alt: "Team photo marking the successful completion of the drive.",
-         width: 900,
-         height: 1200
-       }
-     ]
-   },
+
 
   // Additional events would be defined here...
 };
@@ -1431,38 +1435,12 @@ export const projectData = {
 export const testimonials = [
   {
     id: 1,
-    name: "Dr. Raj Kumar",
-    position: "Former NSS President (2020-2022)",
-    image: "/api/placeholder/400/400",
+    name: "Himanshu Sheth",
+    position: "Educationist Sustainability Promoter Innovator", 
+    image: "/testimonials/himanshu-sheth.webp",
     quote: "The NSS unit at NIT JSR exemplifies the true spirit of service before self. During my tenure, I witnessed remarkable growth in student participation and community engagement. The dedication with which students approach social challenges is truly inspiring.",
-    date: "February 2023",
+    date: "January 2025",
     icon: "user-tie"
   },
-  {
-    id: 2,
-    name: "Prof. Meena Sharma",
-    position: "Head, Department of Computer Science",
-    image: "/api/placeholder/400/400",
-    quote: "The NSS activities at NIT JSR go beyond mere social service; they are educational experiences that complement classroom learning. I've observed students developing crucial soft skills and practical problem-solving abilities through their involvement.",
-    date: "November 2023",
-    icon: "graduation-cap"
-  },
-  {
-    id: 3,
-    name: "Shri Vikram Singh, IAS",
-    position: "District Collector, Jamshedpur",
-    image: "/api/placeholder/400/400",
-    quote: "The partnership between the local administration and NIT JSR's NSS unit has been transformative for our district. Their initiatives in digital literacy, healthcare awareness, and environmental conservation have reached remote villages.",
-    date: "January 2024",
-    icon: "landmark"
-  },
-  {
-    id: 4,
-    name: "Dr. Ananya Mishra",
-    position: "Director, City Medical Foundation",
-    image: "/api/placeholder/400/400",
-    quote: "The health camps organized by NIT JSR's NSS volunteers have been exemplary in their planning and execution. Their attention to detail and commitment to serving the underprivileged sections of society is commendable.",
-    date: "March 2024",
-    icon: "heartbeat"
-  }
+
 ];
