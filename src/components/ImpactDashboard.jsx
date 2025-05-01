@@ -241,19 +241,19 @@ const CharityImpactDashboard = () => {
   }, []);
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-950 to-gray-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-950 to-gray-900 text-white relative">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Glowing orbs */}
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-purple-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-emerald-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-800/25 rounded-full blur-3xl"></div>
+        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-700/25 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-emerald-700/25 rounded-full blur-3xl"></div>
         
         {/* Grid overlay */}
         <div className="absolute inset-0" style={{ 
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), 
-                            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)`,
-          backgroundSize: '40px 40px' 
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px), 
+                            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px' 
         }}></div>
       </div>
       

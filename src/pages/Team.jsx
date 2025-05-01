@@ -137,10 +137,33 @@ const Team = () => {
       </header>
 
       {/* Enhanced 3D Category Navigation */}
-        <ResponsiveCategoryTabs categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
       {/* Enhanced Team Members Section with Advanced Cards */}
-      <section className="py-10 mb-24">
+      <section className="py-10 relative">
+        <ResponsiveCategoryTabs categories={categories} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Soft gradient base */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800"></div>
+
+          {/* Noise texture overlay for depth */}
+          <div
+            className="absolute inset-0 opacity-30 dark:opacity-40"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+              backgroundSize: "cover",
+              mixBlendMode: "soft-light",
+            }}
+          ></div>
+
+        
+          {/* Subtle animated accents */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-70"></div>
+          {/* Light beams */}
+          <div className="absolute top-40 left-[10%] w-40 h-80 bg-gradient-to-t from-blue-500/10 to-transparent transform -rotate-45 dark:from-blue-400/20"></div>
+          <div className="absolute -bottom-20 right-1/4 w-40 h-80 bg-gradient-to-t from-purple-500/30 to-transparent transform -rotate-45 dark:from-purple-400/20"></div>
+
+        
+        </div>
         <div className="container mx-auto px-4 md:px-12">
           <AnimatePresence mode="wait">
             <motion.div
