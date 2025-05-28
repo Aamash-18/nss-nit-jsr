@@ -1132,7 +1132,22 @@ export const teamMembers = {
         instagram: '#'
       }
     },
+    {
+      id: 26,
+      name: 'RAVI RANJAN',
+      position: 'Joint Secretary',
+      image: '/core-team/Ravi.webp',
+      department: 'B.Tech,Engineering and Computational mechanics  ',
+      email: 'itsme9508674540@gmail.com',
+      description: 'Ravi leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/ravi-ranjan-3063862a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
 
+    
     
   ],
   volunteers: [
