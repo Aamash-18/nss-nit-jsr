@@ -1153,12 +1153,12 @@ export const teamMembers = {
   volunteers: [
     {
       id: 27,
-      name: 'Rahul Verma',
+      name: 'MAYANK SAHOO',
       position: 'Volunteer',
-      image: 'src/assets/volunteers/Rahul Verma.jpg',
-      department: 'B.Tech, Mechanical Engineering',
-      email: 'rahul.verma@nitjsr.ac.in',
-      description: 'Rahul is an enthusiastic volunteer who actively participates in all NSS activities. He is particularly interested in environmental conservation projects.',
+      image: '/core-team/4.jpg',
+      department: 'B.Tech, Production Engineering',
+      email: '',
+      description: 'Mayank is an enthusiastic volunteer who actively participates in all NSS activities. He is particularly interested in environmental conservation projects.',
       social: {
         linkedin: '#',
         twitter: '#',
@@ -1167,12 +1167,12 @@ export const teamMembers = {
     },
     {
       id: 28,
-      name: 'Neha Gupta',
+      name: 'KRISHNA KUMAR CHOUDHARY',
       position: 'Volunteer',
-      image: 'src/assets/volunteers/Neha Gupta.jpg',
+      image: '/core-team/6.jpg',
       department: 'B.Tech, Computer Science',
-      email: 'neha.gupta@nitjsr.ac.in',
-      description: 'Neha is passionate about teaching and regularly conducts educational workshops for underprivileged children as part of NSS activities.',
+      email: '',
+      description: 'Krishna is passionate about teaching and regularly conducts educational workshops for underprivileged children as part of NSS activities.',
       social: {
         linkedin: '#',
         twitter: '#',
@@ -1181,32 +1181,19 @@ export const teamMembers = {
     },
     {
       id: 29,
-      name: 'Vikram Singh',
+      name: 'ISHIKA GUPTA',
       position: 'Volunteer',
-      image: 'src/assets/volunteers/Vikram Singh.jpg',
-      department: 'B.Tech, Electronics Engineering',
-      email: 'vikram.singh@nitjsr.ac.in',
-      description: 'Vikram is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
+      image: '/core-team/5.jpg',
+      department: 'B.Tech, Mechanical Engineering',
+      email: '',
+      description: 'Ishika is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
       social: {
         linkedin: '#',
         twitter: '#',
         instagram: '#'
       }
     },
-    {
-      id: 30,
-      name: 'Ananya Reddy',
-      position: 'Volunteer',
-      image: 'src/assets/volunteers/Ananya Reddy.jpg',
-      department: 'B.Tech, Chemical Engineering',
-      email: 'ananya.reddy@nitjsr.ac.in',
-      description: 'Ananya is dedicated to social service and has been actively involved in various community outreach programs organized by NSS.',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        instagram: '#'
-      }
-    },
+   
   ],
 };
 
