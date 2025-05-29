@@ -1309,31 +1309,31 @@ export const teamMembers = {
         instagram: '#'
       }
     },
-    
-  ],
-  volunteers: [
+  
     {
       id: 27,
-      name: 'Rahul Verma',
-      position: 'Volunteer',
-      image: 'src/assets/volunteers/Rahul Verma.jpg',
-      department: 'B.Tech, Mechanical Engineering',
-      email: 'rahul.verma@nitjsr.ac.in',
-      description: 'Rahul is an enthusiastic volunteer who actively participates in all NSS activities. He is particularly interested in environmental conservation projects.',
+      name: 'RAVI RANJAN',
+      position: 'Joint Secretary',
+      image: '/core-team/Ravi.webp',
+      department: 'B.Tech,Engineering and Computational mechanics  ',
+      email: 'itsme9508674540@gmail.com',
+      description: 'Ravi leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.linkedin.com/in/ravi-ranjan-3063862a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         twitter: '#',
         instagram: '#'
       }
     },
+  ],
+  volunteers: [
     {
       id: 28,
-      name: 'Neha Gupta',
+      name: 'MAYANK SAHOO',
       position: 'Volunteer',
-      image: 'src/assets/volunteers/Neha Gupta.jpg',
-      department: 'B.Tech, Computer Science',
-      email: 'neha.gupta@nitjsr.ac.in',
-      description: 'Neha is passionate about teaching and regularly conducts educational workshops for underprivileged children as part of NSS activities.',
+      image: '/core-team/4.jpg',
+      department: 'B.Tech, Production Engineering',
+      email: '',
+      description: 'Mayank is an enthusiastic volunteer who actively participates in all NSS activities. He is particularly interested in environmental conservation projects.',
       social: {
         linkedin: '#',
         twitter: '#',
@@ -1342,12 +1342,12 @@ export const teamMembers = {
     },
     {
       id: 29,
-      name: 'Vikram Singh',
+      name: 'KRISHNA KUMAR CHOUDHARY',
       position: 'Volunteer',
-      image: 'src/assets/volunteers/Vikram Singh.jpg',
-      department: 'B.Tech, Electronics Engineering',
-      email: 'vikram.singh@nitjsr.ac.in',
-      description: 'Vikram is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
+      image: '/core-team/6.jpg',
+      department: 'B.Tech, Computer Science',
+      email: '',
+      description: 'Krishna is passionate about teaching and regularly conducts educational workshops for underprivileged children as part of NSS activities.',
       social: {
         linkedin: '#',
         twitter: '#',
@@ -1356,18 +1356,19 @@ export const teamMembers = {
     },
     {
       id: 30,
-      name: 'Ananya Reddy',
+      name: 'ISHIKA GUPTA',
       position: 'Volunteer',
-      image: 'src/assets/volunteers/Ananya Reddy.jpg',
-      department: 'B.Tech, Chemical Engineering',
-      email: 'ananya.reddy@nitjsr.ac.in',
-      description: 'Ananya is dedicated to social service and has been actively involved in various community outreach programs organized by NSS.',
+      image: '/core-team/5.jpg',
+      department: 'B.Tech, Mechanical Engineering',
+      email: '',
+      description: 'Ishika is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
       social: {
         linkedin: '#',
         twitter: '#',
         instagram: '#'
       }
     },
+   
   ],
 };
 
