@@ -28,6 +28,7 @@ import {
   Star,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const Events = () => {
   const [filter, setFilter] = useState("all");
@@ -60,6 +61,13 @@ const Events = () => {
 
 
   return (
+
+  <>
+    <SEO 
+    title="Events"
+    description="Upcoming and past events organized by NSS NIT Jamshedpur. Join us in our community service activities and social initiatives."
+    path="/events"
+  />
     <div>
       {/* Hero Section */}
       <section className="relative z-10 min-h-[500px] h-auto flex items-center justify-center text-center overflow-hidden py-16">
@@ -678,6 +686,7 @@ const Events = () => {
         </div>
       </section>
     </div>
+  </>
   );
 };
 

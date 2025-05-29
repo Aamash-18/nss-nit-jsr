@@ -22,6 +22,7 @@ import { Layers, Calendar, Leaf, BookOpen, Heart } from 'lucide-react';
 import { BsImages } from "react-icons/bs";
 import CreativeGalleryHero from "../components/CreativeGalleryHero";
 import { galleryEvents } from "../utils/data";
+import SEO from "../components/SEO";
 
 const Gallery = () => {
   const [filter, setFilter] = useState("all");
@@ -55,6 +56,12 @@ const Gallery = () => {
   // Get featured events
 
   return (
+   <>
+    <SEO 
+    title="Gallery"
+    description="Photo gallery showcasing various events, activities, and community service initiatives by NSS NIT Jamshedpur."
+    path="/gallery"
+  />
     <div>
       {/* Hero Section - Kept as is */}
       <section className="relative min-h-screen overflow-hidden">
@@ -519,6 +526,7 @@ const Gallery = () => {
 
       
     </div>
+   </>
   );
 };
 

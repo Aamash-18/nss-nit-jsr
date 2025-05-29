@@ -18,6 +18,8 @@ import {
   FaHandsHelping,
 } from "react-icons/fa";
 import { MdSubject, MdMessage, MdCheck, MdStar } from "react-icons/md";
+import SEO from "../components/SEO";
+import sendEmail from "../utils/sendEmail";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -47,6 +49,8 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     // Simulate API call
+
+    sendEmail(e);
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     console.log("Form submitted:", formData);
@@ -129,6 +133,13 @@ export default function ContactPage() {
   ];
 
   return (
+
+    <>
+    <SEO 
+    title="Contact Us"
+    description="Get in touch with NSS NIT Jamshedpur. Contact information for inquiries, collaborations, and volunteering opportunities."
+    path="/contact"
+  />
     <div className="min-h-screen bg-gradient-to-b from-gray-950 via-indigo-950 to-gray-950 text-white">
   
       <header className="relative py-28 overflow-hidden">
@@ -716,5 +727,6 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -226,8 +226,8 @@ const Footer = () => {
                 <div className="w-9 h-9 rounded-full bg-[#1e293b] flex items-center justify-center mr-3 flex-shrink-0 shadow-lg">
                   <FaPhone className="w-4 h-4 text-[#60a5fa]" />
                 </div>
-                <a href="tel:+919876543210" className="text-gray-300 hover:text-[#60a5fa] transition-colors duration-300">
-                  +91 98765 43210
+                <a href="tel:+9195083 88643" className="text-gray-300 hover:text-[#60a5fa] transition-colors duration-300">
+                  +91 95083 88643
                 </a>
               </motion.li>
             </ul>
@@ -252,10 +252,10 @@ const Footer = () => {
             
             <div className="flex space-x-4 mb-8">
               {[
-                { icon: FaFacebookF, color: "#4267B2", link: "https://facebook.com" },
-                { icon: FaTwitter, color: "#1DA1F2", link: "https://twitter.com" },
-                { icon: FaInstagram, color: "#E1306C", link: "https://instagram.com" },
-                { icon: FaLinkedinIn, color: "#0077B5", link: "https://linkedin.com" }
+                { icon: FaFacebookF, color: "#4267B2", link: "https://www.facebook.com/nssnitjamshedpur" },
+                { icon: FaTwitter, color: "#1DA1F2", link: "https://x.com/nss_nitjsr" },
+                { icon: FaInstagram, color: "#E1306C", link: "https://www.instagram.com/nss_nitjsr/" },
+                { icon: FaLinkedinIn, color: "#0077B5", link: "https://www.linkedin.com/school/national-institute-of-technology-jamshedpur/?originalSubdomain=in" }
               ].map((social, index) => (
                 <motion.a
                   key={index}

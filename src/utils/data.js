@@ -1,6 +1,18 @@
 
 export const events = [
   {
+    id:7 ,
+    title: "Cleanliness Drive",
+    date: "2025-04-26",
+    category: "past",
+    image:"/Gallery_Images/NSS_Cleanliness_Drive_2025/image1.webp",
+    description:
+      "The NSS unit of NIT Jamshedpur conducted a cleanliness drive on 26th April 2025. Over 50 volunteers, under the guidance of Dr. Jayendra Kumar, cleaned various parts of the campus. Around 7 kilograms of plastic waste was collected and weighed by Dr. Naveen Veldurthi and Go Green Club members. This drive reinforced the importance of consistent small efforts towards a greener, cleaner NIT Jamshedpur.",
+    location: "NIT Jamshedpur Campus",
+    time: "7:00 AM onwards",
+    link: "nss-cleanliness-drive-2025",
+},
+  {
     id: 1,
     title: "Blood Donation Camp",
     date: "2025-03-15",
@@ -31,7 +43,7 @@ export const events = [
     category: "past",
     image: "/Gallery_Images/Health_Awareness_Camp/image5.jpg",
     description:
-      "A workshop on health awareness focusing on preventive measures and healthy lifestyle choices.",
+      "A workshop on health awareness focusing on preventive measures and healthy lifestyle choices conducted by the Red Cross Society. Participants learned about COVID-19 prevention measures and distributed masks and sanitizers.",
     location: "Central Auditorium, NIT Jamshedpur",
     time: "2:00 PM - 5:00 PM",
     link:"health-awareness-camp",
@@ -43,14 +55,14 @@ export const events = [
     category: "past",
     image: "/Gallery_Images/Cleanliness_Drive/image1.jpg",
     description:
-      "A successful cleanliness drive conducted in the nearby villages to promote hygiene and sanitation.",
+      "A successful cleanliness drive conducted in the nearby villages to promote hygiene and sanitation. Over 50 volunteers, under the guidance of Dr. Jayendra Kumar, cleaned various parts of the campus. Around 7 kilograms of plastic waste was collected and weighed by Dr. Naveen Veldurthi and Go Green Club members.",
     location: "Adityapur Village",
     time: "9:00 AM - 12:00 PM",
     link:"cleanliness-drive",
   },
   {
     id: 5,
-    title: "Educational Outreach Program",
+    title: "Educational Outreach",
     date: "2024-11-20",
     category: "past",
     image: "/Gallery_Images/Village_Outreach/image1.jpg",
@@ -72,9 +84,75 @@ export const events = [
     time: "All Day",
     link:"health-awareness-camp",
   },
+ 
+];
+export const upcomingEvents = [
+  /*
+  {
+    name: "Blood Donation Camp",
+    category: "Health",
+    description: "Join our annual blood donation drive in collaboration with the local hospital.",
+    icon: "🩸",
+    date: "May 15, 2025",
+    formLink: "https://forms.google.com/blooddonation"
+  },
+  {
+    name: "Tree Plantation Drive",
+    category: "Environment",
+    description: "Help us make our planet greener by planting trees in and around our campus.",
+    icon: "🌱",
+    date: "May 22, 2025",
+    formLink: "https://forms.google.com/treeplantation"
+  },
+  {
+    name: "Leadership Workshop",
+    category: "Skill Development",
+    description: "Develop your leadership skills through interactive sessions by industry experts.",
+    icon: "👥",
+    date: "June 5, 2025",
+    formLink: "https://forms.google.com/leadershipworkshop"
+  },
+  {
+    name: "Swachchhata Pakhwara",
+    category: "Environment",
+    description: "Clean surroundings. Clean habits. Clean future.",
+    icon: "🧹",
+    date: "June 12, 2025",
+    formLink: "https://forms.google.com/cleanliness"
+  },
+  {
+    name: "Run For Unity",
+    category: "Health",
+    description: "Race towards a united India. One stride at a time.",
+    icon: "🏃",
+    date: "June 20, 2025",
+    formLink: "https://forms.google.com/runforunity"
+  },
+  {
+    name: "Digital Literacy Workshop",
+    category: "Education",
+    description: "Learn essential digital skills for the modern world.",
+    icon: "💻",
+    date: "July 3, 2025",
+    formLink: "https://forms.google.com/digitalliteracy"
+  }
+    */
 ];
 
 export const galleryEvents = [
+  {
+    id: 10,
+    eventId: "nss-cleanliness-drive-2025",
+    title: "NSS Cleanliness Drive 2025",
+    thumbnailSrc: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image1.webp",
+    category: "environment",
+    description:
+      "Over 50 NSS volunteers at NIT Jamshedpur, under the guidance of Dr. Jayendra Kumar, participated in a campus-wide cleanliness drive on 26th April 2025, promoting waste segregation and environmental awareness.",
+    date: "April 26, 2025",
+    location: "NIT Jamshedpur Campus",
+    imageCount: 8,
+    featured: true,
+  },
   {
     id: 1,
     eventId: "blood-donation-camp",
@@ -195,9 +273,78 @@ export const galleryEvents = [
     imageCount: 7,
     featured: true,
   },
+
+  
 ];
 
 export const galleryEventsDetailed = {
+  "nss-cleanliness-drive-2025": {
+    id:10,
+     eventId: "nss-cleanliness-drive-2025",
+     title: "NSS Cleanliness Drive 2025",
+     date: "April 26, 2025",
+     location: "NIT Jamshedpur Campus",
+     category: "environment",
+     description: "On 26th April 2025, NSS volunteers at NIT Jamshedpur, guided by Dr. Jayendra Kumar, organized a cleanliness drive across the campus. Over 50 volunteers enthusiastically participated, promoting proper waste segregation and sustainability. Around 7 kilograms of plastic waste was collected, contributing towards a cleaner, greener campus.",
+     images: [
+       {
+         id: 1,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image1.webp",
+         alt: "NSS volunteers assembled for the cleanliness drive.",
+         width: 1200,
+         height: 800
+       },
+       {
+         id: 2,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image2.webp",
+         alt: "Teams cleaning various parts of the campus.",
+         width: 800,
+         height: 1200
+       },
+       {
+         id: 3,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image3.webp",
+         alt: "Volunteers segregating plastic waste with gloves and bags.",
+         width: 1200,
+         height: 900
+       },
+       {
+         id: 4,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image4.webp",
+         alt: "Group cleaning the TSG area.",
+         width: 900,
+         height: 1200
+       },
+       {
+         id: 5,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image5.webp",
+         alt: "Cleaning of various part of campus",
+         width: 1600,
+         height: 900
+       },
+       {
+         id: 6,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image6.webp",
+         alt: "Volunteers displaying collected plastic waste bags.",
+         width: 1200,
+         height: 900
+       },
+       {
+         id: 7,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image7.webp",
+         alt: "Collected waste from different part of campus.",
+         width: 1200,
+         height: 900
+       },
+       {
+         id: 8,
+         src: "/Gallery_Images/NSS_Cleanliness_Drive_2025/image8.webp",
+         alt: "Team photo marking the successful completion of the drive.",
+         width: 900,
+         height: 1200
+       }
+     ]
+   },
   "blood-donation-camp": {
     id: 1,
     eventId: "blood-donation-camp",
@@ -746,6 +893,8 @@ export const galleryEventsDetailed = {
     ]
 
   },
+
+
   // Additional events would be defined here...
 };
 
@@ -812,7 +961,7 @@ export const teamMembers = {
       name: 'Neeraj Bhatt',
       position: 'EM Head',
       image: '/core-team/Neeraj.webp',
-      department: 'B.Tech, Master of Computer Applications',
+      department: 'Master of Computer Applications',
       email: 'neeraj.bhatt099@gmail.com',
       description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
       social: {
@@ -935,10 +1084,24 @@ export const teamMembers = {
     },
     {
       id: 15,
+      name: 'Ankit Aryan',
+      position: 'Strategic and Planning Head',
+      image: '/core-team/ankit-aryan.webp',
+      department: 'B.Tech, Electrical Engineering',
+      email: 'not-found@gmail.com',
+      description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
+      social: {
+        linkedin: '#',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+    {
+      id: 16,
       name: 'Bhavesh Gupta',
       position: 'PG Representative',
       image: '/core-team/bhavesh gupta.webp',
-      department: 'B.Tech, Master of Computer Applications',
+      department: 'Master of Computer Applications',
       email: 'bhaveshguptanit@gmail.com',
       description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
       social: {
@@ -948,11 +1111,11 @@ export const teamMembers = {
       }
     },
     {
-      id: 16,
+      id: 17,
       name: 'Santosh Kumar Sahani',
       position: 'PG Representative',
       image: '/core-team/Santosh Kumar Sahani.webp',
-      department: 'B.Tech, Master of Computer Applications',
+      department: 'Master of Computer Applications',
       email: 'sks.vssems@gmail.com',
       description: 'Sushant co-leads the media team, specializing in photography and videography of NSS events and campaigns.',
       social: {
@@ -1025,7 +1188,7 @@ export const teamMembers = {
       name: 'Ayush Das',
       position: 'Joint Secretary',
       image: '/core-team/Ayush 1.webp',
-      department: 'B.Tech,Master of Computer Applications',
+      department: 'Master of Computer Applications',
       email: 'ayushdas7354@gmail.com',
       description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
       social: {
@@ -1109,7 +1272,7 @@ export const teamMembers = {
       name: 'Aman kumar ',
       position: 'Joint Secretary',
       image: '/core-team/Aman kumar .webp',
-      department: 'B.Tech,Master of Computer Applications ',
+      department: 'Master of Computer Applications ',
       email: 'rajamanofficial1@gmail.com',
       description: 'Neeraj leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
       social: {
@@ -1132,6 +1295,21 @@ export const teamMembers = {
         instagram: '#'
       }
     },
+   {
+      id: 27,
+      name: 'RAVI RANJAN',
+      position: 'Joint Secretary',
+      image: '/core-team/Ravi.webp',
+      department: 'B.Tech,Engineering and Computational mechanics  ',
+      email: 'itsme9508674540@gmail.com',
+      description: 'Ravi leads the Event Management team and ensures smooth execution of NSS initiatives across campus and community.',
+      social: {
+        linkedin: 'https://www.linkedin.com/in/ravi-ranjan-3063862a0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        twitter: '#',
+        instagram: '#'
+      }
+    },
+  
     {
       id: 27,
       name: 'RAVI RANJAN',
@@ -1194,77 +1372,16 @@ export const teamMembers = {
   ],
 };
 
-export const projectData = {
-  all: {
-    volunteers: 3842,
-    events: 197,
-    hours: 28564,
-    projects: [
-      { id: 1, title: "Blood Donation Camp", location: "Lecture Hall Complex, NIT Jamshedpur", category: "Health", people: 250, impact: "promoted awareness on blood donation", lat: 22.77, lng: 86.17 },
-      { id: 2, title: "Session on Farm Animals and Us", location: "NIT Jamshedpur Campus", category: "Environment", people: 100, impact: "Raised awareness on animal exploitation and promoted ethical consumption", lat: 22.78, lng: 86.18 },
-      { id: 3, title: "Blood Donation Camp organized by Shri Shanidev Bhakt Mandali Trust", location: "Near Aaieda Campus, Adityapur, Jamshedpur", category: "Health", people: 300, impact: "Targeted 1500 blood units with strong NSS volunteer support", lat: 22.79, lng: 86.19 },
-      { id: 4, title: "Sandhya Pheri - Voter Awareness Rally", location: "NIT Jamshedpur Campus", category: "Education", people: 250, impact: "Promoted youth awareness and responsibility towards voting rights", lat: 22.80, lng: 86.20 },
-      { id: 5, title: "Panel Discussion on No-Tobacco Day", location: "Online", category: "Health", people: 100, impact: "Raised awareness on tobacco risks and prevention strategies", lat: 22.81, lng: 86.21 },
-      { id: 6, title: "Cleanliness Drive - Swachhta Pakhwada", location: "NIT Jamshedpur", category: "Environment", people: 100, impact: "Promoted cleanliness and waste segregation", lat: 22.82, lng: 86.22 },
-      { id: 7, title: "Cloth Donation", location: "NIT Jamshedpur", category: "Social", people: 200, impact: "Collected and distributed over 1000 clothes to support those in need", lat: 22.78, lng: 86.20 },
-      { id: 8, title: "Tiranga Yatra", location: "NIT Jamshedpur", category: "Social", people: 150, impact: "Promoted national pride and unity", lat: 22.79, lng: 86.21 },
-      { id: 9, title: "Debate Competition", location: "Seminar Hall, NIT Jamshedpur", category: "Education", people: 120, impact: "Encouraged critical thinking and social responsibility", lat: 22.80, lng: 86.18 },
-      { id: 10, title: "World Bicycle Day Rally", location: "NIT Jamshedpur Campus", category: "Health", people: 250, impact: "Promoted cycling for health and raised awareness", lat: 22.81, lng: 86.19 },
-      { id: 11, title: "Oath Taking Ceremony on World Environment Day", location: "NIT Jamshedpur Campus", category: "Environment", people: 200, impact: "Promoted environmental conservation and sustainability", lat: 22.82, lng: 86.20 },
-      { id: 12, title: "World Science Day Seminar", location: "NIT Jamshedpur", category: "Education", people: 150, impact: "Promoted scientific knowledge and its importance in society", lat: 22.77, lng: 86.18 },
-      { id: 13, title: "International Yoga Day", location: "Online", category: "Health", people: 120, impact: "Promoted mindfulness and yoga practices for mental and physical well-being", lat: 22.78, lng: 86.19 },
-      { id: 14, title: "Doctors' Day Celebration", location: "NIT Jamshedpur Campus", category: "Health", people: 100, impact: "Honored medical professionals and raised awareness about healthcare", lat: 22.79, lng: 86.20 },
-      { id: 15, title: "Plantation Drive", location: "NIT Jamshedpur Campus", category: "Environment", people: 200, impact: "Promoted environmental sustainability through tree planting", lat: 22.80, lng: 86.21 },
-      { id: 16, title: "Social Awareness by School Visit", location: "Local Schools, Adityapur", category: "Social", people: 80, impact: "Raised awareness on social issues among school children", lat: 22.81, lng: 86.22 },
-      { id: 17, title: "Udgam", location: "NIT Jamshedpur Campus", category: "Education", people: 70, impact: "Engaged school students in campus activities and inspired them towards academic and extracurricular excellence", lat: 22.77, lng: 86.19 },
-      { id: 18, title: "Raksha Bandhan with Security Guard and Rakhi for Army", location: "NIT Jamshedpur", category: "Social", people: 50, impact: "Fostered bonds of respect and gratitude between students and security guards", lat: 22.78, lng: 86.21 },
-      { id: 19, title: "Fit India Freedom Run", location: "NIT Jamshedpur", category: "Health", people: 150, impact: "Encouraged physical fitness and national pride through an inclusive run", lat: 22.79, lng: 86.22 },
-      { id: 20, title: "Amrit Kalash Yatra", location: "NIT Jamshedpur", category: "Social", people: 200, impact: "Celebrated India's heritage and promoted community participation in national celebrations", lat: 22.80, lng: 86.17 },
-      { id: 21, title: "Swachhata hi Sewa Cleanliness Drive", location: "NIT Jamshedpur", category: "Environment", people: 120, impact: "Encouraged cleanliness and environmental responsibility", lat: 22.81, lng: 86.18 },
-      { id: 22, title: "Mental Health Awareness", location: "Bistupur", category: "Health", people: 203, impact: "25 workshops conducted", lat: 22.82, lng: 86.22 }
-    ]
+
+export const testimonials = [
+  {
+    id: 1,
+    name: "Himanshu Sheth",
+    position: "Educationist Sustainability Promoter Innovator", 
+    image: "/testimonials/himanshu-sheth.webp",
+    quote: "The NSS unit at NIT JSR exemplifies the true spirit of service before self. During my tenure, I witnessed remarkable growth in student participation and community engagement. The dedication with which students approach social challenges is truly inspiring.",
+    date: "January 2025",
+    icon: "user-tie"
   },
-  "2024": {
-    volunteers: 1842,
-    events: 97,
-    hours: 14564,
-    projects: [
-      { id: 1, title: "Blood Donation Camp", location: "Lecture Hall Complex, NIT Jamshedpur", category: "Health", people: 250, impact: "promoted awareness on blood donation", lat: 22.77, lng: 86.17 },
-      { id: 2, title: "Session on Farm Animals and Us", location: "NIT Jamshedpur Campus", category: "Environment", people: 100, impact: "Raised awareness on animal exploitation and promoted ethical consumption", lat: 22.78, lng: 86.18 },
-      { id: 3, title: "Blood Donation Camp organized by Shri Shanidev Bhakt Mandali Trust", location: "Near Aaieda Campus, Adityapur, Jamshedpur", category: "Health", people: 300, impact: "Targeted 1500 blood units with strong NSS volunteer support", lat: 22.79, lng: 86.19 },
-      { id: 4, title: "Sandhya Pheri - Voter Awareness Rally", location: "NIT Jamshedpur Campus", category: "Social", people: 250, impact: "Promoted youth awareness and responsibility towards voting rights", lat: 22.80, lng: 86.20 },
-      { id: 5, title: "Panel Discussion on No-Tobacco Day", location: "Online", category: "Health", people: 100, impact: "Raised awareness on tobacco risks and prevention strategies", lat: 22.81, lng: 86.21 },
-      { id: 6, title: "Cleanliness Drive - Swachhta Pakhwada", location: "NIT Jamshedpur", category: "Environment", people: 100, impact: "Promoted cleanliness and waste segregation", lat: 22.82, lng: 86.22 },
-      { id: 7, title: "Cloth Donation", location: "NIT Jamshedpur", category: "Social", people: 200, impact: "Collected and distributed over 1000 clothes to support those in need", lat: 22.78, lng: 86.20 },
-      { id: 8, title: "Tiranga Yatra", location: "NIT Jamshedpur", category: "Social", people: 150, impact: "Promoted national pride and unity", lat: 22.79, lng: 86.21 }
-    ]
-  },
-  "2023": {
-    volunteers: 2000,
-    events: 100,
-    hours: 14000,
-    projects: [
-      { id: 9, title: "Debate Competition", location: "Seminar Hall, NIT Jamshedpur", category: "Education", people: 120, impact: "Encouraged critical thinking and social responsibility", lat: 22.80, lng: 86.18 },
-      { id: 10, title: "World Bicycle Day Rally", location: "NIT Jamshedpur Campus", category: "Health", people: 250, impact: "Promoted cycling for health and raised awareness", lat: 22.81, lng: 86.19 },
-      { id: 11, title: "Oath Taking Ceremony on World Environment Day", location: "NIT Jamshedpur Campus", category: "Environment", people: 200, impact: "Promoted environmental conservation and sustainability", lat: 22.82, lng: 86.20 },
-      { id: 12, title: "World Science Day Seminar", location: "NIT Jamshedpur", category: "Education", people: 150, impact: "Promoted scientific knowledge and its importance in society", lat: 22.77, lng: 86.18 },
-      { id: 13, title: "International Yoga Day", location: "Online", category: "Health", people: 120, impact: "Promoted mindfulness and yoga practices for mental and physical well-being", lat: 22.78, lng: 86.19 },
-      { id: 14, title: "Doctors' Day Celebration", location: "NIT Jamshedpur Campus", category: "Health", people: 100, impact: "Honored medical professionals and raised awareness about healthcare", lat: 22.79, lng: 86.20 },
-      { id: 15, title: "Plantation Drive", location: "NIT Jamshedpur Campus", category: "Environment", people: 200, impact: "Promoted environmental sustainability through tree planting", lat: 22.80, lng: 86.21 },
-      { id: 16, title: "Social Awareness by School Visit", location: "Local Schools, Adityapur", category: "Social", people: 80, impact: "Raised awareness on social issues among school children", lat: 22.81, lng: 86.22 },
-      { id: 17, title: "Udgam", location: "NIT Jamshedpur Campus", category: "Education", people: 70, impact: "Engaged school students in campus activities and inspired them towards academic and extracurricular excellence", lat: 22.77, lng: 86.19 },
-      { id: 18, title: "Raksha Bandhan with Security Guard and Rakhi for Army", location: "NIT Jamshedpur", category: "Social", people: 50, impact: "Fostered bonds of respect and gratitude between students and security guards", lat: 22.78, lng: 86.21 },
-      { id: 19, title: "Fit India Freedom Run", location: "NIT Jamshedpur", category: "Health", people: 150, impact: "Encouraged physical fitness and national pride through an inclusive run", lat: 22.79, lng: 86.22 },
-      { id: 20, title: "Amrit Kalash Yatra", location: "NIT Jamshedpur", category: "Social", people: 200, impact: "Celebrated India's heritage and promoted community participation in national celebrations", lat: 22.80, lng: 86.17 },
-      { id: 21, title: "Swachhata hi Sewa Cleanliness Drive", location: "NIT Jamshedpur", category: "Environment", people: 120, impact: "Encouraged cleanliness and environmental responsibility", lat: 22.81, lng: 86.18 }
-   ]
-  },
-  "2022": {
-    volunteers: 1700,
-    events: 90,
-    hours: 13000,
-    projects: [
-      { id: 22, title: "Mental Health Awareness", location: "Bistupur", category: "Health", people: 203, impact: "25 workshops conducted", lat: 22.82, lng: 86.22 }
-    ]
-  }
-};
+
+];
