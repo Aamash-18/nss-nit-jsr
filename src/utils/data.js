@@ -1133,7 +1133,7 @@ export const teamMembers = {
       }
     },
     {
-      id: 26,
+      id: 27,
       name: 'RAVI RANJAN',
       position: 'Joint Secretary',
       image: '/core-team/Ravi.webp',
@@ -1146,13 +1146,10 @@ export const teamMembers = {
         instagram: '#'
       }
     },
-
-    
-    
   ],
   volunteers: [
     {
-      id: 27,
+      id: 28,
       name: 'MAYANK SAHOO',
       position: 'Volunteer',
       image: '/core-team/4.jpg',
@@ -1166,7 +1163,7 @@ export const teamMembers = {
       }
     },
     {
-      id: 28,
+      id: 29,
       name: 'KRISHNA KUMAR CHOUDHARY',
       position: 'Volunteer',
       image: '/core-team/6.jpg',
@@ -1180,7 +1177,7 @@ export const teamMembers = {
       }
     },
     {
-      id: 29,
+      id: 30,
       name: 'ISHIKA GUPTA',
       position: 'Volunteer',
       image: '/core-team/5.jpg',
