@@ -1,18 +1,6 @@
 
 export const events = [
   {
-    id:7 ,
-    title: "Cleanliness Drive",
-    date: "2025-04-26",
-    category: "past",
-    image:"/Gallery_Images/NSS_Cleanliness_Drive_2025/image1.webp",
-    description:
-      "The NSS unit of NIT Jamshedpur conducted a cleanliness drive on 26th April 2025. Over 50 volunteers, under the guidance of Dr. Jayendra Kumar, cleaned various parts of the campus. Around 7 kilograms of plastic waste was collected and weighed by Dr. Naveen Veldurthi and Go Green Club members. This drive reinforced the importance of consistent small efforts towards a greener, cleaner NIT Jamshedpur.",
-    location: "NIT Jamshedpur Campus",
-    time: "7:00 AM onwards",
-    link: "nss-cleanliness-drive-2025",
-},
-  {
     id: 1,
     title: "Blood Donation Camp",
     date: "2025-03-15",
@@ -84,6 +72,59 @@ export const events = [
     time: "All Day",
     link:"health-awareness-camp",
   },
+  {
+    id:7 ,
+    title: "Cleanliness Drive",
+    date: "2025-04-26",
+    category: "past",
+    image:"/Gallery_Images/NSS_Cleanliness_Drive_2025/image1.webp",
+    description:
+      "The NSS unit of NIT Jamshedpur conducted a cleanliness drive on 26th April 2025. Over 50 volunteers, under the guidance of Dr. Jayendra Kumar, cleaned various parts of the campus. Around 7 kilograms of plastic waste was collected and weighed by Dr. Naveen Veldurthi and Go Green Club members. This drive reinforced the importance of consistent small efforts towards a greener, cleaner NIT Jamshedpur.",
+    location: "NIT Jamshedpur Campus",
+    time: "7:00 AM onwards",
+    link: "nss-cleanliness-drive-2025",
+  },
+  {
+    id: 8,
+    title: "Cyber Awareness Case Study and Seminar",
+    date: "2024-04-12",
+    category: "past",
+    image: "/Gallery_Images/Cyber_Awareness/image1.jpg",
+    description: "During the Cyber Security and Awareness Week, NSS organized a Cyber Awareness Case Study competition, attracting around 20 participating teams. Shortlisted teams advanced to the presentation round. The top three winners showcased their case studies at the Cyber Security Seminar, attended by dignitaries, faculty members, and students, spreading awareness amongst the public.",
+    location: "LHC",
+    time: "5:00 PM - 7:00 PM",
+  },
+  {
+    id: 9,
+    title: "World No Tobacco Day",
+    date: "2025-05-31",
+    category: "past",
+    image: "/Gallery_Images/World_No_Tobacco_Day/image1.png",
+    description: "To commemorate World No Tobacco Day, the NSS unit of NIT Jamshedpur hosted an engaging online quiz and video-making competition. Led by Program Coordinator Dr. Jayendra Kumar, the event aimed to spread awareness about the dangers of tobacco consumption. With enthusiastic participation from 42 students, Akankshya Samal secured the top spot in the quiz, while Ekangsh Sah's video was awarded best entry.",
+    location: "Online - Mode",
+    time: "11:00 AM - 1:00 PM"
+  },
+  {
+    id: 10,
+    title: "World Environment Day",
+    date: "2025-06-05",
+    category: "past",
+    image: "/Gallery_Images/World_Environment_Day/image1.png", 
+    description: "On the occasion of World Environment Day, the NSS Unit of NIT Jamshedpur organized a plantation drive and released an environmental awareness video. Under the guidance of Programme Coordinator Dr. Jayendra Kumar, students actively participated by planting saplings near their homes and sharing their efforts online. The initiative promoted sustainable living and highlighted key ecological concerns through student-led voices.",
+    location: "Near Students' Homes",
+    time: "All Day"
+  },
+  {
+    id: 11,
+    title: "International Yoga Day 2025",
+    date: "2025-06-21",
+    category: "past",
+    image: "/Gallery_Images/International_Yoga_Day/image1.jpg", 
+    description: "NIT Jamshedpur's NSS unit held an online yoga session on International Yoga Day 2025, guided by experts including Er. Anshu Kumar Singh and Ms. Ritu Jha. Attended by 70 participants, the event promoted yoga's mental and physical benefits through posture practice, meditation, and insightful talks by faculty and guests. The initiative successfully emphasized holistic well-being and the importance of mindfulness in daily life.",
+    location: "Online - Meet",
+    time: "All Day"
+  }
+
  
 ];
 export const upcomingEvents = [
@@ -273,7 +314,54 @@ export const galleryEvents = [
     imageCount: 7,
     featured: true,
   },
-
+  {
+    id: 11,
+    eventId: "cyber-awareness-case-study-and-seminar",
+    title: "Cyber Awareness Case Study and Seminar",
+    thumbnailSrc: "/Gallery_Images/Cyber_Awareness/image1.jpg",
+    category: "events",
+    description: "NSS organized a Cyber Awareness Case Study competition followed by a seminar, promoting cybersecurity awareness through student presentations and expert insights.",
+    date: "April 12, 2024",
+    location: "LHC, NIT Jamshedpur",
+    imageCount: 10, 
+    featured: false
+  },  
+  {
+    id: 12,
+    eventId: "world-no-tobacco-day",
+    title: "World No Tobacco Day",
+    thumbnailSrc: "/Gallery_Images/World_No_Tobacco_Day/image1.png",
+    category: "events",
+    description: "To mark World No Tobacco Day, NSS NIT Jamshedpur organized an online quiz and video-making competition to raise awareness about the harmful effects of tobacco.",
+    date: "May 31, 2025",
+    location: "Online",
+    imageCount: 8, 
+    featured: false
+  },
+  {
+    id: 13,
+    eventId: "world-environment-day",
+    title: "World Environment Day",
+    thumbnailSrc: "/Gallery_Images/World_Environment_Day/image1.png",
+    category: "events",
+    description: "NSS NIT Jamshedpur celebrated World Environment Day with a plantation drive and an awareness video, encouraging students to take eco-friendly actions at home.",
+    date: "June 5, 2025",
+    location: "Near Students' Homes",
+    imageCount: 12, 
+    featured: false
+  },
+  {
+    id: 14,
+    eventId: "international-yoga-day-2025",
+    title: "International Yoga Day 2025",
+    thumbnailSrc: "/Gallery_Images/International_Yoga_Day/image1.jpg",
+    category: "events",
+    description: "An online yoga session conducted by NSS NIT Jamshedpur, featuring expert guidance and active student participation to promote mindfulness and well-being.",
+    date: "June 21, 2025",
+    location: "Online",
+    imageCount: 10, 
+    featured: false
+  }
   
 ];
 
@@ -459,7 +547,7 @@ export const galleryEventsDetailed = {
     ]
   },
   "educational-workshop": {
-    "id": 2,
+    "id": 3,
     "eventId": "educational-workshop",
     "title": "Educational Workshop",
     "date": "February 10, 2025",
@@ -893,6 +981,132 @@ export const galleryEventsDetailed = {
     ]
 
   },
+  "cyber-awareness": {
+  id: 11,
+  eventId: "cyber-awareness",
+  title: "Cyber Awareness Case Study and Seminar",
+  date: "April 12, 2025",
+  location: "LHC, NIT Jamshedpur",
+  category: "events",
+  description: "Organized a Cyber Awareness Case Study competition followed by a seminar, promoting cybersecurity awareness through student presentations and expert insights. Students presented real-life case studies and solutions, while experts shed light on safe internet practices and modern-day cyber threats. .",
+  images: [
+    {
+      id: 1,
+      src: "/Gallery_Images/Cyber_Awareness/image1.jpg",
+      alt: "Participants presenting their cyber case study.",
+      width: 1200,
+      height: 800
+    },
+    {
+      id: 2,
+      src: "/Gallery_Images/Cyber_Awareness/image2.jpg",
+      alt: "Speaker discussing real-world cyber threats.",
+      width: 1200,
+      height: 900
+    },
+    {
+      id: 3,
+      src: "/Gallery_Images/Cyber_Awareness/image3.jpg",
+      alt: "Audience listening during the seminar.",
+      width: 800,
+      height: 1200
+     }
+    ]
+  },
+  "world-no-tobacco-day": {
+  id: 12,
+  eventId: "world-no-tobacco-day",
+  title: "World No Tobacco Day",
+  date: "May 31, 2025",
+  location: "Online",
+  category: "events",
+  description: "To mark World No Tobacco Day, NSS NIT Jamshedpur organized an online quiz and video-making competition to raise awareness about the harmful effects of tobacco. The event aimed to educate participants on tobacco-related health risks and promote a tobacco-free lifestyle through creative engagement.",
+  images: [
+    {
+      id: 1,
+      src: "/Gallery_Images/World_No_Tobacco_Day/image1.png",
+      alt: "all participants in the online video meet during the awareness event.",
+      width: 1200,
+      height: 800
+    },
+    {
+      id: 2,
+      src: "/Gallery_Images/World_No_Tobacco_Day/image2.png",
+      alt: "Quiz question displayed on screen during the World No Tobacco Day awareness session.",
+      width: 1200,
+      height: 900
+    },
+    {
+      id: 3,
+      src: "/Gallery_Images/World_No_Tobacco_Day/image3.png",
+      alt: "Another round of the online quiz with participants answering questions on tobacco awareness.",
+      width: 1200,
+      height: 900
+    }
+  ]
+},
+"world-environment-day": {
+  id: 13,
+  eventId: "world-environment-day",
+  title: "World Environment Day",
+  date: "June 5, 2025",
+  location: "Near Students' Homes",
+  category: "events",
+  description: "NSS NIT Jamshedpur celebrated World Environment Day with a plantation drive and an awareness video, encouraging students to take eco-friendly actions at home. Participants planted saplings in their neighborhoods and shared inspiring messages to promote sustainability.",
+  images: [
+    {
+      id: 1,
+      src: "/Gallery_Images/World_Environment_Day/image1.png",
+      alt: "Students planting a sapling near their home.",
+      width: 1200,
+      height: 800
+    },
+    {
+      id: 2,
+      src: "/Gallery_Images/World_Environment_Day/image2.png",
+      alt: "Students planting a sapling near their home.",
+      width: 1200,
+      height: 900
+    }
+  ]
+},
+"international-yoga-day-2025": {
+  id: 14,
+  eventId: "international-yoga-day-2025",
+  title: "International Yoga Day 2025",
+  date: "June 21, 2025",
+  location: "Online",
+  category: "events",
+  description: "An online yoga session conducted by NSS NIT Jamshedpur, featuring expert guidance and active student participation to promote mindfulness and well-being. Students joined from their homes and followed the session to boost physical and mental health.",
+  images: [
+    {
+      id: 1,
+      src: "/Gallery_Images/International_Yoga_Day/image1.jpg",
+      alt: "Instructor demonstrating yoga poses during the live session.",
+      width: 1200,
+      height: 800
+    },
+    {
+      id: 2,
+      src: "/Gallery_Images/International_Yoga_Day/image2.jpg",
+      alt: "Students participating in the online yoga session from their homes.",
+      width: 1200,
+      height: 900
+    },
+    {
+      id: 3,
+      src: "/Gallery_Images/International_Yoga_Day/image3.jpg",
+      alt: "Experienced Instructors sharing insights on Yoga and mental well being.",
+      width: 1000,
+      height: 1000
+    }
+  ]
+},
+
+
+
+
+   
 
 
   // Additional events would be defined here...
