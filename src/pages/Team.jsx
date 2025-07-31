@@ -10,7 +10,7 @@ import {
 } from 'react-icons/fa';
 import TeamMemberCard from '../components/TeamMemberCard';
 import ResponsiveCategoryTabs from '../components/export default ResponsiveCategoryTabs;';
-import { teamMembers } from '../utils/data';
+import { teamMembers } from '../utils/core-team';
 import SEO from '../components/SEO';
 
 const Team = () => {
