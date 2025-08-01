@@ -568,7 +568,7 @@ export const teamMembers = {
         id: 39,
         name: 'MANBENDRA SINGH',
         position: 'Volunteer',
-        image: '/core-team/Volunteer/Manbendra .jpg',
+        image: '/core-team/Volunteer/Manbendra.jpg',
         department: 'B.Tech, Electrical Engineering',
         email: '',
         description: 'Manbendra is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
