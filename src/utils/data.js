@@ -93,6 +93,7 @@ export const events = [
     description: "During the Cyber Security and Awareness Week, NSS organized a Cyber Awareness Case Study competition, attracting around 20 participating teams. Shortlisted teams advanced to the presentation round. The top three winners showcased their case studies at the Cyber Security Seminar, attended by dignitaries, faculty members, and students, spreading awareness amongst the public.",
     location: "LHC",
     time: "5:00 PM - 7:00 PM",
+    link:"cyber-awareness",
   },
   {
     id: 9,
@@ -102,7 +103,8 @@ export const events = [
     image: "/Gallery_Images/World_No_Tobacco_Day/image1.png",
     description: "To commemorate World No Tobacco Day, the NSS unit of NIT Jamshedpur hosted an engaging online quiz and video-making competition. Led by Program Coordinator Dr. Jayendra Kumar, the event aimed to spread awareness about the dangers of tobacco consumption. With enthusiastic participation from 42 students, Akankshya Samal secured the top spot in the quiz, while Ekangsh Sah's video was awarded best entry.",
     location: "Online - Mode",
-    time: "11:00 AM - 1:00 PM"
+    time: "11:00 AM - 1:00 PM",
+    link:"world-no-tobacco-day",
   },
   {
     id: 10,
@@ -112,7 +114,8 @@ export const events = [
     image: "/Gallery_Images/World_Environment_Day/image1.png", 
     description: "On the occasion of World Environment Day, the NSS Unit of NIT Jamshedpur organized a plantation drive and released an environmental awareness video. Under the guidance of Programme Coordinator Dr. Jayendra Kumar, students actively participated by planting saplings near their homes and sharing their efforts online. The initiative promoted sustainable living and highlighted key ecological concerns through student-led voices.",
     location: "Near Students' Homes",
-    time: "All Day"
+    time: "All Day",
+    link:"world-environment-day",
   },
   {
     id: 11,
@@ -122,10 +125,43 @@ export const events = [
     image: "/Gallery_Images/International_Yoga_Day/image1.jpg", 
     description: "NIT Jamshedpur's NSS unit held an online yoga session on International Yoga Day 2025, guided by experts including Er. Anshu Kumar Singh and Ms. Ritu Jha. Attended by 70 participants, the event promoted yoga's mental and physical benefits through posture practice, meditation, and insightful talks by faculty and guests. The initiative successfully emphasized holistic well-being and the importance of mindfulness in daily life.",
     location: "Online - Meet",
-    time: "All Day"
-  }
+    time: "All Day",
+    link:"international-yoga-day-2025",
+  },
+  {
+    id: 12,
+    title: "Raksha Bandhan for Indian Soldiers 2025",
+    date: "2025-08-02",
+    category: "past",
+    image: "/Gallery_Images/Raksha_Bandhan_Soldiers/image1.jpg", 
+    description: "NSS NIT Jamshedpur, under the guidance of Dr. Jayendra Kumar, sent 120 rakhis to Indian soldiers as a gesture of gratitude and solidarity. The initiative, supported by faculty wives and female students, honoured the courage and sacrifice of our jawans, reminding them they are never forgotten.",
+    location: "NIT Jamshedpur",
+    time: "All Day",
+    link:"raksha-bandhan-soldiers-2025",
+},
+{
+    id: 13,
+    title: "Raksha Bandhan Celebration with Security Staff 2025",
+    date: "2025-08-09",
+    category: "past",
+    image: "/Gallery_Images/Raksha_Bandhan_Security_Guards/image1.jpg", 
+    description: "The NSS Unit of NIT Jamshedpur celebrated Raksha Bandhan by honouring nearly 50 campus security personnel. Girl students tied rakhis as a mark of respect, joined by faculty members and Brahmakumari sisters, fostering unity and community bonding.",
+    location: "NIT Jamshedpur",
+    time: "All Day",
+    link:"raksha-bandhan-security-guards-2025",
+} ,
+{
+    id: 14,
+    title: "Independence Day Flag Rally 2025",
+    date: "August 14, 2025",
+    category: "past",
+    image: "/Gallery_Images/Independence_Day_Flag_Rally_2025/image1.jpg", 
+    description: "A spirited flag rally organised by NSS NIT Jamshedpur and NCC 37 Battalion, promoting the Har Ghar Tiranga campaign across campus.",
+    location: "NIT Jamshedpur",
+    time: "Evening",
+    link: "independence-day-flag-rally-2025"
+}
 
- 
 ];
 export const upcomingEvents = [
   /*
@@ -361,7 +397,45 @@ export const galleryEvents = [
     location: "Online",
     imageCount: 10, 
     featured: false
-  }
+  },
+  {
+    id: 15,
+    eventId: "raksha-bandhan-soldiers-2025",
+    title: "Raksha Bandhan for Indian Soldiers 2025",
+    thumbnailSrc: "/Gallery_Images/Raksha_Bandhan_Soldiers/image1.jpg",
+    category: "events",
+    description: "NSS NIT Jamshedpur sent 120 rakhis to Indian soldiers, honouring their courage and sacrifice with heartfelt gestures from faculty wives and students.",
+    date: "August 2, 2025",
+    location: "NIT Jamshedpur",
+    imageCount: 3,
+    featured: false
+},
+{
+    id: 16,
+    eventId: "raksha-bandhan-security-guards-2025",
+    title: "Raksha Bandhan Celebration with Security Staff 2025",
+    thumbnailSrc: "/Gallery_Images/Raksha_Bandhan_Security_Guards/image1.jpg",
+    category: "events",
+    description: "Girl students tied rakhis to nearly 50 campus security personnel, joined by faculty and Brahmakumari sisters, celebrating unity and gratitude.",
+    date: "August 9, 2025",
+    location: "NIT Jamshedpur",
+    imageCount: 7,
+    featured: false
+},
+{
+    id: 17,
+    eventId: "independence-day-flag-rally-2025",
+    title: "Independence Day Flag Rally 2025",
+    thumbnailSrc: "/Gallery_Images/Independence_Day_Flag_Rally_2025/image1.jpg",
+    category: "events",
+    description: "NSS and NCC cadets conducted a patriotic flag rally on campus to mark the 79th Independence Day and promote the Har Ghar Tiranga campaign.",
+    date: "August 14, 2025",
+    location: "NIT Jamshedpur",
+    imageCount: 6,
+    featured: false
+}
+
+
   
 ];
 
@@ -1015,7 +1089,7 @@ export const galleryEventsDetailed = {
   },
   "world-no-tobacco-day": {
   id: 12,
-  eventId: "world-no-tobacco-day",
+  eventId: "",
   title: "World No Tobacco Day",
   date: "May 31, 2025",
   location: "Online",
@@ -1102,11 +1176,147 @@ export const galleryEventsDetailed = {
     }
   ]
 },
+"raksha-bandhan-soldiers-2025": {
+  id: 15,
+  eventId: "raksha-bandhan-soldiers-2025",
+  title: "Raksha Bandhan for Indian Soldiers 2025",
+  date: "August 2, 2025",
+  location: "NIT Jamshedpur",
+  category: "patriotism",
+  description: "NSS NIT Jamshedpur, under the guidance of Dr. Jayendra Kumar, sent 120 rakhis to Indian soldiers as a gesture of gratitude and solidarity. Supported by faculty wives and students, the initiative honoured the courage and sacrifice of our jawans.",
+  images: [
+    {
+      id: 1,
+      src: "/Gallery_Images/Raksha_Bandhan_Soldiers/image1.jpg",
+      alt: "Rakhis packed and prepared to be sent to soldiers.",
+      width: 1200,
+      height: 800
+    },
+    {
+      id: 2,
+      src: "/Gallery_Images/Raksha_Bandhan_Soldiers/image2.jpg",
+      alt: "Faculty wives and students preparing rakhis.",
+      width: 1200,
+      height: 900
+    },
+    {
+      id: 3,
+      src: "/Gallery_Images/Raksha_Bandhan_Soldiers/image3.jpg",
+      alt: "Group photo of contributors to the rakhi initiative.",
+      width: 900,
+      height: 1200
+    }
+  ]
+},
+"raksha-bandhan-security-guards-2025": {
+  id: 16,
+  eventId: "raksha-bandhan-security-guards-2025",
+  title: "Raksha Bandhan Celebration with Security Guards 2025",
+  date: "August 9, 2025",
+  location: "NIT Jamshedpur",
+  category: "community",
+  description: "The NSS Unit of NIT Jamshedpur celebrated Raksha Bandhan by honouring nearly 50 campus security guards. Girl students tied rakhis as a mark of respect, joined by faculty members and Brahmakumari sisters.",
+  images: [
+    {
+      id: 1,
+      src: "/Gallery_Images/Raksha_Bandhan_Security_Guards/image1.jpg",
+      alt: "Student tying rakhi to a campus security guard.",
+      width: 1200,
+      height: 800
+    },
+    {
+      id: 2,
+      src: "/Gallery_Images/Raksha_Bandhan_Security_Guards/image2.jpg",
+      alt: "Faculty members present during the celebration.",
+      width: 1200,
+      height: 900
+    },
+    {
+      id: 3,
+      src: "/Gallery_Images/Raksha_Bandhan_Security_Guards/image3.jpg",
+      alt: "Brahmakumari sisters participating in the event.",
+      width: 900,
+      height: 1200
+    },
+    {
+      id: 4,
+      src: "/Gallery_Images/Raksha_Bandhan_Security_Guards/image4.jpg",
+      alt: "Girl students tying rakhis to multiple security personnel.",
+      width: 1200,
+      height: 800
+    },
+    {
+      id: 5,
+      src: "/Gallery_Images/Raksha_Bandhan_Security_Guards/image5.jpg",
+      alt: "Group photo of NSS members and security staff.",
+      width: 1600,
+      height: 900
+    },
+    {
+      id: 6,
+      src: "/Gallery_Images/Raksha_Bandhan_Security_Guards/image6.jpg",
+      alt: "Smiling participants sharing the festive spirit.",
+      width: 1200,
+      height: 900
+    },
+    {
+      id: 7,
+      src: "/Gallery_Images/Raksha_Bandhan_Security_Guards/image7.jpg",
+      alt: "Security personnel showing tied rakhis with pride.",
+      width: 900,
+      height: 1200
+    }
+  ]
+},
+"independence-day-flag-rally-2025": {
+    id: 17,
+    eventId: "independence-day-flag-rally-2025",
+    title: "Independence Day Flag Rally 2025",
+    date: "August 14, 2025",
+    location: "NIT Jamshedpur",
+    category: "patriotism",
+    description: "On the eve of India’s 79th Independence Day, NSS NIT Jamshedpur, in collaboration with NCC Jharkhand 37 Battalion, organised a spirited Flag Rally. Nearly 70 participants marched from the Old Academic Building through the Main Gate and Professors’ Colony, waving flags, chanting slogans, and promoting the Har Ghar Tiranga campaign.",
+    images: [
+        {
+            id: 1,
+            src: "/Gallery_Images/Independence_Day_Flag_Rally_2025/image1.jpg",
+            alt: "Volunteers and NCC cadets assembling for the flag rally.",
+            width: 1200,
+            height: 800
+        },
+        {
+            id: 2,
+            src: "/Gallery_Images/Independence_Day_Flag_Rally_2025/image2.jpg",
+            alt: "Participants holding the Tricolour during the rally.",
+            width: 1200,
+            height: 900
+        },
+        {
+            id: 3,
+            src: "/Gallery_Images/Independence_Day_Flag_Rally_2025/image3.jpg",
+            alt: "Rally moving past the NIT Main Gate.",
+            width: 900,
+            height: 1200
+        },
+        {
+            id: 4,
+            src: "/Gallery_Images/Independence_Day_Flag_Rally_2025/image4.jpg",
+            alt: "Group of volunteers chanting patriotic slogans.",
+            width: 1200,
+            height: 800
+        },
+        {
+            id: 5,
+            src: "/Gallery_Images/Independence_Day_Flag_Rally_2025/image5.jpg",
+            alt: "Team photo after completing the rally route.",
+            width: 1200,
+            height: 900
+        }
+    ]
+}
 
 
 
-
-   
 
 
   // Additional events would be defined here...
