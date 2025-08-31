@@ -578,6 +578,34 @@ export const teamMembers = {
           instagram: '#'
         }
       },
+      {
+        id: 40,
+        name: 'SAURABH MISHRA',
+        position: 'Volunteer',
+        image: '/core-team/Volunteer/saurabh_mishra.jpg',
+        department: 'B.Tech, Civil Engineering',
+        email: '',
+        description: 'Saurabh is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
+      {
+        id: 41,
+        name: 'ADITYA RAJ',
+        position: 'Volunteer',
+        image: '/core-team/Volunteer/aditya_raj.jpg',
+        department: 'B.Tech, Metallurgical & Materials Engineering',
+        email: '',
+        description: 'Aditya is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
      
     ],
   };
