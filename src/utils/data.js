@@ -160,7 +160,19 @@ export const events = [
     location: "NIT Jamshedpur",
     time: "Evening",
     link: "independence-day-flag-rally-2025"
-}
+},
+{
+    id: 15,
+    title: "Mega Blood Donation Camp 2025",
+    date: "August 30, 2025",
+    category: "past",
+    image: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image1.jpg", 
+    description: "Organized by NITJAA in collaboration with NSS NIT Jamshedpur, the Mega Blood Donation Camp at TSG Hall collected 335 units of blood. The event saw active participation from students, faculty, staff, and alumni, marking a new milestone for the institute and celebrating the spirit of compassion and social responsibility.",
+    location: "TSG Hall, NIT Jamshedpur",
+    time: "Morning",
+    link: "mega-blood-donation-camp-2025"
+},
+
 
 ];
 export const upcomingEvents = [
@@ -433,7 +445,20 @@ export const galleryEvents = [
     location: "NIT Jamshedpur",
     imageCount: 6,
     featured: false
+},
+{
+    id: 18,
+    eventId: "mega-blood-donation-camp-2025",
+    title: "Mega Blood Donation Camp 2025",
+    thumbnailSrc: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image1.jpg",
+    category: "events",
+    description: "NITJAA and NSS NIT Jamshedpur organized a Mega Blood Donation Camp at TSG Hall, collecting 335 units of blood with enthusiastic participation from students, faculty, staff, and alumni.",
+    date: "August 30, 2025",
+    location: "TSG Hall, NIT Jamshedpur",
+    imageCount: 10,
+    featured: false
 }
+
 
 
   
@@ -1313,7 +1338,90 @@ export const galleryEventsDetailed = {
             height: 900
         }
     ]
+},
+"mega-blood-donation-camp-2025": {
+    id: 18,
+    eventId: "mega-blood-donation-camp-2025",
+    title: "Mega Blood Donation Camp 2025",
+    date: "August 30, 2025",
+    location: "TSG Hall, NIT Jamshedpur",
+    category: "social-service",
+    description: "NIT Jamshedpur Alumni Association (NITJAA), in collaboration with NSS NIT Jamshedpur, organised a Mega Blood Donation Camp at TSG Hall. The event was inaugurated by the institute’s leadership in the presence of dignitaries, guests, and alumni. With enthusiastic participation from students, faculty, staff, and alumni, 335 units of blood were collected — setting a new milestone for the institute.",
+    images: [
+      //Guests and alumni attending the inaugural ceremony
+        {
+            id: 1,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image1.jpg",
+            alt: "Blood donation in progress inside TSG Hall.",
+            width: 1200,
+            height: 800
+        },
+        {
+            id: 2,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image2.jpg",
+            alt: "Dignitaries inaugurating the Mega Blood Donation Camp.",
+            width: 1200,
+            height: 800
+        },
+        {
+            id: 3,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image3.jpg",
+            alt: "Volunteers assisting donors at the registration desk.",
+            width: 1200,
+            height: 900
+        },
+        {
+            id: 4,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image4.jpg",
+            alt: "Faculty members actively participating in the camp.",
+            width: 1200,
+            height: 800
+        },
+        {
+            id: 5,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image5.jpg",
+            alt: "Donors resting after successful blood donation.",
+            width: 1200,
+            height: 900
+        },
+        {
+            id: 6,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image6.jpg",
+            alt: "Blood donation in progress inside TSG Hall.",
+            width: 1200,
+            height: 800
+        },
+        {
+            id: 7,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image7.jpg",
+            alt: "Group photo capturing the success of the Mega Camp.",
+            width: 1200,
+            height: 800
+        },
+        {
+            id: 8,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image8.jpg",
+            alt: "Group photo capturing the success of the Mega Camp.",
+            width: 1200,
+            height: 900
+        },
+        {
+            id: 9,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image9.jpg",
+            alt: "Highlights of the Mega Blood Donation Camp 2025 at NIT Jamshedpur.",
+            width: 1200,
+            height: 800
+        },
+        {
+            id: 10,
+            src: "/Gallery_Images/Mega_Blood_Donation_Camp_2025/image10.jpg",
+            alt: "Group photo capturing the success of the Mega Camp.",
+            width: 1200,
+            height: 900
+        }
+    ]
 }
+
 
 
 

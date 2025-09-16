@@ -606,7 +606,62 @@ export const teamMembers = {
           instagram: '#'
         }
       },
-     
+      {
+        id: 42,
+        name: 'ROSHAN KUMAR',
+        position: 'Volunteer',
+        image: '/core-team/Volunteer/Roshan_Kumar.jpg',
+        department: 'B.Tech, Civil Engineering',
+        email: '',
+        description: 'Roshan is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
+      {
+        id: 43,
+        name: 'ANKITA MANDAL',
+        position: 'Volunteer',
+        image: '/core-team/Volunteer/Ankita_Mandal.jpg',
+        department: 'M.S.C Chamestry',
+        email: '',
+        description: 'Ankita is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
+     {
+        id: 44,
+        name: 'Akshit Agarwal',
+        position: 'Volunteer',
+        image: '/core-team/Volunteer/Akshit_Agarwal.jpg',
+        department: 'B.Tech, Metallurgical & Materials Engineering',
+        email: '',
+        description: 'Akshit is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
+      {
+        id: 45,
+        name: 'Saloni Pandey',
+        position: 'Volunteer',
+        image: '/core-team/Volunteer/Saloni_Pandey.jpg',
+        department: 'B.Tech, Electronics and Communication Engineering',
+        email: '',
+        description: 'Saloni is skilled in organizing health camps and awareness programs. He has been instrumental in the success of several health-related initiatives.',
+        social: {
+          linkedin: '#',
+          twitter: '#',
+          instagram: '#'
+        }
+      },
     ],
   };
   
